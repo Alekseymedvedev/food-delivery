@@ -57,10 +57,12 @@ export class CategoriesService {
 
     async deleteCategory(id: number): Promise<void> {
         try {
-            const category = await this.getCategoryById(id);
+      const category = await this.getCategoryById(id);
             await category.destroy();
         } catch (e) {
-            throw new HttpException('Произошла ошибка при удалении категории', HttpStatus.INTERNAL_SERVER_ERROR)
+      throw new HttpException(
+        'Произошла ошибка при удалении категории',
+        HttpStatus.INTERNAL_SERVER_ERROR,
         }
     }
 }

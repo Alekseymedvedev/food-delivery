@@ -7,6 +7,7 @@ export interface IProduct {
     favourites?: boolean
     categoryId?: number
     description?: string
+    count?: number
 }
 
 export interface IProducts {

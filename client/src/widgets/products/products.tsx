@@ -14,7 +14,7 @@ export const Products: FC<IType> = memo(({data}) => {
         <div>
             {
                 data?.map(item =>
-                    <NavLink key={item.id} to={`/${item.id}`}>
+                    <NavLink key={item.id} to={`/product/${item.id}`}>
                         <Product data={item}/>
                     </NavLink>
                 )

@@ -4,6 +4,7 @@ import {ProductPage} from "../pages/product/productPageLazy";
 import {SettingsProductPage} from "../pages/settingsProduct/settingsProductPageLazy";
 import {SettingsPage} from "../pages/settings/settingsPageLazy";
 import {SettingsCategoryPage} from "../pages/settingsCategory/settingsCategoryPageLazy";
+import {CartPage} from "../pages/cart/cartPageLazy";
 
 
 export const routes = [
@@ -13,4 +14,5 @@ export const routes = [
     {path: "/settings", element: <SettingsPage/>},
     {path: "/settings-category/:id", element: <SettingsCategoryPage/>},
     {path: "/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
+    {path: "/cart", element: <CartPage/>},
 ]

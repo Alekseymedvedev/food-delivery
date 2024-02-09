@@ -12,6 +12,11 @@ export const productsApi = createApi({
                 url: '',
             }),
         }),
+           getOneProduct: build.query({
+            query: (id) => ({
+                url: `${id}`,
+            }),
+        }),
         createNewProduct: build.mutation({
             query: (body) => ({
                 url: ``,
@@ -42,6 +47,7 @@ export const productsApi = createApi({
 
 export const {
     useGetProductsQuery,
+    useGetOneProductQuery,
     useCreateNewProductMutation,
     useUpdateProductMutation,
     useDeleteProductMutation,
