@@ -1,0 +1,47 @@
+import {Body, Controller, Delete, Get, Param, Patch, Post, Put, UploadedFile, UseInterceptors} from '@nestjs/common';
+import {ApiOperation, ApiResponse, ApiTags} from "@nestjs/swagger";
+import {FileInterceptor} from "@nestjs/platform-express";
+import { CategoriesService } from './categories.service';
+import { CategoriesModel } from './categories.model';
+import { CategoriesDto } from './categories.dto';
+@ApiTags('Категории')
+@Controller('categories')
+export class CategoriesController {
+    constructor(private categoriesService: CategoriesService) {}
+    @ApiOperation({summary: 'Создание категории продукта'})
+    @ApiResponse({status: 200, type: CategoriesModel})
+    @Post()
+    @UseInterceptors(FileInterceptor('image'))
+    create(@Body() dto: CategoriesDto,
+               @UploadedFile() image ){
+        return this.categoriesService.createCategories(dto, image)
+    }
+    @ApiOperation({ summary: 'Получение всех категорий' })
+    @ApiResponse({ status: 200, type: [CategoriesModel] })
+    @Get()
+    async findAll() {
+        return this.categoriesService.getAllCategories();
+    }
+
+    @ApiOperation({ summary: 'Получение категории по идентификатору' })
+    @ApiResponse({ status: 200, type: CategoriesModel })
+    @Get(':id')
+    async findOne(@Param('id') id: string) {
+        return this.categoriesService.getCategoryById(+id);
+    }
+
+    @ApiOperation({ summary: 'Частичное изменение категории' })
+    @ApiResponse({ status: 200, type: CategoriesModel })
+    @Patch(':id')
+    @UseInterceptors(FileInterceptor('image'))
+    async update( @Body() dto: CategoriesDto,@Param('id') id: string,@UploadedFile() image) {
+        return this.categoriesService.updateCategory(+id, dto,image);
+    }
+
+    @ApiOperation({ summary: 'Удаление категории' })
+    @ApiResponse({ status: 200 })
+    @Delete(':id')
+    async remove(@Param('id') id: string) {
+        return this.categoriesService.deleteCategory(+id);
+    }
+}
