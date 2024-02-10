@@ -7,11 +7,11 @@ import {useTelegram} from "./hooks/useTelegram";
 
 function App() {
     const {tg} = useTelegram()
-    tg.MainButton.text = "Changed Text"; //изменяем текст кнопки
-    tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
-    tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
-    tg.MainButton.color = "green"; //изменяем цвет бэкграунда кнопки
-    tg.MainButton.setParams({"color": "grey"});
+    // tg.MainButton.text = "Changed Text"; //изменяем текст кнопки
+    // tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
+    // tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+    // tg.MainButton.color = "green"; //изменяем цвет бэкграунда кнопки
+    // tg.MainButton.setParams({"color": "grey"});
     return (
         <Suspense fallback={'Загрузка'}>
             <Routes>

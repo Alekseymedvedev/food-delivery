@@ -71,6 +71,7 @@ export class CategoriesService {
       );
     }
   }
+
   async deleteCategory(id: number): Promise<void> {
     try {
       const category = await this.getCategoryById(id);
