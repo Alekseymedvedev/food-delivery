@@ -5,7 +5,7 @@ import {useGetOneProductQuery} from "../../store/API/productsApi";
 import {Product} from "../../entities/product/product";
 import {Button} from "../../shared/button/button";
 import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
-import {increment} from "../../store/slice/productsSlice";
+import {addProductToCart} from "../../store/slice/productsSlice";
 
 
 const ProductPage = () => {
@@ -14,7 +14,7 @@ const ProductPage = () => {
     const dispatch = useAppDispatch()
     const {countProducts}= useAppSelector(state => state.productReducer)
     const addHandler = () => {
-        dispatch(increment(data))
+        dispatch(addProductToCart(data))
     }
     return (
         <MainLayout heading={''}>

@@ -1,10 +1,9 @@
 
 :root {
-  --button-background-color: #ff0000; /* new background color */
-  --button-text-color: #ffffff; /* new text color */
+  --button-background-color: #ff0000;
+  --button-text-color: #ffffff;
 }
 body {
-
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 }

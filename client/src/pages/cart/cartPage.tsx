@@ -9,7 +9,7 @@ const CartPage = () => {
     const dispatch = useAppDispatch()
     useEffect(() => {
 
-        const data = localStorage.getItem('products');
+        const data = localStorage.getItem('productsInCart');
         if (data !== null) {
             dispatch(getProducts(JSON.parse(data)))
         }

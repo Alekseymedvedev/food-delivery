@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/cart/cartPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/cart/cartPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/product/productPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/product/productPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/slice/productsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/slice/productsSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +96,9 @@
       <workItem from="1707498241939" duration="11517000" />
       <workItem from="1707549096863" duration="7402000" />
       <workItem from="1707557601314" duration="2409000" />
-      <workItem from="1707560131238" duration="8278000" />
+      <workItem from="1707560131238" duration="9589000" />
+      <workItem from="1707571885534" duration="915000" />
+      <workItem from="1707573958249" duration="368000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -172,7 +180,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707568269580</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit">
+      <option name="closed" value="true" />
+      <created>1707568606127</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707568606127</updated>
+    </task>
+    <task id="LOCAL-00012" summary="commit">
+      <option name="closed" value="true" />
+      <created>1707568791726</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707568791726</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
