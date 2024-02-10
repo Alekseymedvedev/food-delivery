@@ -1,42 +1,50 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {IProduct} from "../../types/types";
-import {find} from "@reduxjs/toolkit/dist/utils";
-// localStorage.setItem('products', JSON.stringify([]))
-const local =localStorage.getItem('products')
-const data = local && JSON.parse(local)
-// const data:any = []
 
 interface IProductsState {
-   countProducts:number
-    productsInCart:IProduct[] | undefined
+    countProducts: number
+    productsInCart: IProduct[]
     // productsInCart:any
 };
 
 const initialState: IProductsState = {
-    countProducts:0,
-    productsInCart: data
+    countProducts: 0,
+    productsInCart: []
 };
 
 export const products = createSlice({
     name: "products",
     initialState,
     reducers: {
+        getProducts: (state: IProductsState, action: PayloadAction<IProduct[]>) => {
+            state.productsInCart = action.payload
+            state.countProducts = state.productsInCart.length
+        },
+        increment: (state: IProductsState, action: PayloadAction<IProduct>) => {
+            const item = state.productsInCart.find((item: IProduct) => item.id === action.payload.id)
+            if (item) {
+                 item.count = item?.count && item?.count + 1
 
-        increment: (state: IProductsState, action: any) => {
-            const local =localStorage.getItem('products')
-            const data = local ? JSON.parse(local) :[]
-            const item=data.find((item:any) => item.title === action.payload.title)
-            if(item){
-                item.count = item.count +1
-                localStorage.setItem('products', JSON.stringify(data))
-            }else{
-                localStorage.setItem('products', JSON.stringify([...data, {...action.payload,count:1}]))
+            } else {
+                state.productsInCart.push({...action.payload, count: 1})
             }
-
-            state.countProducts ++;
+            state.countProducts = state.productsInCart.length
+            localStorage.setItem('products', JSON.stringify(state.productsInCart))
+        },
+        decrement: (state: IProductsState, action: PayloadAction<IProduct>) => {
+            const item = state.productsInCart.find((item: IProduct) => item.id === action.payload.id)
+            if ( item?.count !== 1) {
+                if(item ) item.count = item?.count && item?.count - 1
+            } else {
+                alert('Удалить')
+                const index = state.productsInCart.indexOf(item && item)
+                state.productsInCart.splice(index, 1)
+            }
+            state.countProducts = state.productsInCart.length
+            localStorage.setItem('products', JSON.stringify(state.productsInCart))
         },
     },
 });
 
-export const {increment} = products.actions;
+export const {getProducts,increment, decrement} = products.actions;
 export default products.reducer;

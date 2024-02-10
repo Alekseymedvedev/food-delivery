@@ -26,7 +26,7 @@ export class ProductsController {
   create(@Body() dto: ProductsDto, @UploadedFile() image) {
     return this.productsService.createProduct(dto, image);
   }
- 
+
   @ApiOperation({ summary: 'Получение всех продуктов' })
   @ApiResponse({ status: 200, type: ProductsModel })
   @Get()
@@ -52,7 +52,11 @@ export class ProductsController {
   @ApiResponse({ status: 200, type: ProductsModel })
   @Patch(':id')
   @UseInterceptors(FileInterceptor('image'))
-  update(@Param('id') id: number, @Body() dto: ProductsDto, @UploadedFile() image) {
-    return this.productsService.updateProduct(+id, dto,image);
+  update(
+    @Param('id') id: number,
+    @Body() dto: ProductsDto,
+    @UploadedFile() image,
+  ) {
+    return this.productsService.updateProduct(+id, dto, image);
   }
 }

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/server/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/productsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/productsApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/slice/productsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/slice/productsSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/categories/categories.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/categories/categories.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/categories/categories.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/categories/categories.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/categories/categories.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/categories/categories.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/categories/categories.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/categories/categories.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/categories/categories.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/categories/categories.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/file/file.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/file/file.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/file/file.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/file/file.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/products/products.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/products/products.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/products/products.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/products/products.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/products/products.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/products/products.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/products/products.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/products/products.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/products/products.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/products/products.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.service.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2btv7sSf5ukOpqV1L1Zj9OWWduy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleks/Desktop/web/food-delivery/client&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\aleks\\Desktop\\web\\food-delivery\\server\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aleks\Desktop\web\food-delivery\client" />
+      <recent name="C:\Users\aleks\Desktop\web\food-delivery\server\src" />
+      <recent name="C:\Users\aleks\Desktop\web\food-delivery\client\src" />
+      <recent name="C:\Users\aleks\Desktop\web\food-delivery\server\src\products" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aleks\Desktop\web\food-delivery\client\src" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="" />
+      <created>1707047031394</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707047031394</updated>
+      <workItem from="1707047033106" duration="6397000" />
+      <workItem from="1707127751136" duration="9929000" />
+      <workItem from="1707138306307" duration="6439000" />
+      <workItem from="1707146665156" duration="448000" />
+      <workItem from="1707156456238" duration="3781000" />
+      <workItem from="1707202585640" duration="1077000" />
+      <workItem from="1707203854549" duration="347000" />
+      <workItem from="1707204289378" duration="951000" />
+      <workItem from="1707205457615" duration="9473000" />
+      <workItem from="1707218567710" duration="7225000" />
+      <workItem from="1707308570913" duration="3115000" />
+      <workItem from="1707411456499" duration="5547000" />
+      <workItem from="1707470021296" duration="17277000" />
+      <workItem from="1707493592430" duration="2725000" />
+      <workItem from="1707497233900" duration="822000" />
+      <workItem from="1707498241939" duration="11517000" />
+      <workItem from="1707549096863" duration="7402000" />
+      <workItem from="1707557601314" duration="1519000" />
+    </task>
+    <task id="LOCAL-00001" summary="commit">
+      <option name="closed" value="true" />
+      <created>1707496897690</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707496897690</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit">
+      <option name="closed" value="true" />
+      <created>1707496911306</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707496911306</updated>
+    </task>
+    <task id="LOCAL-00003" summary="commit">
+      <option name="closed" value="true" />
+      <created>1707516573826</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707516573850</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/main.ts</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/generate/index.js</url>
+          <line>23</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/categories/categories.service.ts</url>
+          <line>84</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

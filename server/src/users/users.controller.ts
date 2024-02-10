@@ -25,7 +25,7 @@ export class UsersController {
   create(@Body() dto: UsersDto) {
     return this.productsService.createUser(dto);
   }
- 
+
   // @ApiOperation({ summary: 'Получение всех продуктов' })
   // @ApiResponse({ status: 200, type: UsersModel })
   // @Get()
