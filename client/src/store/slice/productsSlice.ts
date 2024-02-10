@@ -17,16 +17,14 @@ export const products = createSlice({
     initialState,
     reducers: {
         getProducts: (state: IProductsState, action: PayloadAction<IProduct[]>) => {
-            state.productsInCart = action.payload
-            state.countProducts = state.productsInCart.length
+            state.productsInCart = [...action.payload]
         },
         increment: (state: IProductsState, action: PayloadAction<IProduct>) => {
             const item = state.productsInCart.find((item: IProduct) => item.id === action.payload.id)
             if (item) {
                  item.count = item?.count && item?.count + 1
-
             } else {
-                state.productsInCart.push({...action.payload, count: 1})
+                state.productsInCart = [...state.productsInCart, {...action.payload, count: 1}]
             }
             state.countProducts = state.productsInCart.length
             localStorage.setItem('products', JSON.stringify(state.productsInCart))

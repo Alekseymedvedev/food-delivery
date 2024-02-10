@@ -8,9 +8,11 @@ const CartPage = () => {
     const {productsInCart} = useAppSelector(state => state.productReducer)
     const dispatch = useAppDispatch()
     useEffect(() => {
-        const local = localStorage.getItem('products')
-        const data = local && JSON.parse(local)
-        dispatch(getProducts(data))
+
+        const data = localStorage.getItem('products');
+        if (data !== null) {
+            dispatch(getProducts(JSON.parse(data)))
+        }
     }, [])
     return (
         <MainLayout heading={''}>
