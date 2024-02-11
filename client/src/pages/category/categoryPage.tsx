@@ -9,7 +9,7 @@ const CategoryPage = () => {
     const {data, isError} = useGetCategoryQuery(`${id}`)
 
     return (
-        <MainLayout heading={data?.title}>
+        <MainLayout heading={data?.title} textCenter>
             <div>
                 {
                     data && <Products data={data?.products}/>

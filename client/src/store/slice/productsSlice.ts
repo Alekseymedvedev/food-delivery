@@ -42,27 +42,19 @@ export const products = createSlice({
             state.countProducts = state.productsInCart.length
             localStorage.setItem('products', JSON.stringify(state.productsInCart))
         },
-    // addProductToCart: (state: IProductsState, action: PayloadAction<IProduct>) => {
-    //     const existingProduct = state.productsInCart.find(product => product.id === action.payload.id);
-    //     if (existingProduct) {
-    //         existingProduct.count = (existingProduct.count || 0) + 1;
-    //     } else {
-    //         const newProduct = { ...action.payload, count: 1 };
-    //         state.productsInCart.push(newProduct);
-    //     }
-    //     state.countProducts = state.productsInCart.reduce((total, product) => total + (product.count || 0), 0);
-    //     localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart));
-    // },
+   
     addProductToCart: (state: IProductsState, action: PayloadAction<IProduct>) => {
+        const localValue = localStorage.getItem('productsInCart')
+        const arr =  JSON.parse(localValue ? localValue : '[]') ?? []
         const existingProduct = state.productsInCart.find(product => product.id === action.payload.id);
         if (existingProduct) {
             existingProduct.count = (existingProduct.count || 0) + 1;
+            localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart));
         } else {
             const newProduct = { ...action.payload, count: 1 };
             state.productsInCart = [...state.productsInCart, newProduct];
+            localStorage.setItem('productsInCart', JSON.stringify([...arr,newProduct]));
         }
-        state.countProducts = state.productsInCart.reduce((total, product) => total + (product.count || 0), 0);
-        localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart));
     },
     },
    

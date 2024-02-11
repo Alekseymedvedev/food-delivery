@@ -12,19 +12,22 @@ const SettingsCategoryPage = () => {
     const [addNewProductForm, setAddNewProduct] = useState(false)
     const [editCategory, setEditCategory] = useState(false)
     const {data,isError} = useGetCategoryQuery(`${id}`)
+    console.log(isError);
+    
     const addHandler = () => {
         setAddNewProduct(true)
         setEditCategory(false)
     }
     return (
-        <MainLayout heading={''}>
+        <MainLayout heading={'Настройка'} textCenter>
+            
             <Button onClick={() => setEditCategory(true)}>Редактировать категорию</Button>
             <Button onClick={addHandler}>Добавить блюдо +</Button>
             {
                 addNewProductForm && <AddAndEditForm addNewProductForm categoryId={id}/>
             }
             {
-                editCategory && <AddAndEditForm categoryId={id} updateCategoryForm/>
+                editCategory && <AddAndEditForm categoryId={id} updateCategoryForm categoryData={data}/>
             }
             {
                 data?.products?.map(item =>

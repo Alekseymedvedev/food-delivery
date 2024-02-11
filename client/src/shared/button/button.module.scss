@@ -1,8 +1,15 @@
 .button {
+  width: 289px;
+  height: 38px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 15px;
-  background: var(--tg-theme-button-color);
+  background: var(--button-background-color);
   color: var(--tg-theme-button-text-color);
-  border: none;
-  outline: none;
+  font-weight: 500;
+  font-size: 15px;
   cursor: pointer;
+  border-radius: 16px;
 }

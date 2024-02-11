@@ -1,46 +1,57 @@
-import React, {FC, memo} from 'react'
-import classes from './product.module.scss'
-import {IProduct} from "../../types/types";
-import {FavoritesIcon} from "../../shared/images/icons/favoritesIcon";
-import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
-import {decrement,addProductToCart} from "../../store/slice/productsSlice";
+import React, { FC, memo } from "react";
+import classes from "./product.module.scss";
+import { IProduct } from "../../types/types";
+import { FavoritesIcon } from "../../shared/images/icons/favoritesIcon";
+import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
+import { decrement, addProductToCart } from "../../store/slice/productsSlice";
+import {PlusIcon} from "../../shared/images/icons/plusIcon";
+import { MinusIcon } from "../../shared/images/icons/minusIcon";
 
 interface IType {
-    data: IProduct
-    inCart?:boolean
-    count?:number
+  data: IProduct;
+  inCart?: boolean;
+  editAdmin?: boolean;
+  oneProduct?: boolean;
+  count?: number;
 }
 
-export const Product: FC<IType> = memo(({data,inCart,count}) => {
-    const dispatch = useAppDispatch()
+export const Product: FC<IType> = memo(({ data, inCart, count, editAdmin,oneProduct }) => {
+  const dispatch = useAppDispatch();
 
-    function addProductToCart(data: IProduct): any {
-        throw new Error('Function not implemented.');
-    }
-
-    return (
-        <div>
-            <img src={process.env.REACT_APP_API_URL + data?.image} alt={data?.title}/>
-            <div className={classes.box}>
-                <div className={classes.title}>
-                    <span>{data?.title}</span>
-                    <span>
-                    <FavoritesIcon isActive={data?.favourites}/>
-                </span>
+  return (
+    <div className={oneProduct ? classes.product + classes.oneProduct : classes.product}>
+      <div className={classes.image}>
+        <img
+          src={process.env.REACT_APP_API_URL + data?.image}
+          alt={data?.title}
+        />
+      </div>
+      <div className={classes.box}>
+        <div className={classes.title}>
+          <span>{data?.title}</span>
+    
+          {
+          (!editAdmin && !inCart) &&
+            <span>
+              <FavoritesIcon isActive={data?.favourites} />
+            </span>
+          }
+          {
+                inCart && 
+                <div className={classes.buttonGroup}>
+                  <button className={classes.button} onClick={() => dispatch(decrement(data))}>
+                    <MinusIcon/>
+                  </button>
+                  <span>{data.count}</span>
+                  <button className={classes.button} onClick={() => dispatch(addProductToCart(data))}>
+                    <PlusIcon/>
+                  </button>
                 </div>
-                <div className={classes.description}>{data?.description}</div>
-                <div className={classes.price}>{data?.price}</div>
-                {
-                    inCart &&
-                    <div className={classes}>
-                        <button onClick={()=>dispatch(decrement(data))}>minus</button>
-                        <h2>{count}</h2>
-                        <button onClick={()=>dispatch(addProductToCart(data))}>plus</button>
-                    </div>
-                }
-
-
-            </div>
+          }
         </div>
-    )
-}) 
+        <div className={classes.description}>{data?.description}</div>
+        <div className={classes.price}>{data?.price}₽</div>
+      </div>
+    </div>
+  );
+});

@@ -17,9 +17,9 @@ const ProductPage = () => {
         dispatch(addProductToCart(data))
     }
     return (
-        <MainLayout heading={''}>
-            <Product data={data}/>
-            <Button onClick={addHandler}>Добавить в корзину{countProducts}</Button>
+        <MainLayout heading={data?.title} textCenter>
+            <Product data={data} oneProduct/>
+            <Button onClick={addHandler}>Добавить в корзину {countProducts ? countProducts : '+'}</Button>
         </MainLayout>
     );
 };

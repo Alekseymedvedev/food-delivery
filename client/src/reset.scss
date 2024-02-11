@@ -21,15 +21,20 @@ body {
 
 a {
   text-decoration: none;
+  &:visited{
+    color: inherit
+  }
 }
 
 
 select,
 input,
+textarea,
 button{
   background-color: transparent;
   border: none;
   outline: none;
+  padding: 0
 }
 ul,
 li {

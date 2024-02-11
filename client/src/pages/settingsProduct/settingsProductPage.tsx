@@ -8,19 +8,18 @@ import React, {useState} from "react";
 import {Form} from "../../entities/form/form";
 import {useInput} from "../../hooks/useInput";
 import {Input} from "../../shared/input/input";
-import {useCreateNewProductMutation} from "../../store/API/productsApi";
+import {useCreateNewProductMutation, useGetOneProductQuery, useGetProductsQuery} from "../../store/API/productsApi";
 import {AddAndEditForm} from "../../widgets/addAndEditForm/addAndEditForm";
 
 
 const SettingsProductPage = () => {
     const {id} = useParams()
-
-    console.log(id)
+const {data,isLoading}=useGetOneProductQuery(id)
 
     return (
         <MainLayout heading={'Настройка'}>
             {
-              <AddAndEditForm updateProductForm productId={id}/>
+             !isLoading && <AddAndEditForm updateProductForm productId={id} productData={data}/>
             }
         </MainLayout>
     );

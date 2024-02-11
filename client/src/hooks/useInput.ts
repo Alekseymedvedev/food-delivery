@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from "react";
+import React, {ChangeEvent, useEffect, useMemo, useState} from "react";
 
 
 export const useInput = (initialValue: any, errorInput?: boolean, clear?: boolean, noValidate?: boolean) => {
@@ -10,7 +10,7 @@ export const useInput = (initialValue: any, errorInput?: boolean, clear?: boolea
         }
     }, [errorInput])
 
-    const onChange = (e: any) => {
+    const onChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
         setValue(e.target.value)
         if (e.target.value !== '' && !noValidate) {
             setError(false)

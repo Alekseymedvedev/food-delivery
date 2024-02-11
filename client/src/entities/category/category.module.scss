@@ -1,4 +1,17 @@
-
 .category {
-  
+    margin-bottom: 21px;
+}
+.title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--black-color);
+  a{
+  }
+}
+.image {
+  width: 100%;
+  border-radius: 16px;
+  color: var(--black-color);
+  overflow: hidden;
 }

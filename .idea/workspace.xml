@@ -5,14 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/category/category.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/category/category.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/category/category.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/category/category.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useInput.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layout/mainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layout/mainLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/cart/cartPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/cart/cartPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/category/categoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/category/categoryPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/home/homePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/homePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/product/productPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/product/productPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/settings/settingsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/settings/settingsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/settingsCategory/settingsCategoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/settingsCategory/settingsCategoryPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/settingsProduct/settingsProductPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/settingsProduct/settingsProductPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reset.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/button/button.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/button/button.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/input/input.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/input/input.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/input/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/input/input.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/slice/productsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/slice/productsSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +36,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -33,23 +49,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleks/Desktop/web/food-delivery/client&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\aleks\\Desktop\\web\\food-delivery\\server\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/aleks/Desktop/web/food-delivery/server/src/users",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\aleks\\Desktop\\web\\food-delivery\\server\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -61,6 +77,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aleks\Desktop\web\food-delivery\server\src\users" />
       <recent name="C:\Users\aleks\Desktop\web\food-delivery\client" />
       <recent name="C:\Users\aleks\Desktop\web\food-delivery\server\src" />
       <recent name="C:\Users\aleks\Desktop\web\food-delivery\client\src" />
@@ -98,7 +115,17 @@
       <workItem from="1707557601314" duration="2409000" />
       <workItem from="1707560131238" duration="9589000" />
       <workItem from="1707571885534" duration="915000" />
-      <workItem from="1707573958249" duration="368000" />
+      <workItem from="1707573958249" duration="7748000" />
+      <workItem from="1707583374285" duration="1256000" />
+      <workItem from="1707584760481" duration="681000" />
+      <workItem from="1707590339175" duration="106000" />
+      <workItem from="1707594483924" duration="306000" />
+      <workItem from="1707594935349" duration="2993000" />
+      <workItem from="1707599276747" duration="6203000" />
+      <workItem from="1707637618719" duration="3265000" />
+      <workItem from="1707642088594" duration="96000" />
+      <workItem from="1707642217849" duration="617000" />
+      <workItem from="1707678891423" duration="2714000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -196,11 +223,22 @@
       <option name="project" value="LOCAL" />
       <updated>1707568791726</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="commit">
+      <option name="closed" value="true" />
+      <created>1707574480397</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1707574480397</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
@@ -220,7 +258,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server/src/categories/categories.service.ts</url>
-          <line>85</line>
+          <line>83</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

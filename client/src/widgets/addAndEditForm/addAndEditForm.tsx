@@ -4,14 +4,16 @@ import {Input} from "../../shared/input/input";
 import {Button} from "../../shared/button/button";
 import {useInput} from "../../hooks/useInput";
 import {useCreateNewProductMutation, useUpdateProductMutation} from "../../store/API/productsApi";
-import {useCreateNewCategoryMutation, useUpdateCategoryMutation} from "../../store/API/categoriesApi";
-import {ICategory} from "../../types/types";
+import {useCreateNewCategoryMutation, useGetCategoriesQuery, useUpdateCategoryMutation} from "../../store/API/categoriesApi";
 import {useParams} from "react-router-dom";
+import { ICategory, IProduct } from "../../types/types";
 
 
 interface IType {
     categoryId?: number | string
+    categoryData?: ICategory
     productId?: number | string
+    productData?: IProduct
     addCategoryForm?: boolean
     updateCategoryForm?: boolean
     addNewProductForm?: boolean
@@ -20,21 +22,27 @@ interface IType {
 
 export const AddAndEditForm: FC<IType> = memo(({
                                                    categoryId,
+                                                   categoryData,
                                                    productId,
+                                                   productData,
                                                    addCategoryForm,
                                                    updateCategoryForm,
                                                    addNewProductForm,
                                                    updateProductForm,
                                                }) => {
-    const {id} = useParams()
+    const {data:dataCategories, error:dataError} = useGetCategoriesQuery('')
+    const [textModal, setTextModal] = useState('')
+    
+    const [select, setSelect] = useState('')
     const [file, setFile] = useState<any>()
-    const nameInput = useInput('')
-    const descriptionInput = useInput('')
-    const priceInput = useInput('')
-    const [addNewCategory, {error}] = useCreateNewCategoryMutation()
-    const [updateCategory] = useUpdateCategoryMutation()
-    const [addNewProduct] = useCreateNewProductMutation()
-    const [updateProduct] = useUpdateProductMutation()
+    const nameInput = useInput(categoryData ? categoryData?.title : productData ? productData?.title  : '')
+    const descriptionInput = useInput(productData ? productData?.description  : '')
+    const priceInput = useInput(productData ? productData?.price  : '')
+
+    const [addNewCategory, {error:errorAddNewCategory}] = useCreateNewCategoryMutation()
+    const [updateCategory,{error: errorUpdateCategory}] = useUpdateCategoryMutation()
+    const [addNewProduct,{error: errorAddNewProduct}] = useCreateNewProductMutation()
+    const [updateProduct,{error: errorUpdateProduct}] = useUpdateProductMutation()
     const submitHandler = () => {
         if (addCategoryForm) {
             if(nameInput.value ===''){
@@ -45,20 +53,30 @@ export const AddAndEditForm: FC<IType> = memo(({
                 formData.append('image', file);
                 formData.append('userName', 'username');
 
-                addNewCategory(formData);
+                addNewCategory(formData).then(() => {
+                    if(errorAddNewCategory){
+                        setTextModal('Ошибка при добавлении категории')
+                    }else{
+                        setTextModal('Категория успешно добавлена')
+                    }
+                });
             }
         }
         if (updateCategoryForm) {
             const formData = new FormData();
-            formData.append('title', nameInput.value);
-            formData.append('image', file);
-            formData.append('userName', 'username');
+           nameInput.value &&  formData.append('title', nameInput.value);
+           file &&  formData.append('image', file);
+           formData.append('userName', 'username');
 
-            updateCategory({
-                id:categoryId,
-                body:formData
+            updateCategory({id:categoryId,body:formData}).then(() => {
+                if(errorUpdateCategory){
+                    setTextModal('Ошибка при редактировании категории')
+                }else{
+                    setTextModal('Категория успешно обновлена')
+                }
             });
         }
+        
         if (addNewProductForm) {
             if(nameInput.value ==='' || priceInput.value ==='' || descriptionInput.value ==='' || !file){
                 nameInput.value ==='' && nameInput.setError(true)
@@ -71,29 +89,43 @@ export const AddAndEditForm: FC<IType> = memo(({
                 formData.append('image', file);
                 formData.append('userName', 'username');
                 formData.append('description', descriptionInput.value);
-                formData.append("favourites", 'true');
-                formData.append("categoryId", `${categoryId}`);
+                formData.append("categoryId",  `${categoryId}`);
+                // formData.append("count:",  `0`);
+                // formData.append("favourites:",  `false`);
 
-                addNewProduct(formData);
+                addNewProduct(formData).then(() => {
+                    if(errorAddNewProduct){
+                        setTextModal('Ошибка при добавлении блюда')
+                    }else{
+                        setTextModal('Блюдо успешно добавлено')
+                    }
+                });
             }
         }
         if (updateProductForm) {
             const formData = new FormData();
-            formData.append('title', nameInput.value);
-            formData.append('price', priceInput.value);
-            formData.append('image', file);
+            nameInput.value && formData.append('title', nameInput.value);
+            priceInput.value && formData.append('price', priceInput.value);
+            file && formData.append('image', file);
             formData.append('userName', 'username');
-            formData.append('description', descriptionInput.value);
-            formData.append("favourites", 'true');
-
-            updateProduct({
-                id:productId,
-                body:formData
+            descriptionInput.value && formData.append('description', descriptionInput.value);
+            select && formData.append("categoryId", select);
+            
+            updateProduct({id:productId,body:formData}).then(() => {
+                if(errorUpdateProduct){
+                    setTextModal('Ошибка при редактировании блюда')
+                }else{
+                    setTextModal('Блюдо успешно обновлено')
+                }
             });
         }
     }
     return (
-        <form className={classes.addAndEditForm}>
+        <>
+        {
+            textModal && <div>{textModal}</div>
+        }
+         <form className={classes.addAndEditForm}>
             {
                 (addCategoryForm || updateCategoryForm) &&
                 <>
@@ -105,13 +137,26 @@ export const AddAndEditForm: FC<IType> = memo(({
                 (addNewProductForm || updateProductForm) &&
                 <>
                     <Input label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
+           
+                    {
+                        updateProductForm && 
+                        <select value={select} onChange={(e) => setSelect(e.target.value)}>
+                            {
+                                (dataCategories && !dataError) && 
+                                dataCategories.map(item => 
+                                <option key={item.id} value={item.id}>{item.title}</option>
+                                )
+                            }
+                        </select>
+                    }
                     <Input label={'Название'} onChange={nameInput.onChange} value={nameInput.value} error={nameInput.error}/>
-                    <Input label={'Описание'} onChange={descriptionInput.onChange} value={descriptionInput.value}error={descriptionInput.error}/>
+                    <Input label={'Описание'} onChange={descriptionInput.onChange} value={descriptionInput.value}error={descriptionInput.error} description/>
                     <Input label={'Цена'} onChange={priceInput.onChange} value={priceInput.value}error={priceInput.error}/>
                 </>
             }
-
             <Button onClick={submitHandler}>Сохранить</Button>
         </form>
+        </>
+    
     )
 }) 

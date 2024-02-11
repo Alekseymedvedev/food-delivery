@@ -9,7 +9,7 @@ import {AddAndEditForm} from "../../widgets/addAndEditForm/addAndEditForm";
 
 
 const SettingsPage = () => {
-    const {data, isError} = useGetCategoriesQuery('')
+    const {data, isError, isLoading} = useGetCategoriesQuery('')
     const [addCategory, setAddCategory] = useState(false)
     const Handler = () => {
 
@@ -17,15 +17,16 @@ const SettingsPage = () => {
     const addHandler = () => {
         setAddCategory(true)
     }
+console.log(isLoading);
 
     return (
-        <MainLayout heading={''}>
+        <MainLayout heading={'Настройка'} textCenter>
             {
-                addCategory ?
+                addCategory  ?
                     <AddAndEditForm addCategoryForm/>
                     :
                     <>
-                        <Button onClick={addHandler}>добавить категорию</Button>
+                        <Button onClick={addHandler}>добавить категорию +</Button>
                         {
                             data && data.map((item: ICategory) =>
                                 <NavLink  key={item.id} to={`/settings-category/${item.id}`}>
