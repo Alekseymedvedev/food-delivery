@@ -1,0 +1,15 @@
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+.input{
+    margin-top: 16px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--text-color);
+    color: var(--text-color);
+    font-size: 12px;
+}
+// .input {
+//     color: var(--text-color); /* Change the text color variable as needed */
+// }

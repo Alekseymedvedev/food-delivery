@@ -1,13 +1,11 @@
 import React, {FC} from 'react';
 
-
 interface IType {
     isActive?: boolean
 }
 
 export const FavoritesIcon: FC<IType> = ({isActive}) => {
     return (
-
         <>
             {
                 isActive ?

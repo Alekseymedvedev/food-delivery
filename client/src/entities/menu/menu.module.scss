@@ -1,4 +1,23 @@
 
 .menu {
-  
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--text-color);
+    fill: var(--bg-grey-color);
+    line-height:12px;
+    &.active{
+        color: var(--accent-color);
+        fill: var(--accent-color);
+    }
+    svg{
+        fill: inherit;
+    }
 }

@@ -12,7 +12,7 @@ const SettingsCategoryPage = () => {
     const [addNewProductForm, setAddNewProduct] = useState(false)
     const [editCategory, setEditCategory] = useState(false)
     const {data,isError} = useGetCategoryQuery(`${id}`)
-    console.log(isError);
+
     
     const addHandler = () => {
         setAddNewProduct(true)

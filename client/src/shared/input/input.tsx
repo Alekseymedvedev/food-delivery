@@ -36,8 +36,7 @@ export const Input: FC<IType> = memo(
             {
                 description ?
                 <textarea className={classes.textarea}  placeholder="Описание" value={value} onChange={onChange}></textarea>
-
-                : 
+                :
                 <>
                 <span className={classes.text}>{label}</span>
                 <input type={type ? type : "text"} value={value} onChange={onChange}/>

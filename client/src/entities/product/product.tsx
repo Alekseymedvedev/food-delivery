@@ -19,7 +19,7 @@ export const Product: FC<IType> = memo(({ data, inCart, count, editAdmin,oneProd
   const dispatch = useAppDispatch();
 
   return (
-    <div className={oneProduct ? classes.product + classes.oneProduct : classes.product}>
+    <div className={oneProduct ? (classes.product , classes.oneProduct) : classes.product}>
       <div className={classes.image}>
         <img
           src={process.env.REACT_APP_API_URL + data?.image}

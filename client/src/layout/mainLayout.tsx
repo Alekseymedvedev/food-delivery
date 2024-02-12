@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../shared/button/button";
 import { ArrowIconBack } from "../shared/images/icons/arrowIconBack";
+import { Menu } from "../entities/menu/menu";
 
 interface IType {
   children?: React.ReactNode;
@@ -28,6 +29,7 @@ export const MainLayout: FC<IType> = ({
         <span>{heading}</span>
       </h1>
       {children}
+      <Menu/>
     </div>
   );
 };
