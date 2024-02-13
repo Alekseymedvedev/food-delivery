@@ -16,7 +16,7 @@ const CartPage = () => {
     const [checkout, setCheckout] = useState(false)
     useEffect(() => {
         const data = localStorage.getItem('productsInCart');
-        if (data !== null) {
+        if (data) {
             dispatch(getProducts(JSON.parse(data)))
         }
     }, [])

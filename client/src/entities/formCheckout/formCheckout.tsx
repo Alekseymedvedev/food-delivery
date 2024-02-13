@@ -32,10 +32,13 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
             name: name.value,
             paymentMethod,
             userId: 1,
-            productsId: productsInCart.map(item => +item.id)
+            orderProducts: productsInCart.map(item => +item.id)
          }
         createOrder(data).then(() => {
-            if(!error && !isLoading) navigate('/order')
+            if(!error && !isLoading) {
+                localStorage.setItem('productsInCart', '')
+                navigate('/order')
+            }
         })
     }
     return (

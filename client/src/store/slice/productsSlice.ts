@@ -18,18 +18,6 @@ export const products = createSlice({
         getProducts: (state: IProductsState, action: PayloadAction<IProduct[]>) => {
             state.productsInCart = [...action.payload]
         },
-        // increment: (state: IProductsState, action: PayloadAction<IProduct>) => {
-        //     const item = state.productsInCart.find((item: IProduct) => item.id === action.payload.id)
-        //     if (item) {
-        //         console.log('item',item)
-        //          item.count = item?.count && item?.count + 1
-        //     } else {
-        //         console.log('item',JSON.parse(JSON.stringify(state.productsInCart)))
-        //         state.productsInCart = [...state.productsInCart, {...action.payload, count: 1}]
-        //     }
-        //     state.countProducts = state.productsInCart.length
-        //     localStorage.setItem('products', JSON.stringify(state.productsInCart))
-        // },
         decrement: (state: IProductsState, action: PayloadAction<IProduct>) => {
             const item = state.productsInCart.find((item: IProduct) => item.id === action.payload.id)
             if ( item?.count !== 1) {
@@ -40,7 +28,7 @@ export const products = createSlice({
                 state.productsInCart.splice(index, 1)
             }
             state.countProducts = state.productsInCart.length
-            localStorage.setItem('products', JSON.stringify(state.productsInCart))
+            localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart))
         },
    
     addProductToCart: (state: IProductsState, action: PayloadAction<IProduct>) => {
