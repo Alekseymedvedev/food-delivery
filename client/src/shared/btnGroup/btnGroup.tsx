@@ -13,7 +13,6 @@ interface IType{
 }
 
 export const BtnGroup: FC<IType> = memo(({onClickOneBtn,textOneBtn,onClickTwoBtn,textTwoBtn,activeOneBtn,activeTwoBtn}) => {
-    console.log(activeTwoBtn)
     return (
         <div className={classes.btnGroup}>
             <button className={activeOneBtn ? classes.active :''} onClick={onClickOneBtn}>{textOneBtn}</button>

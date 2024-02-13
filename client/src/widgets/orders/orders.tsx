@@ -15,7 +15,7 @@ export const Orders: FC<IType> = memo(({children}) => {
         <div className={classes.orders}>
             {
                 data && data?.map(item=>
-                    <Order data={item}/>
+                    <Order key={item.id} data={item}/>
                 )
             }
         </div>

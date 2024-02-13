@@ -13,6 +13,7 @@ const SettingsCategoryPage = () => {
     const [addNewProductForm, setAddNewProduct] = useState(false)
     const [editCategory, setEditCategory] = useState(false)
     const {data,isError} = useGetCategoryQuery(`${id}`)
+console.log(editCategory);
 
     const [btn, setBtn] = useState(1)
     
@@ -23,8 +24,8 @@ const SettingsCategoryPage = () => {
     return (
         <MainLayout heading={'Настройка'} textCenter>
             <BtnGroup
-                activeOneBtn={editCategory}
-                activeTwoBtn={editCategory}
+                activeOneBtn={!addNewProductForm}
+                activeTwoBtn={addNewProductForm}
                 onClickOneBtn={() => setEditCategory(true)}
                 onClickTwoBtn={addHandler}
                 textOneBtn={'Редактировать'}
@@ -33,13 +34,13 @@ const SettingsCategoryPage = () => {
             {/*<Button onClick={() => setEditCategory(true)}>Редактировать категорию</Button>*/}
             {/*<Button onClick={addHandler}>Добавить блюдо +</Button>*/}
             {
-                addNewProductForm && <AddAndEditForm addNewProductForm categoryId={id}/>
+                (addNewProductForm && !editCategory) && <AddAndEditForm addNewProductForm categoryId={id}/>
             }
             {
-                editCategory && <AddAndEditForm categoryId={id} updateCategoryForm categoryData={data}/>
+                (!addNewProductForm && editCategory) && <AddAndEditForm categoryId={id} updateCategoryForm categoryData={data}/>
             }
             {
-                data?.products?.map(item =>
+               (!addNewProductForm) && data?.products?.map(item =>
                     <NavLink key={item.id} to={`settings-product/${item.id}`}>
                         <Product data={item}/>
                     </NavLink>

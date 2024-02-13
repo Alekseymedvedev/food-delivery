@@ -2,15 +2,20 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {productsApi} from "./API/productsApi";
 import {categoriesApi} from "./API/categoriesApi";
 import productReducer from "./slice/productsSlice"
+import userReducer from "./slice/userSlice"
 import {ordersApi} from "./API/ordersApi";
 import {searchApi} from "./API/searchApi";
+import { userApi } from "./API/userApi";
 
 const rootReducer = combineReducers({
     [productsApi.reducerPath]: productsApi.reducer,
     [categoriesApi.reducerPath]: categoriesApi.reducer,
     [ordersApi.reducerPath]: ordersApi.reducer,
     [searchApi.reducerPath]: searchApi.reducer,
-    productReducer
+    [userApi.reducerPath]: userApi.reducer,
+    productReducer,
+    userReducer,
+
 })
 
 export const setupStore = () =>
@@ -21,6 +26,7 @@ export const setupStore = () =>
             categoriesApi.middleware,
             ordersApi.middleware,
             searchApi.middleware,
+            userApi.middleware,
         ),
     });
 

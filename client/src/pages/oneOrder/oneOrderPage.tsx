@@ -29,7 +29,7 @@ const OneOrderPage = () => {
                 <div className={classes.products}>
                     {
                         data && data?.orderProducts.map(item =>
-                            <Product data={item} inOrder/>
+                            <Product key={item.id} data={item} inOrder/>
                         )
                     }
                 </div>

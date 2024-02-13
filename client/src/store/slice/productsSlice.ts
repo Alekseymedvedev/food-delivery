@@ -33,15 +33,20 @@ export const products = createSlice({
    
     addProductToCart: (state: IProductsState, action: PayloadAction<IProduct>) => {
         const localValue = localStorage.getItem('productsInCart')
-        const arr =  JSON.parse(localValue ? localValue : '[]') ?? []
-        const existingProduct = state.productsInCart.find(product => product.id === action.payload.id);
+        const arr:IProduct[] =  JSON.parse(localValue ? localValue : '[]') ?? []
+        const existingProduct =arr && arr.find(product => product.id === action.payload.id);
+        console.log(111);
+        
         if (existingProduct) {
-            existingProduct.count = (existingProduct.count || 0) + 1;
+            console.log(222);
+            
+            existingProduct.count = existingProduct.count++;
             localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart));
         } else {
-            const newProduct = { ...action.payload, count: 1 };
-            state.productsInCart = [...state.productsInCart, newProduct];
-            localStorage.setItem('productsInCart', JSON.stringify([...arr,newProduct]));
+            console.log(3333);
+            
+            state.productsInCart = [...state.productsInCart, action.payload];
+            localStorage.setItem('productsInCart', JSON.stringify([...arr,action.payload]));
         }
     },
     },

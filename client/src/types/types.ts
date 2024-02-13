@@ -1,42 +1,51 @@
 export interface IProduct {
-    id: number
-    title: string
-    price: string
-    image: string
-    userName: string
-    favourites?: boolean
-    categoryId?: number
-    description?: string
-    count?: number
+  id: number;
+  title: string;
+  price: string;
+  image: string;
+  userName: string;
+  favourites?: boolean;
+  categoryId: number;
+  description?: string;
+  count: number;
 }
 
-
 export interface ICategory {
-    id: number
-    title: string
-    image: string
-    products:IProduct[]
+  id: number;
+  title: string;
+  image: string;
+  products: IProduct[];
 }
 
 export interface IOrderCreate {
-    id?: number | string,
-    userId?: number,
-    address?: string,
-    typeDelivery?: string,
-    phone?: string,
-    name?: string,
-    paymentMethod?: string,
-    sum?:number,
-    orderProducts:number[]
+  id?: number | string;
+  userId?: number;
+  address?: string;
+  typeDelivery?: string;
+  phone?: string;
+  name?: string;
+  paymentMethod?: string;
+  sum?: number;
+  orderProducts: { id: number; count: number }[];
 }
 export interface IOrder {
-    id?: number | string,
-    userId?: number,
-    address?: string,
-    typeDelivery?: string,
-    phone?: string,
-    name?: string,
-    paymentMethod?: string,
-    sum?:number,
-    orderProducts:IProduct[]
+  id?: number | string;
+  userId?: number;
+  address?: string;
+  typeDelivery?: string;
+  phone?: string;
+  name?: string;
+  paymentMethod?: string;
+  sum?: number;
+  orderProducts: IProduct[];
+}
+export interface IUser {
+  id?: number;
+  chatId?: number;
+  role?: string;
+  name?: string;
+  email?: string;
+  gender?: string;
+  date?: string;
+  phone?: string;
 }

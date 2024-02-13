@@ -10,7 +10,7 @@ interface IType {
 }
 
 export const Search: FC<IType> = memo(({children}) => {
-    const [query, setQyery] = useState('')
+    const [query, setQuery] = useState('')
     const {data, error, isLoading} = useSearchQuery(`/?title=${query}`,{skip:!query})
 
     return (
@@ -20,7 +20,7 @@ export const Search: FC<IType> = memo(({children}) => {
                     className={classes.input} type="search"
                     placeholder={'Поиск'}
                     value={query}
-                    onChange={(e) => setQyery(e.target.value)}/>
+                    onChange={(e) => setQuery(e.target.value)}/>
                 <NavLink className={classes.icon} to={`/search/?title=${query}`}>
                     <SearchIcon/>
                 </NavLink>

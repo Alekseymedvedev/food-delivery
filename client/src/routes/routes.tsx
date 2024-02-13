@@ -17,9 +17,6 @@ export const routes = [
     {path: "/", element: <HomePage/>},
     {path: "/category/:id", element: <CategoryPage/>},
     {path: "/product/:id", element: <ProductPage/>},
-    {path: "/settings", element: <SettingsPage/>},
-    {path: "/settings-category/:id", element: <SettingsCategoryPage/>},
-    {path: "/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
     {path: "/cart", element: <CartPage/>},
     {path: "/orders", element: <OrdersPage/>},
     {path: "/order/:id", element: <OneOrderPage/>},
@@ -28,4 +25,9 @@ export const routes = [
     {path: "/more", element: <MorePage/>},
     {path: "/more/orders", element: <OrdersPage/>},
     {path: "/statistics", element: <StatisticsPage/>},
+]
+export const adminRoutes =[
+    {path: "/settings", element: <SettingsPage/>},
+    {path: "/settings-category/:id", element: <SettingsCategoryPage/>},
+    {path: "/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
 ]

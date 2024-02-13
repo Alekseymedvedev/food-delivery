@@ -7,6 +7,7 @@ import {useCreateNewProductMutation, useUpdateProductMutation} from "../../store
 import {useCreateNewCategoryMutation, useGetCategoriesQuery, useUpdateCategoryMutation} from "../../store/API/categoriesApi";
 import {useParams} from "react-router-dom";
 import { ICategory, IProduct } from "../../types/types";
+import { useAppSelector } from "../../hooks/useRedux";
 
 
 interface IType {
@@ -32,7 +33,7 @@ export const AddAndEditForm: FC<IType> = memo(({
                                                }) => {
     const {data:dataCategories, error:dataError} = useGetCategoriesQuery('')
     const [textModal, setTextModal] = useState('')
-    
+    const { user } = useAppSelector((state) => state.userReducer);
     const [select, setSelect] = useState('')
     const [file, setFile] = useState<any>()
     const nameInput = useInput(categoryData ? categoryData?.title : productData ? productData?.title  : '')
@@ -51,7 +52,7 @@ export const AddAndEditForm: FC<IType> = memo(({
                 const formData = new FormData();
                 formData.append('title', nameInput.value);
                 formData.append('image', file);
-                formData.append('userName', 'username');
+                formData.append('userName', user?.name ? user?.name :'');
 
                 addNewCategory(formData).then(() => {
                     if(errorAddNewCategory){
@@ -66,7 +67,7 @@ export const AddAndEditForm: FC<IType> = memo(({
             const formData = new FormData();
            nameInput.value &&  formData.append('title', nameInput.value);
            file &&  formData.append('image', file);
-           formData.append('userName', 'username');
+           formData.append('userName', user?.name ? user?.name :'');
 
             updateCategory({id:categoryId,body:formData}).then(() => {
                 if(errorUpdateCategory){
@@ -87,11 +88,10 @@ export const AddAndEditForm: FC<IType> = memo(({
                 formData.append('title', nameInput.value);
                 formData.append('price', priceInput.value);
                 formData.append('image', file);
-                formData.append('userName', 'username');
+                formData.append('userName', user?.name ? user?.name :'');
                 formData.append('description', descriptionInput.value);
                 formData.append("categoryId",  `${categoryId}`);
-                // formData.append("count:",  `0`);
-                // formData.append("favourites:",  `false`);
+            
 
                 addNewProduct(formData).then(() => {
                     if(errorAddNewProduct){
@@ -107,7 +107,7 @@ export const AddAndEditForm: FC<IType> = memo(({
             nameInput.value && formData.append('title', nameInput.value);
             priceInput.value && formData.append('price', priceInput.value);
             file && formData.append('image', file);
-            formData.append('userName', 'username');
+            formData.append('userName', user?.name ? user?.name :'');
             descriptionInput.value && formData.append('description', descriptionInput.value);
             select && formData.append("categoryId", select);
             
