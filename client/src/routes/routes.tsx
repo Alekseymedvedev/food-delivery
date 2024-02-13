@@ -10,6 +10,7 @@ import { MorePage } from "../pages/more/morePageLazy";
 import { NotuficationPage } from "../pages/notufication/notuficationPageLazy";
 import { OrdersPage } from "../pages/orders/ordersPageLazy";
 import {OneOrderPage} from "../pages/oneOrder/oneOrderPageLazy";
+import {StatisticsPage} from "../pages/statistics/statisticsPageLazy";
 
 
 export const routes = [
@@ -21,9 +22,10 @@ export const routes = [
     {path: "/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
     {path: "/cart", element: <CartPage/>},
     {path: "/orders", element: <OrdersPage/>},
-    {path: "/order", element: <OneOrderPage/>},
+    {path: "/order/:id", element: <OneOrderPage/>},
     {path: "/profile", element: <ProfilePage/>},
     {path: "/notification", element: <NotuficationPage/>},
     {path: "/more", element: <MorePage/>},
     {path: "/more/orders", element: <OrdersPage/>},
+    {path: "/statistics", element: <StatisticsPage/>},
 ]

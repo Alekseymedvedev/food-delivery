@@ -7,7 +7,7 @@ import {NavLink} from "react-router-dom";
 
 const HomePage = () => {
     return (
-        <MainLayout heading={'Что вы предпочитайте?'} homePage>
+        <MainLayout heading={'Что вы предпочитайте?'} homePage isSearch>
             <Categories/>
         </MainLayout>
     );

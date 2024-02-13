@@ -10,9 +10,7 @@ export interface IProduct {
     count?: number
 }
 
-export interface IProducts {
-    products: IProduct[]
-}
+
 export interface ICategory {
     id: number
     title: string
@@ -20,6 +18,25 @@ export interface ICategory {
     products:IProduct[]
 }
 
-export interface ICategories {
-    categories: ICategory[]
+export interface IOrderCreate {
+    id?: number | string,
+    userId?: number,
+    address?: string,
+    typeDelivery?: string,
+    phone?: string,
+    name?: string,
+    paymentMethod?: string,
+    sum?:number,
+    orderProducts:number[]
+}
+export interface IOrder {
+    id?: number | string,
+    userId?: number,
+    address?: string,
+    typeDelivery?: string,
+    phone?: string,
+    name?: string,
+    paymentMethod?: string,
+    sum?:number,
+    orderProducts:IProduct[]
 }

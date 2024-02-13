@@ -7,6 +7,7 @@ import {InputRadio} from "../../shared/inputRadio/inputRadio";
 import {useAppSelector} from "../../hooks/useRedux";
 import {useCreateNewOrderMutation} from "../../store/API/ordersApi";
 import {useNavigate} from "react-router-dom";
+import {IOrder, IOrderCreate} from "../../types/types";
 
 interface IType {
     onSubmit: (val: any) => void;
@@ -14,7 +15,7 @@ interface IType {
 
 export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
     const navigate = useNavigate();
-    const [createOrder, {error, isLoading}] = useCreateNewOrderMutation()
+    const [createOrder, {data:dataCreate,error, isLoading}] = useCreateNewOrderMutation()
 
     const {productsInCart} = useAppSelector(state => state.productReducer)
     const address = useInput('')
@@ -25,7 +26,7 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
     const [modalError, setModalError] = useState(false)
 
     const submitHandler = () => {
-        const data = {
+        const data:IOrderCreate = {
             address: address.value,
             typeDelivery,
             phone: phone.value,
@@ -35,9 +36,9 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
             orderProducts: productsInCart.map(item => +item.id)
          }
         createOrder(data).then(() => {
-            if(!error && !isLoading) {
+            if(!error && !isLoading && dataCreate) {
                 localStorage.setItem('productsInCart', '')
-                navigate('/order')
+                navigate(`/order/${data.id}`)
             }
         })
     }
@@ -53,7 +54,7 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
             <div className={classes.box}>
                 <SimpleTextField label={"Укажите адрес доставки"} value={address.value} onChange={address.onChange}/>
                 <SimpleTextField label={"Контакты"} type={'phone'} value={phone.value} onChange={phone.onChange}/>
-                <SimpleTextField label={"Контакты"} value={name.value} onChange={name.onChange}/>
+                <SimpleTextField label={"Имя"} value={name.value} onChange={name.onChange}/>
             </div>
             <div>
                 <InputRadio label={'Наличные'} value={'Наличные'} onChange={setPaymentMethod} name={"payment"}/>

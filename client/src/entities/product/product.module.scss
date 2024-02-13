@@ -49,6 +49,12 @@
     height: 330px;
   }
 }
+.small{
+  & .image{
+    max-width: 80px;
+    height: 80px;
+  }
+}
 .buttonGroup{
   display: flex;
   gap:8px;

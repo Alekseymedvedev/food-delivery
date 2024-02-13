@@ -5,6 +5,7 @@ import {AddAndEditForm} from "../../widgets/addAndEditForm/addAndEditForm";
 import {useGetCategoriesQuery, useGetCategoryQuery} from "../../store/API/categoriesApi";
 import {NavLink, useParams} from "react-router-dom";
 import {Product} from "../../entities/product/product";
+import {BtnGroup} from "../../shared/btnGroup/btnGroup";
 
 
 const SettingsCategoryPage = () => {
@@ -13,6 +14,7 @@ const SettingsCategoryPage = () => {
     const [editCategory, setEditCategory] = useState(false)
     const {data,isError} = useGetCategoryQuery(`${id}`)
 
+    const [btn, setBtn] = useState(1)
     
     const addHandler = () => {
         setAddNewProduct(true)
@@ -20,9 +22,16 @@ const SettingsCategoryPage = () => {
     }
     return (
         <MainLayout heading={'Настройка'} textCenter>
-            
-            <Button onClick={() => setEditCategory(true)}>Редактировать категорию</Button>
-            <Button onClick={addHandler}>Добавить блюдо +</Button>
+            <BtnGroup
+                activeOneBtn={editCategory}
+                activeTwoBtn={editCategory}
+                onClickOneBtn={() => setEditCategory(true)}
+                onClickTwoBtn={addHandler}
+                textOneBtn={'Редактировать'}
+                textTwoBtn={'Блюдо +'}/>
+
+            {/*<Button onClick={() => setEditCategory(true)}>Редактировать категорию</Button>*/}
+            {/*<Button onClick={addHandler}>Добавить блюдо +</Button>*/}
             {
                 addNewProductForm && <AddAndEditForm addNewProductForm categoryId={id}/>
             }

@@ -1,5 +1,6 @@
 import React, { FC, memo } from "react";
 import classes from "./simpleTextField.module.scss";
+import ReactInputMask from "react-input-mask";
 
 interface IType {
   type?: string;
@@ -17,7 +18,8 @@ export const SimpleTextField: FC<IType> = memo(
           {type === "phone" ?
               <label className={classes.label}>
                   <span className={classes.text}>{label}</span>
-                   <input type="text" value={value} onChange={onChange} />
+                   {/*<textField type="text" value={value} onChange={onChange} />*/}
+                  <ReactInputMask mask={'+7 999 999 99 99'}/>
                   {error && <span className="error"></span>}
               </label>
               :

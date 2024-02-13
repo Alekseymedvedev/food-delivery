@@ -1,6 +1,6 @@
 import React, {FC, memo, useEffect, useState} from "react";
 import classes from './addAndEditForm.module.scss'
-import {Input} from "../../shared/input/input";
+import {TextField} from "../../shared/textField/textField";
 import {Button} from "../../shared/button/button";
 import {useInput} from "../../hooks/useInput";
 import {useCreateNewProductMutation, useUpdateProductMutation} from "../../store/API/productsApi";
@@ -129,14 +129,14 @@ export const AddAndEditForm: FC<IType> = memo(({
             {
                 (addCategoryForm || updateCategoryForm) &&
                 <>
-                    <Input label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
-                    <Input label={'Название'} onChange={nameInput.onChange} value={nameInput.value} error={nameInput.error}/>
+                    <TextField label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
+                    <TextField label={'Название'} onChange={nameInput.onChange} value={nameInput.value} error={nameInput.error}/>
                 </>
             }
             {
                 (addNewProductForm || updateProductForm) &&
                 <>
-                    <Input label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
+                    <TextField label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
            
                     {
                         updateProductForm && 
@@ -149,9 +149,9 @@ export const AddAndEditForm: FC<IType> = memo(({
                             }
                         </select>
                     }
-                    <Input label={'Название'} onChange={nameInput.onChange} value={nameInput.value} error={nameInput.error}/>
-                    <Input label={'Описание'} onChange={descriptionInput.onChange} value={descriptionInput.value}error={descriptionInput.error} description/>
-                    <Input label={'Цена'} onChange={priceInput.onChange} value={priceInput.value}error={priceInput.error}/>
+                    <TextField label={'Название'} onChange={nameInput.onChange} value={nameInput.value} error={nameInput.error}/>
+                    <TextField label={'Описание'} onChange={descriptionInput.onChange} value={descriptionInput.value} error={descriptionInput.error} description/>
+                    <TextField label={'Цена'} onChange={priceInput.onChange} value={priceInput.value} error={priceInput.error}/>
                 </>
             }
             <Button onClick={submitHandler}>Сохранить</Button>

@@ -12,7 +12,7 @@ export const InputFile: FC<IType> = memo(({children}) => {
         <>
             {/*<label className={classes.label}>*/}
             {/*    <span>{label}</span>*/}
-            {/*    <input type="file" onChange={(e) => setFile(e?.target?.files?.[0])}/>*/}
+            {/*    <textField type="file" onChange={(e) => setFile(e?.target?.files?.[0])}/>*/}
             {/*</label>*/}
         </>
 

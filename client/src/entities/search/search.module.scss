@@ -1,0 +1,23 @@
+
+.label {
+  position: relative;
+}
+
+.input {
+  height: 42px;
+  width: 100%;
+  padding: 13px 19px;
+  border: 1px solid var(--bg-grey-color);
+  border-radius: 16px;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+  color: var(--bg-grey-color);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}

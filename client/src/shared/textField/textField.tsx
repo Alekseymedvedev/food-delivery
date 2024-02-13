@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FC, memo } from "react";
-import classes from "./input.module.scss";
+import classes from "./textField.module.scss";
 import imgBg from "../images/product-settings-bg.png";
 
 interface IType {
@@ -12,7 +12,7 @@ interface IType {
   error?: boolean;
 }
 
-export const Input: FC<IType> = memo(
+export const TextField: FC<IType> = memo(
   ({ type, label, value, onChange, onChangeFile,description, error }) => {
     return (
       <>

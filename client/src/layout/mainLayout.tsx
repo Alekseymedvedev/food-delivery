@@ -3,12 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../shared/button/button";
 import { ArrowIconBack } from "../shared/images/icons/arrowIconBack";
 import { Menu } from "../entities/menu/menu";
+import {Search} from "../entities/search/search";
 
 interface IType {
   children?: React.ReactNode;
   heading?: string;
   homePage?: boolean;
   textCenter?: boolean;
+  isSearch?: boolean;
 }
 
 export const MainLayout: FC<IType> = ({
@@ -16,6 +18,7 @@ export const MainLayout: FC<IType> = ({
   heading,
   homePage,
   textCenter,
+                                        isSearch,
 }) => {
   const navigate = useNavigate();
   return (
@@ -28,6 +31,8 @@ export const MainLayout: FC<IType> = ({
         )}
         <span>{heading}</span>
       </h1>
+      { isSearch && <Search/>}
+
       {children}
       <Menu/>
     </div>

@@ -1,4 +1,5 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import {IOrder} from "../../types/types";
 
 export const ordersApi = createApi({
     reducerPath: "ordersApi",
@@ -7,12 +8,12 @@ export const ordersApi = createApi({
     }),
     tagTypes: ['Orders'],
     endpoints: (build) => ({
-        getOrders: build.query({
+        getOrders: build.query<IOrder[], number| string>({
             query: () => ({
                 url: '',
             }),
         }),
-        getOneOrder: build.query({
+        getOneOrder: build.query<IOrder, number| string>({
             query: (id) => ({
                 url: `${id}`,
             }),

@@ -1,0 +1,14 @@
+
+.btnGroup{
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--accent-color);
+  button{
+    width: 100%;
+    padding: 10px 39px;
+    &.active{
+      background: var(--accent-color);
+    }
+  }
+}
