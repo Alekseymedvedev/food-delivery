@@ -9,10 +9,8 @@ export const searchApi = createApi({
     endpoints: (build) => ({
         search: build.query<IProduct[], string>({
             query: (query) => ({
-                url: '',
-                params: {
-                    query,
-                }
+                url: `${query}`,
+
             }),
         }),
     }),

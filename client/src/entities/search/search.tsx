@@ -11,8 +11,8 @@ interface IType {
 
 export const Search: FC<IType> = memo(({children}) => {
     const [query, setQuery] = useState('')
-    const {data, error, isLoading} = useSearchQuery(`/?title=${query}`,{skip:!query})
-
+    const {data, error, isLoading} = useSearchQuery(`/?search=${query}`,{skip:!query})
+    console.log(data)
     return (
         <div className={classes.search}>
             <label className={classes.label}>

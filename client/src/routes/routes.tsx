@@ -24,10 +24,11 @@ export const routes = [
     {path: "/notification", element: <NotuficationPage/>},
     {path: "/more", element: <MorePage/>},
     {path: "/more/orders", element: <OrdersPage/>},
-    {path: "/statistics", element: <StatisticsPage/>},
 ]
 export const adminRoutes =[
-    {path: "/settings", element: <SettingsPage/>},
-    {path: "/settings-category/:id", element: <SettingsCategoryPage/>},
-    {path: "/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
+    {path: "/more/settings", element: <SettingsPage/>},
+    {path: "/more/settings-category/:id", element: <SettingsCategoryPage/>},
+    {path: "/more/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
+    {path: "/more/statistics", element: <StatisticsPage/>},
+
 ]

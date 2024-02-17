@@ -18,8 +18,7 @@ export const SimpleTextField: FC<IType> = memo(
           {type === "phone" ?
               <label className={classes.label}>
                   <span className={classes.text}>{label}</span>
-                   {/*<textField type="text" value={value} onChange={onChange} />*/}
-                  <ReactInputMask mask={'+7 999 999 99 99'}/>
+                  <ReactInputMask mask={'+7 999 999 99 99'} value={value} onChange={onChange}/>
                   {error && <span className="error"></span>}
               </label>
               :
