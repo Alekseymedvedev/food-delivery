@@ -23,7 +23,7 @@ export const products = createSlice({
             const arr: IProduct[] = JSON.parse(localValue ? localValue : '[]') ?? []
             const existingProduct = arr && arr.find(product => product.id === action.payload.id);
             if (existingProduct) {
-                existingProduct.count = existingProduct.count++;
+                existingProduct.count = existingProduct.count +1;
                 localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart));
             } else {
                 state.productsInCart = [...state.productsInCart, action.payload];

@@ -17,7 +17,7 @@ export const Category: FC<IType> = memo(({ data, inkAll }) => {
       </h2>
       <div className={classes.image}>
         <img
-          src={process.env.REACT_APP_API_URL + "/" + data.image}
+          src={process.env.REACT_APP_API_URL + data.image}
           alt={data.title}
         />
       </div>

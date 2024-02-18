@@ -8,6 +8,7 @@ import {NavLink} from "react-router-dom";
 
 interface IType {
     children?: React.ReactNode
+    inkAll?: boolean
 }
 
 export const Categories: FC<IType> = memo(({children}) => {
@@ -20,7 +21,7 @@ export const Categories: FC<IType> = memo(({children}) => {
             {
                 data && data.map((item: ICategory) =>
                     <NavLink key={item.id} to={`category/${item.id}`}>
-                        <Category data={item}/>
+                        <Category data={item} inkAll/>
                     </NavLink>
                 )
             }

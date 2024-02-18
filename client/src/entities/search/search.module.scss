@@ -1,3 +1,7 @@
+.search {
+  margin-bottom: 8px;
+  position: relative;
+}
 
 .label {
   position: relative;
@@ -11,13 +15,50 @@
   border-radius: 16px;
 }
 
+//[type="search"]::-webkit-search-cancel-button {
+//  -webkit-appearance: none;
+//  appearance: none;
+//}
+
 ::placeholder { /* Most modern browsers support this now. */
   color: var(--bg-grey-color);
 }
 
 .icon {
   position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+  top: 3px;
+  right: 18px;
+}
+
+.box {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  width: 100%;
+  padding: 24px;
+  background-color: var(--color-white);
+  border: 1px solid var(--accent-color);
+  border-radius: 16px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.inner {
+  display: flex;
+  gap: 8px;
+}
+
+.title,
+.price {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  background-color: var(--bg-grey-color);
+  border-radius: 8px;
 }

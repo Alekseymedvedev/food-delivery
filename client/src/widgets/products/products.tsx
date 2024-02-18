@@ -11,7 +11,7 @@ interface IType {
 
 export const Products: FC<IType> = memo(({data}) => {
     return (
-        <div>
+        <div className={classes.products}>
             {
                 data?.map(item =>
                     <NavLink key={item.id} to={`/product/${item.id}`}>

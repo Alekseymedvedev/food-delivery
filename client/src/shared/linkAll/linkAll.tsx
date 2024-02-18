@@ -12,11 +12,12 @@ interface IType{
 
 export const LinkAll: FC<IType> = memo(({text,link}) => {
     return (
-        <NavLink to={link} className={classes.link}>
+        <div className={classes.link}>
             <span>{text ? text : 'все'}</span>
             <span>
+                &nbsp;
                 <ArrowIcon/>
             </span>
-        </NavLink>
+        </div>
     )
 }) 
