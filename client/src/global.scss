@@ -24,7 +24,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #000 transparent;
+  scrollbar-color: var(--accent-color) var(--bg-grey-color);
 }
 body {
   background: var(--tg-theme-bg-color);
@@ -43,9 +43,9 @@ img {
   justify-content: space-between;
   height: 103vh;
   width: 100%;
-  width: 377px;
-  height: 812px;
-  border: 1px solid;
+  //width: 377px;
+  //height: 812px;
+  //border: 1px solid;
   margin: 0 auto;
   padding: 32px 19px 44px 19px;
 }
