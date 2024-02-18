@@ -14,7 +14,7 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--bg-grey-color);
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -24,7 +24,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--accent-color) var(--bg-grey-color);
+  scrollbar-color: var(--accent-color) transparent;
 }
 body {
   background: var(--tg-theme-bg-color);
