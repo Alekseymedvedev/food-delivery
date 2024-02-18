@@ -25,8 +25,8 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
     const [favouritesProduct, setFavouritesProduct] = useState<IProduct[]>()
 
     useEffect(() => {
-        const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-       if(favorites) setFavouritesProduct(favorites)
+       //  const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+       // if(favorites) setFavouritesProduct(favorites)
     }, []);
 
     const toggleFavorite = (e: any,) => {
