@@ -20,7 +20,7 @@ export const Categories: FC<IType> = memo(({children}) => {
         <div>
             {
                 data && data.map((item: ICategory) =>
-                    <NavLink key={item.id} to={`category/${item.id}`}>
+                    <NavLink key={item.id} to={`/category/${item.id}`}>
                         <Category data={item} inkAll/>
                     </NavLink>
                 )
