@@ -6,7 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/cart/cartPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/cart/cartPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/cart/cartPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/cart/cartPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/category/categoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/category/categoryPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/more/morePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/more/morePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/product/productPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/product/productPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/settings/settingsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/settings/settingsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/settingsCategory/settingsCategoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/settingsCategory/settingsCategoryPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/images/icons/paymentIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/images/icons/paymentIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/images/icons/profileIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/images/icons/profileIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/images/icons/settingsIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/images/icons/settingsIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/images/icons/statisticsIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/images/icons/statisticsIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/slice/productsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/slice/productsSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/widgets/categories/categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/categories/categories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +136,7 @@
       <workItem from="1707764790130" duration="105000" />
       <workItem from="1707767551134" duration="25116000" />
       <workItem from="1707860397089" duration="3151000" />
-      <workItem from="1707981531523" duration="58641000" />
+      <workItem from="1707981531523" duration="64421000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -411,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708261790512</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="commit">
+      <option name="closed" value="true" />
+      <created>1708262305285</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1708262305285</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

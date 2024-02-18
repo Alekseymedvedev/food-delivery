@@ -62,22 +62,27 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
                         </span>
                     }
                     {inOrder && <span>x{data?.count}</span>}
-                    {
-                        inCart &&
-                        <div className={classes.buttonGroup}>
-                            <button className={classes.button} onClick={() => dispatch(decrement(data))}>
-                                <MinusIcon/>
-                            </button>
-                            <span>{data.count}</span>
-                            <button className={classes.button} onClick={() => dispatch(addProductToCart(data))}>
-                                <PlusIcon/>
-                            </button>
-                        </div>
-                    }
+
                 </div>
                 <div className={classes.description}>{data?.description}</div>
-                <div className={classes.price}>{data?.price}₽</div>
+                {!inCart && <div className={classes.price}>{data?.price}₽</div>}
+
             </div>
+            {
+                inCart &&
+                <div className={classes.priceBox}>
+                    <div className={classes.buttonGroup}>
+                        <button className={classes.button} onClick={() => dispatch(decrement(data))}>
+                            <MinusIcon/>
+                        </button>
+                        <span>{data.count}</span>
+                        <button className={classes.button} onClick={() => dispatch(addProductToCart(data))}>
+                            <PlusIcon/>
+                        </button>
+                    </div>
+                    <div className={classes.price}>{data?.price}₽</div>
+                </div>
+            }
         </div>
     );
 });

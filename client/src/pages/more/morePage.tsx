@@ -28,7 +28,7 @@ const MorePage = () => {
             <nav className={classes.menu}>
                 {
                     linkArr?.map(item => (
-                        <NavLink to={item.to} className={classes.link}>
+                        <NavLink key={item.to} to={item.to} className={classes.link}>
                             {item.icon}
                             <span>{item.text}</span>
                         </NavLink>
@@ -36,7 +36,7 @@ const MorePage = () => {
                 }
                 {
                     user?.role === 'admin' &&  linkArrAdmin?.map(item => (
-                        <NavLink to={item.to} className={classes.link}>
+                        <NavLink key={item.to} to={item.to} className={classes.link}>
                             {item.icon}
                             <span>{item.text}</span>
                         </NavLink>

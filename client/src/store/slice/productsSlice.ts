@@ -5,10 +5,11 @@ interface IProductsState {
     countProducts: number
     productsInCart: IProduct[]
 };
-
+const data = localStorage.getItem('productsInCart');
+const parseData = JSON.parse(data ?data:'[]')
 const initialState: IProductsState = {
-    countProducts: 0,
-    productsInCart: []
+    countProducts: parseData?.length,
+    productsInCart: parseData
 };
 
 export const products = createSlice({
@@ -19,16 +20,15 @@ export const products = createSlice({
             state.productsInCart = [...action.payload]
         },
         addProductToCart: (state: IProductsState, action: PayloadAction<IProduct>) => {
-            const localValue = localStorage.getItem('productsInCart')
-            const arr: IProduct[] = JSON.parse(localValue ? localValue : '[]') ?? []
-            const existingProduct = arr && arr.find(product => product.id === action.payload.id);
+            const existingProduct = state.productsInCart.find(product => product.id === action.payload.id);
             if (existingProduct) {
                 existingProduct.count = existingProduct.count +1;
                 localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart));
             } else {
                 state.productsInCart = [...state.productsInCart, action.payload];
-                localStorage.setItem('productsInCart', JSON.stringify([...arr, action.payload]));
+                localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart));
             }
+            state.countProducts = state.productsInCart.length
         },
         decrement: (state: IProductsState, action: PayloadAction<IProduct>) => {
             const item = state.productsInCart.find((item: IProduct) => item.id === action.payload.id)

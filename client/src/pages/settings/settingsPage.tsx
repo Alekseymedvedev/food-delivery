@@ -6,6 +6,7 @@ import {Category} from "../../entities/category/category";
 import React, {useState} from "react";
 import {NavLink} from "react-router-dom";
 import {AddAndEditForm} from "../../widgets/addAndEditForm/addAndEditForm";
+import {Loader} from "../../shared/loader/loader";
 
 
 const SettingsPage = () => {
@@ -17,19 +18,21 @@ const SettingsPage = () => {
     const addHandler = () => {
         setAddCategory(true)
     }
-console.log(isLoading);
 
     return (
         <MainLayout heading={'Настройка'} textCenter>
             {
-                addCategory  ?
+                addCategory ?
                     <AddAndEditForm addCategoryForm/>
                     :
                     <>
-                        <Button onClick={addHandler}>добавить категорию +</Button>
+                        <div className={'mb-6'}>
+                            <Button onClick={addHandler}>добавить категорию +</Button>
+                        </div>
+                        {isLoading && <Loader height={164}/>}
                         {
                             data && data.map((item: ICategory) =>
-                                <NavLink  key={item.id} to={`/settings-category/${item.id}`}>
+                                <NavLink key={item.id} to={`/more/settings-category/${item.id}`}>
                                     <Category data={item}/>
                                 </NavLink>
                             )

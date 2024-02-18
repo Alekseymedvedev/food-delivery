@@ -4,6 +4,7 @@ import {Category} from "../../entities/category/category";
 import {useGetCategoriesQuery} from "../../store/API/categoriesApi";
 import {ICategory} from "../../types/types";
 import {NavLink} from "react-router-dom";
+import {Loader} from "../../shared/loader/loader";
 
 
 interface IType {
@@ -12,12 +13,13 @@ interface IType {
 }
 
 export const Categories: FC<IType> = memo(({children}) => {
-    const {data, isError} = useGetCategoriesQuery('')
-    if(isError){
+    const {data, isError, isLoading} = useGetCategoriesQuery('')
+    if (isError) {
         return <h2 className={'error'}>Произошла ошибка при загрузке данных. Попробуйте обновить страницу</h2>
     }
     return (
         <div>
+            {isLoading && <Loader height={164}/>}
             {
                 data && data.map((item: ICategory) =>
                     <NavLink key={item.id} to={`/category/${item.id}`}>

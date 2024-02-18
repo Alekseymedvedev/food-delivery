@@ -14,12 +14,6 @@ const CartPage = () => {
     const {productsInCart} = useAppSelector(state => state.productReducer)
 
     const [checkout, setCheckout] = useState(false)
-    useEffect(() => {
-        const data = localStorage.getItem('productsInCart');
-        if (data) {
-            dispatch(getProducts(JSON.parse(data)))
-        }
-    }, [])
 
     const ordersHandler = (data: any) => {
 
@@ -31,20 +25,23 @@ const CartPage = () => {
                     <FormCheckout onSubmit={ordersHandler}/>
                     :
                     <>
-                        {
-                            productsInCart && productsInCart.map(item =>
-                                <div key={item.id} className={classes.list}>
-                                    <Product data={item} inCart count={item.count ? item.count : 0}/>
-                                </div>
-                            )
-                        }
-                        <div className={classes.summ}>
+                        <div className={classes.list}>
+                            {
+                                productsInCart && productsInCart.map(item =>
+                                    <div key={item.id} >
+                                        <Product data={item} inCart count={item.count ? item.count : 0}/>
+                                        <div className={classes.divider}></div>
+                                    </div>
+                                )
+                            }
+                        </div>
+                        <div className={classes.sum}>
                             <span>Итого:</span>
                             <span>
-                {
-                    productsInCart && productsInCart.reduce((acc, item) => acc + (+item?.price * (item.count ? item.count : 0)), 0)
-                }
-                </span>
+                                {
+                                    productsInCart && productsInCart.reduce((acc, item) => acc + (+item?.price * (item.count ? item.count : 0)), 0)
+                                }
+                            </span>
                         </div>
                         <Button onClick={() => setCheckout(true)}>Оформить заказ</Button>
                     </>
