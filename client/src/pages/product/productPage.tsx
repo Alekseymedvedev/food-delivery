@@ -23,7 +23,7 @@ const ProductPage = () => {
     return (
         <MainLayout heading={data?.title} textCenter>
             <h1>fffff</h1>
-            <Product data={data} oneProduct/>
+            {/*<Product data={data} oneProduct/>*/}
             {/*<Button onClick={addHandler}>Добавить в корзину {countProducts ? countProducts : '+'}</Button>*/}
         </MainLayout>
     );
