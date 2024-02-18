@@ -24,25 +24,25 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
     if (inCart || inOrder) classesArr.push(classes.small)
     const [favouritesProduct, setFavouritesProduct] = useState<IProduct[]>()
 
-    useEffect(() => {
-        const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-        setFavouritesProduct(favorites)
-    }, []);
-
-    const toggleFavorite = (e: any,) => {
-        e.preventDefault()
-        const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-        const isFavorite = favorites.find((product: IProduct) => product.id === data.id);
-        if (isFavorite) {
-            const updatedFavorites = favorites.filter((item: any) => item.id !== data.id);
-            localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-            setFavouritesProduct(updatedFavorites)
-        } else {
-            const updatedFavorites = [...favorites, data];
-            localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-            setFavouritesProduct(updatedFavorites)
-        }
-    };
+    // useEffect(() => {
+    //     const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    //     setFavouritesProduct(favorites)
+    // }, []);
+    //
+    // const toggleFavorite = (e: any,) => {
+    //     e.preventDefault()
+    //     const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    //     const isFavorite = favorites.find((product: IProduct) => product.id === data.id);
+    //     if (isFavorite) {
+    //         const updatedFavorites = favorites.filter((item: any) => item.id !== data.id);
+    //         localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    //         setFavouritesProduct(updatedFavorites)
+    //     } else {
+    //         const updatedFavorites = [...favorites, data];
+    //         localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    //         setFavouritesProduct(updatedFavorites)
+    //     }
+    // };
 
     return (
         <div className={classesArr.join(' ')}>
@@ -53,13 +53,13 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
                 <div className={classes.title}>
                     <span>{data?.title}</span>
 
-                    {
-                        (!editAdmin && !inCart && !inOrder) &&
-                        <span onClick={toggleFavorite}>
-                          <FavoritesIcon
-                              isActive={!!favouritesProduct?.find((product: IProduct) => product.id === data.id)}/>
-                        </span>
-                    }
+                    {/*{*/}
+                    {/*    (!editAdmin && !inCart && !inOrder) &&*/}
+                    {/*    <span onClick={toggleFavorite}>*/}
+                    {/*      <FavoritesIcon*/}
+                    {/*          isActive={!!favouritesProduct?.find((product: IProduct) => product.id === data.id)}/>*/}
+                    {/*    </span>*/}
+                    {/*}*/}
                     {inOrder && <span>x{data?.count}</span>}
                     {
                         inCart &&
