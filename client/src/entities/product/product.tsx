@@ -25,8 +25,9 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
     const [favouritesProduct, setFavouritesProduct] = useState<IProduct[]>()
 
     useEffect(() => {
-       //  const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-       // if(favorites) setFavouritesProduct(favorites)
+        const local =localStorage.getItem('favorites')
+        const favorites = JSON.parse( local ? local : '[]');
+       if(favorites) setFavouritesProduct(favorites)
     }, []);
 
     const toggleFavorite = (e: any,) => {
@@ -57,7 +58,7 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
                         (!editAdmin && !inCart && !inOrder) &&
                         <span onClick={toggleFavorite}>
                           <FavoritesIcon
-                              isActive={!!favouritesProduct?.find((product: IProduct) => product.id === data.id)}/>
+                              isActive={!!favouritesProduct?.find((product: IProduct) => product?.id === data?.id)}/>
                         </span>
                     }
                     {inOrder && <span>x{data?.count}</span>}
