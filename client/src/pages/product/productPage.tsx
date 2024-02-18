@@ -21,12 +21,11 @@ const ProductPage = () => {
         return <h2 className={'error'}>Произошла ошибка при загрузке данных. Попробуйте обновить страницу</h2>
     }
     return (
-        <h2 className={'error'}>Произошла ошибка при загрузке данных. Попробуйте обновить страницу</h2>
-        // <MainLayout heading={data?.title} textCenter>
-        //     <h1>fffff</h1>
-        //     <Product data={data} oneProduct/>
-        //     <Button onClick={addHandler}>Добавить в корзину {countProducts ? countProducts : '+'}</Button>
-        // </MainLayout>
+        <MainLayout heading={data?.title} textCenter>
+            <h1>fffff</h1>
+            <Product data={data} oneProduct/>
+            {/*<Button onClick={addHandler}>Добавить в корзину {countProducts ? countProducts : '+'}</Button>*/}
+        </MainLayout>
     );
 };
 export default ProductPage;
