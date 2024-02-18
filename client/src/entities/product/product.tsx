@@ -25,22 +25,22 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
     const [favouritesProduct, setFavouritesProduct] = useState<IProduct[]>()
 
     useEffect(() => {
-        const local =localStorage.getItem('favorites')
+        const local =localStorage.getItem('food-delivery-favorites')
         const favorites = JSON.parse( local ? local : '[]');
        if(favorites) setFavouritesProduct(favorites)
     }, []);
 
     const toggleFavorite = (e: any,) => {
         e.preventDefault()
-        const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        const favorites = JSON.parse(localStorage.getItem('food-delivery-favorites') || '[]');
         const isFavorite = favorites.find((product: IProduct) => product.id === data.id);
         if (isFavorite) {
             const updatedFavorites = favorites.filter((item: any) => item.id !== data.id);
-            localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+            localStorage.setItem('food-delivery-favorites', JSON.stringify(updatedFavorites));
             setFavouritesProduct(updatedFavorites)
         } else {
             const updatedFavorites = [...favorites, data];
-            localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+            localStorage.setItem('food-delivery-favorites', JSON.stringify(updatedFavorites));
             setFavouritesProduct(updatedFavorites)
         }
     };

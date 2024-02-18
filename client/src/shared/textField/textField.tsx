@@ -10,13 +10,14 @@ interface IType {
   onChangeFile?: (val: any) => void;
   description?: boolean;
   error?: boolean;
+  borderAccent?: boolean;
 }
 
 export const TextField: FC<IType> = memo(
-  ({ type, label, value, onChange, onChangeFile,description, error }) => {
+  ({ borderAccent,type, label, value, onChange, onChangeFile,description, error }) => {
     return (
       <>
-        {type === "file" ? (
+        {type === "file" ?
           <label className={classes.labelFile}>
             <span className={classes.image}>
               <img src={imgBg} alt="подложка" />
@@ -30,25 +31,25 @@ export const TextField: FC<IType> = memo(
             />
             {error && <span className={"error"}>Файл не выбран</span>}
           </label>
-        ) : (
+         :
           <label className={classes.label}>
-            
             {
                 description ?
                 <textarea className={classes.textarea}  placeholder="Описание" value={value} onChange={onChange}></textarea>
                 :
                 <>
-                <span className={classes.text}>{label}</span>
-                <input type={type ? type : "text"} value={value} onChange={onChange}/>
+                  {label && <span className={classes.text}>{label}</span>}
+                <input
+                    className={borderAccent ? classes.borderAccent : ''}
+                    type={type ? type : "text"}
+                    value={value}
+                    onChange={onChange}/>
                 </>
                 
             }
-           
-            {error && (
-              <span className={"error"}>Поле обязательно к заполнению</span>
-            )}
+            {error && <span className={"error"}>Поле обязательно к заполнению</span>}
           </label>
-        )}
+        }
       </>
     );
   }

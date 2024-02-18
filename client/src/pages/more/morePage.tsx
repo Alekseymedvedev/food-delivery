@@ -3,7 +3,6 @@ import {NavLink} from "react-router-dom";
 import {MainLayout} from "../../layout/mainLayout";
 import {FavoritesIcon} from "../../shared/images/icons/favoritesIcon";
 import {useAppSelector} from "../../hooks/useRedux";
-import {useEffect, useState} from "react";
 import {PaymentIcon} from "../../shared/images/icons/paymentIcon";
 import {OrdersIcon} from "../../shared/images/icons/ordersIcon";
 import {ProfileIcon} from "../../shared/images/icons/profileIcon";
@@ -14,7 +13,7 @@ const linkArr = [
     {to: "payment", text: "Платежи", icon: <PaymentIcon/>},
     {to: "orders", text: "Заказы", icon: <OrdersIcon/>},
     {to: "/profile", text: "Профиль", icon: <ProfileIcon isSimple/>},
-    {to: "more", text: "Избранное ", icon: <FavoritesIcon />},
+    {to: "/more/favorites", text: "Избранное ", icon: <FavoritesIcon />},
 ];
 const linkArrAdmin = [
     {to: "/more/statistics", text: "Статистика", icon: <StatisticsIcon isSimple/>},

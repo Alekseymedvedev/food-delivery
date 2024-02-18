@@ -11,12 +11,13 @@ import { NotuficationPage } from "../pages/notufication/notuficationPageLazy";
 import { OrdersPage } from "../pages/orders/ordersPageLazy";
 import {OneOrderPage} from "../pages/oneOrder/oneOrderPageLazy";
 import {StatisticsPage} from "../pages/statistics/statisticsPageLazy";
+import {FavoritesPage} from "../pages/favorites/favoritesPageLazy";
 
 
 export const routes = [
     {path: "/", element: <HomePage/>},
-    {path: "category/:id", element: <CategoryPage/>},
-    {path: "product/:id", element: <ProductPage/>},
+    {path: "/category/:id", element: <CategoryPage/>},
+    {path: "/product/:id", element: <ProductPage/>},
     {path: "/cart", element: <CartPage/>},
     {path: "/orders", element: <OrdersPage/>},
     {path: "/order/:id", element: <OneOrderPage/>},
@@ -24,6 +25,7 @@ export const routes = [
     {path: "/notification", element: <NotuficationPage/>},
     {path: "/more", element: <MorePage/>},
     {path: "/more/orders", element: <OrdersPage/>},
+    {path: "/more/favorites", element: <FavoritesPage/>},
 ]
 export const adminRoutes =[
     {path: "/more/settings", element: <SettingsPage/>},

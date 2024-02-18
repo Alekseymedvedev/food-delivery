@@ -9,7 +9,23 @@
   --color-white: #ffffff;
   --color-error: #FF3737;;
 }
+*::-webkit-scrollbar {
+  width: 5px;
+}
 
+*::-webkit-scrollbar-track {
+  background: var(--bg-grey-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 20px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
+}
 body {
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
