@@ -28,7 +28,7 @@ const [disabled,setDisabled]=useState(false)
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
-        if(!disabled) authUser(tg)
+        if(!disabled) authUser({chatId:tg?.id,username:tg?.username})
         return () => setDisabled(true)
     }, []);
     useEffect(() => {
