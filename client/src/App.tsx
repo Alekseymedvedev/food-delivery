@@ -1,4 +1,4 @@
-import React, {useEffect,useState,} from "react";
+import React, {useEffect, useState,} from "react";
 import "./reset.scss";
 import "./global.scss";
 import {Route, Routes} from "react-router-dom";
@@ -20,15 +20,14 @@ interface IRoutes {
 }
 
 function App() {
-     // const { chatId, username } = tg.initDataUnsafe?.user || { chatId: null, username: null };
     const {tg} = useTelegram();
-const [disabled,setDisabled]=useState(false)
+    const [disabled, setDisabled] = useState(false)
     const dispatch = useAppDispatch();
     const {user} = useAppSelector((state) => state.userReducer);
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
-        if(!disabled) authUser({chatId:tg?.id,username:tg?.username})
+        if (!disabled) authUser({chatId: tg?.id, username: tg?.username})
         return () => setDisabled(true)
     }, []);
     useEffect(() => {
@@ -46,16 +45,16 @@ const [disabled,setDisabled]=useState(false)
     }, [data]);
 
     return (
-            <Routes>
-                {allRoutes &&
-                    allRoutes.map((route) => (
-                        <Route
-                            key={route?.path}
-                            path={route?.path}
-                            element={route?.element}
-                        />
-                    ))}
-            </Routes>
+        <Routes>
+            {allRoutes &&
+                allRoutes.map((route) => (
+                    <Route
+                        key={route?.path}
+                        path={route?.path}
+                        element={route?.element}
+                    />
+                ))}
+        </Routes>
 
     );
 }
