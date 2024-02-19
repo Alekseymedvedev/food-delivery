@@ -5,6 +5,7 @@ import imgBg from "../images/product-settings-bg.png";
 interface IType {
   type?: string;
   label?: string;
+    placeholder?: string;
   value?: any;
   onChange?: (val: React.ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => void;
   onChangeFile?: (val: any) => void;
@@ -14,7 +15,7 @@ interface IType {
 }
 
 export const TextField: FC<IType> = memo(
-  ({ borderAccent,type, label, value, onChange, onChangeFile,description, error }) => {
+  ({ placeholder,borderAccent,type, label, value, onChange, onChangeFile,description, error }) => {
     return (
       <>
         {type === "file" ?
@@ -42,6 +43,7 @@ export const TextField: FC<IType> = memo(
                 <input
                     className={borderAccent ? classes.borderAccent : ''}
                     type={type ? type : "text"}
+                    placeholder={placeholder ? placeholder : ''}
                     value={value}
                     onChange={onChange}/>
                 </>
