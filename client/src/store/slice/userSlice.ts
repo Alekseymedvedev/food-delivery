@@ -9,12 +9,12 @@ const initialState: IUserState = {
   user: {
     id: 0,
     chatId: 0,
-    role: "",
-    name: "",
-    email: "",
-    gender: "",
-    date: "",
-    phone: "",
+    role: 'admin',
+    name: '',
+    email: '',
+    gender: '',
+    date: '',
+    phone: '',
   },
 };
 

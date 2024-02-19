@@ -6,7 +6,6 @@ export const userApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: `${process.env.REACT_APP_API_URL}`,
     }),
-    tagTypes: ['User'],
     endpoints: (build) => ({
 
         authUser: build.mutation({
@@ -22,7 +21,6 @@ export const userApi = createApi({
                 method: 'PATCH',
                 body
             }),
-            invalidatesTags: ['User']
         }),
         deleteUser: build.mutation({
             query(id) {
@@ -31,7 +29,6 @@ export const userApi = createApi({
                     method: 'DELETE',
                 }
             },
-            invalidatesTags: ['User']
         }),
 
     }),

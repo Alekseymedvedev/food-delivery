@@ -1,9 +1,4 @@
-import React, {
-    Suspense,
-    useEffect,
-    useState,
-    useSyncExternalStore,
-} from "react";
+import React, {useEffect,useState,} from "react";
 import "./reset.scss";
 import "./global.scss";
 import {Route, Routes} from "react-router-dom";
@@ -25,12 +20,15 @@ interface IRoutes {
 
 function App() {
     const {tg} = useTelegram();
-
+const [disabled,setDisabled]=useState(false)
     const dispatch = useAppDispatch();
     const {user} = useAppSelector((state) => state.userReducer);
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
-
+    useEffect(() => {
+        if(!disabled) authUser(dataUser)
+        return () => setDisabled(true)
+    }, []);
     useEffect(() => {
         if (user?.role === "admin") {
             setAllRoutes([...routes, ...adminRoutes]);
@@ -39,15 +37,12 @@ function App() {
         }
     }, [user]);
     useEffect(() => {
-        authUser(dataUser)
-    }, []);
-    useEffect(() => {
         if (data) {
             dispatch(fetchUser(data?.existUser));
             localStorage.setItem('food-delivery-token', JSON.stringify(data?.access_token))
         }
     }, [data]);
-    tg.MainButton.color = "#F55353"; //изменяем цвет бэкграунда кнопки
+
     return (
             <Routes>
                 {allRoutes &&

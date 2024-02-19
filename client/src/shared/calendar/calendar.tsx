@@ -4,26 +4,27 @@ import {Select} from "../select/select";
 
 
 interface IType {
-    children?: React.ReactNode,
-    handleYearChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined,
-    handleMonthChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined,
-    handleDayChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined
+    changeDate: (val: string) => void,
 }
-const monthArr=['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-export const Calendar: FC<IType> = memo(({children, handleYearChange, handleMonthChange, handleDayChange}) => {
+
+const monthArr = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+export const Calendar: FC<IType> = memo(({changeDate}) => {
     const [selectedDate, setSelectedDate] = useState('')
     const [selectedDay, setSelectedDay] = useState('01')
     const [selectedMonth, setSelectedMonth] = useState(`01`)
     const [selectedYear, setSelectedYear] = useState(2024)
     const [countDay, setCountDay] = useState(31)
     const [active, setActive] = useState(false)
-
+    // console.log(selectedDate)
     useEffect(() => {
         setCountDay(new Date(selectedYear, +selectedMonth, 0).getDate())
         setSelectedDate(`${selectedDay}.${selectedMonth}.${selectedYear}`)
+        changeDate(`${selectedDay}.${selectedMonth}.${selectedYear}`)
     }, [selectedDay, selectedMonth, selectedYear]);
+
     const handlerYear = (e: any) => {
         setSelectedYear(e.target.value)
+
     }
     const handlerMonth = (e: any) => {
         if (e < 10) {
@@ -31,7 +32,7 @@ export const Calendar: FC<IType> = memo(({children, handleYearChange, handleMont
         } else {
             setSelectedMonth(e.target.value)
         }
-
+        // changeDate(selectedDate)
     }
     const handlerDay = (day: any) => {
         if (day < 10) {
@@ -39,6 +40,7 @@ export const Calendar: FC<IType> = memo(({children, handleYearChange, handleMont
         } else {
             setSelectedDay(day)
         }
+        // changeDate(selectedDate)
     }
     return (
         <div className={active ? `${classes.calendar} ${classes.active}` : classes.calendar}>
@@ -53,7 +55,7 @@ export const Calendar: FC<IType> = memo(({children, handleYearChange, handleMont
                             onChange={handlerYear}/>
                         <Select
                             dataOption={monthArr}
-                            onChange={(e)=>handlerMonth(monthArr.indexOf(e.target.value))}/>
+                            onChange={(e) => handlerMonth(monthArr.indexOf(e.target.value))}/>
                     </div>
 
                     <div className={classes.days}>
