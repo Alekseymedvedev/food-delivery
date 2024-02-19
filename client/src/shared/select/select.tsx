@@ -12,7 +12,7 @@ export const Select: FC<IType> = memo(({onChange,dataOption}) => {
     return (
         <select className={classes.select} onChange={onChange}>
             {dataOption.map((item,index) => (
-                <option key={item} value={index}>{item}</option>
+                <option key={item} value={item}>{item}</option>
             ))}
         </select>
     )

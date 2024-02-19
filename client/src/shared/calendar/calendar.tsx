@@ -9,25 +9,29 @@ interface IType {
     handleMonthChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined,
     handleDayChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined
 }
-
+const monthArr=['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
 export const Calendar: FC<IType> = memo(({children, handleYearChange, handleMonthChange, handleDayChange}) => {
     const [selectedDate, setSelectedDate] = useState('')
     const [selectedDay, setSelectedDay] = useState('01')
-    const [selectedMonth, setSelectedMonth] = useState(0)
+    const [selectedMonth, setSelectedMonth] = useState(`01`)
     const [selectedYear, setSelectedYear] = useState(2024)
     const [countDay, setCountDay] = useState(31)
     const [active, setActive] = useState(false)
-    // const countDay = new Date(selectedYear, selectedMonth +1, 0).getDate()
-    console.log(selectedDay)
+
     useEffect(() => {
-        setCountDay(new Date(selectedYear, selectedMonth + 1, 0).getDate())
+        setCountDay(new Date(selectedYear, +selectedMonth, 0).getDate())
         setSelectedDate(`${selectedDay}.${selectedMonth}.${selectedYear}`)
     }, [selectedDay, selectedMonth, selectedYear]);
     const handlerYear = (e: any) => {
         setSelectedYear(e.target.value)
     }
     const handlerMonth = (e: any) => {
-        setSelectedMonth(e.target.value)
+        if (e < 10) {
+            setSelectedMonth(`0${+e + 1}`)
+        } else {
+            setSelectedMonth(e.target.value)
+        }
+
     }
     const handlerDay = (day: any) => {
         if (day < 10) {
@@ -37,7 +41,7 @@ export const Calendar: FC<IType> = memo(({children, handleYearChange, handleMont
         }
     }
     return (
-        <div className={active ? `${classes.calendar} ${classes.active}`:classes.calendar}>
+        <div className={active ? `${classes.calendar} ${classes.active}` : classes.calendar}>
             <div className={classes.overlay} onClick={() => setActive(false)}></div>
             <div className={classes.selectedDate} onClick={() => setActive(true)}>{selectedDate}</div>
             {
@@ -48,8 +52,8 @@ export const Calendar: FC<IType> = memo(({children, handleYearChange, handleMont
                             dataOption={Array.from({length: 100}, (_, i) => new Date().getFullYear() - i)}
                             onChange={handlerYear}/>
                         <Select
-                            dataOption={['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']}
-                            onChange={handlerMonth}/>
+                            dataOption={monthArr}
+                            onChange={(e)=>handlerMonth(monthArr.indexOf(e.target.value))}/>
                     </div>
 
                     <div className={classes.days}>
