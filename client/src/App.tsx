@@ -20,15 +20,15 @@ interface IRoutes {
 }
 
 function App() {
-     const { chatId, username } = tg.initDataUnsafe?.user || { chatId: null, username: null };
-    // const {tg} = useTelegram();
+     // const { chatId, username } = tg.initDataUnsafe?.user || { chatId: null, username: null };
+    const {tg} = useTelegram();
 const [disabled,setDisabled]=useState(false)
     const dispatch = useAppDispatch();
     const {user} = useAppSelector((state) => state.userReducer);
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
-        if(!disabled) authUser({chatId,username})
+        if(!disabled) authUser(tg)
         return () => setDisabled(true)
     }, []);
     useEffect(() => {
