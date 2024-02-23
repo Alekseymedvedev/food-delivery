@@ -17,15 +17,8 @@ const OneOrderPage = () => {
     console.log(activeBtn)
     return (
         <MainLayout heading={`Заказ №${id}`} textCenter>
-            <BtnGroup
-                activeOneBtn={activeBtn === 'Доставка'}
-                activeTwoBtn={activeBtn === 'Самовывоз'}
-                onClickOneBtn={() => setActiveBtn('Доставка')}
-                onClickTwoBtn={() => setActiveBtn('Самовывоз')}
-                textOneBtn={'Доставка'}
-                textTwoBtn={'Самовывоз'}/>
+
             <div>
-                <h3>Корзина</h3>
                 <div className={classes.products}>
                     {
                         data && data?.orderProducts.map(item =>

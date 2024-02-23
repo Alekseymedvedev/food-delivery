@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/entities/formCheckout/formCheckout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/formCheckout/formCheckout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/oneOrder/oneOrderPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/oneOrder/oneOrderPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/oneOrder/oneOrderPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/oneOrder/oneOrderPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,23 +131,7 @@
       <workItem from="1707981531523" duration="71599000" />
       <workItem from="1708281242665" duration="6859000" />
       <workItem from="1708327602641" duration="35687000" />
-      <workItem from="1708684188447" duration="12601000" />
-    </task>
-    <task id="LOCAL-00011" summary="commit">
-      <option name="closed" value="true" />
-      <created>1707568606127</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1707568606127</updated>
-    </task>
-    <task id="LOCAL-00012" summary="commit">
-      <option name="closed" value="true" />
-      <created>1707568791726</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1707568791726</updated>
+      <workItem from="1708684188447" duration="13279000" />
     </task>
     <task id="LOCAL-00013" summary="commit">
       <option name="closed" value="true" />
@@ -523,7 +509,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708696291582</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="commit">
+      <option name="closed" value="true" />
+      <created>1708696959769</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1708696959769</updated>
+    </task>
+    <task id="LOCAL-00061" summary="commit">
+      <option name="closed" value="true" />
+      <created>1708696998238</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1708696998238</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

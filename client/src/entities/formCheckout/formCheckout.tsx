@@ -33,7 +33,9 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
     const [modalError, setModalError] = useState(false)
 
     useEffect(() => {
-        if (error && !isLoading) setModalError(true)
+        if (error && !isLoading) {
+            setModalError(true)
+        }
     }, [error, isLoading])
     useEffect(() => {
         if (!error && !isLoading && dataCreate) {

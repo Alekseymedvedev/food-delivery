@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {ArrowIconBack} from "../shared/images/icons/arrowIconBack";
 import {Menu} from "../entities/menu/menu";
 import {Search} from "../entities/search/search";
+import {useTelegram} from "../hooks/useTelegram";
 
 interface IType {
     children?: React.ReactNode;
@@ -19,9 +20,10 @@ export const MainLayout: FC<IType> = ({
                                           textCenter,
                                           isSearch,
                                       }) => {
+    const {tg} = useTelegram();
     const navigate = useNavigate();
     return (
-        <div className="container">
+        <div className={tg?.colorScheme == 'light' ?'container darkTheme'  :'container'}>
                 <h1 className={textCenter ? "h1 textCenter" : "h1"}>
                     {!homePage &&
                         <span className={"back"} onClick={() => navigate(-1)}>
