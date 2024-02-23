@@ -24,11 +24,19 @@ body {
   --tg-theme-button-color: #F3D535;
   --tg-theme-button-text-color: #2D3146;
   height: 100vh;
-  background: var(--tg-theme-bg-color);
-  color: var(--tg-theme-text-color);
+
   font-family: 'Montserrat', sans-serif;
 }
 .container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 377px;
+  margin: 0 auto;
+  padding: 32px 19px 0px 19px;
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
   &.darkTheme{
     --tg-theme-bg-color: #000;
     --tg-theme-text-color: #ffffff;
@@ -72,15 +80,7 @@ select {
 #root{
   height: 100%;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  max-width: 377px;
-  margin: 0 auto;
-  padding: 32px 19px 0px 19px;
-}
+
 .menuBg{
   min-height: 85px;
 }
