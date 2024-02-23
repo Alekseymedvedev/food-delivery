@@ -20,7 +20,8 @@ export const SimpleTextField: FC<IType> = memo(
                     <label className={classes.label}>
                         {label && <span className={classes.text}>{label}</span>}
                         <ReactInputMask
-                            placeholder={'placeholder'}
+                            className={classes.input}
+                            placeholder={placeholder}
                             mask={'+7 999 999 99 99'}
                             value={value}
                             onChange={onChange}/>
@@ -29,7 +30,12 @@ export const SimpleTextField: FC<IType> = memo(
                     :
                     <label className={classes.label}>
                         {label && <span className={classes.text}>{label}</span>}
-                        <input className={classes.input} type="text" value={value} onChange={onChange}/>
+                        <input
+                            className={classes.input}
+                            placeholder={placeholder}
+                            type="text"
+                            value={value}
+                            onChange={onChange}/>
                         {error && <span className="error"></span>}
                     </label>
                 }

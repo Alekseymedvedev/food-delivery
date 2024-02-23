@@ -8,6 +8,7 @@ export interface IProduct {
   categoryId: number;
   description?: string;
   count: number;
+  disabled: boolean;
 }
 
 export interface ICategory {

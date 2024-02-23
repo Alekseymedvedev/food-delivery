@@ -12,7 +12,7 @@ export const productsApi = createApi({
                 url: '',
             }),
         }),
-           getOneProduct: build.query({
+        getOneProduct: build.query({
             query: (id) => ({
                 url: `${id}`,
             }),

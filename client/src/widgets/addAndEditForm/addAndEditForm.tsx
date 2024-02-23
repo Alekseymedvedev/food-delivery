@@ -13,6 +13,7 @@ import {ICategory, IProduct} from "../../types/types";
 import {useAppSelector} from "../../hooks/useRedux";
 import {createPortal} from "react-dom";
 import {Modal} from "../../entities/modal/modal";
+import {InputRadio} from "../../shared/inputRadio/inputRadio";
 
 
 interface IType {
@@ -40,6 +41,7 @@ export const AddAndEditForm: FC<IType> = memo(({
     const [textModal, setTextModal] = useState('')
     const {user} = useAppSelector((state) => state.userReducer);
     const [select, setSelect] = useState('')
+    const [disabledProduct, setDisabledProduct] = useState(false)
     const [file, setFile] = useState<any>()
     const nameInput = useInput(categoryData ? categoryData?.title : productData ? productData?.title : '')
     const descriptionInput = useInput(productData ? productData?.description : '')
@@ -48,8 +50,8 @@ export const AddAndEditForm: FC<IType> = memo(({
     const [addNewCategory, {error: errorAddNewCategory}] = useCreateNewCategoryMutation()
     const [updateCategory, {error: errorUpdateCategory}] = useUpdateCategoryMutation()
     const [addNewProduct, {error: errorAddNewProduct}] = useCreateNewProductMutation()
-    const [updateProduct, {error: errorUpdateProduct}] = useUpdateProductMutation()
-    const submitHandler = () => {
+    const [updateProduct, {error: errorUpdateProduct,isLoading,data}] = useUpdateProductMutation()
+    const submitHandler =  () => {
         if (addCategoryForm) {
             if (nameInput.value === '' && file) {
                 nameInput.setError(true)
@@ -115,13 +117,15 @@ export const AddAndEditForm: FC<IType> = memo(({
             formData.append('userName', user?.name ? user?.name : '');
             descriptionInput.value && formData.append('description', descriptionInput.value);
             select && formData.append("categoryId", select);
+            formData.append("disabled", `${disabledProduct}`);
 
             updateProduct({id: productId, body: formData}).then(() => {
-                if (errorUpdateProduct) {
-                    setTextModal('Ошибка при редактировании блюда')
-                } else {
-                    setTextModal('Блюдо успешно обновлено')
-                }
+                    if (errorUpdateProduct !== undefined) {
+                        setTextModal('Ошибка при редактировании блюда')
+                    } else {
+                        setTextModal('Блюдо успешно обновлено')
+                    }
+
             });
         }
     }
@@ -129,7 +133,7 @@ export const AddAndEditForm: FC<IType> = memo(({
         <>
 
             <form className={classes.addAndEditForm}>
-                <div>
+                <div className={'mb-4'}>
                     {
                         (addCategoryForm || updateCategoryForm) &&
                         <div className={classes.box}>
@@ -141,6 +145,12 @@ export const AddAndEditForm: FC<IType> = memo(({
                     {
                         (addNewProductForm || updateProductForm) &&
                         <div className={classes.box}>
+                            <div className={classes.productDisabled}>
+                                Отображение в каталоге
+                                <InputRadio label={'Не виден'} onChange={setDisabledProduct} name={"disabled"}/>
+                                <InputRadio label={'Виден'} onChange={setDisabledProduct} name={"disabled"}/>
+
+                            </div>
                             <TextField label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
 
                             {
@@ -163,7 +173,9 @@ export const AddAndEditForm: FC<IType> = memo(({
                         </div>
                     }
                 </div>
-                <Button onClick={submitHandler}>Сохранить</Button>
+                <div className={'mb-4'}>
+                    <Button onClick={submitHandler}>Сохранить</Button>
+                </div>
             </form>
 
             {

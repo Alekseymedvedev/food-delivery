@@ -22,22 +22,26 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
     const {user} = useAppSelector((state) => state.userReducer);
     const [createOrder, {data: dataCreate, error, isLoading}] = useCreateNewOrderMutation()
     const [updateUser] = useUpdateUserMutation()
+    const {productsInCart} = useAppSelector(state => state.productReducer)
 
+    const address = useInput(user?.address ? user?.address : '')
+    const phone = useInput(user?.phone ? user?.phone : '')
+    const name = useInput(user?.name ? user?.name : '')
+
+    const [typeDelivery, setTypeDelivery] = useState('Доставка')
+    const [paymentMethod, setPaymentMethod] = useState('Наличные')
+    const [modalError, setModalError] = useState(false)
+
+    useEffect(() => {
+        if (error && !isLoading) setModalError(true)
+    }, [error, isLoading])
     useEffect(() => {
         if (!error && !isLoading && dataCreate) {
             localStorage.setItem('productsInCart', '')
             navigate(`/order/${dataCreate.id}`)
         }
     }, [dataCreate])
-    const {productsInCart} = useAppSelector(state => state.productReducer)
 
-    const address = useInput(user?.address ? user?.address: '')
-    const phone = useInput(user?.phone ?user?.phone : '')
-    const name = useInput(user?.name ?user?.name : '')
-
-    const [typeDelivery, setTypeDelivery] = useState('Доставка')
-    const [paymentMethod, setPaymentMethod] = useState('Наличные')
-    const [modalError, setModalError] = useState(true)
 
     const submitHandler = () => {
         const data: IOrderCreate = {
@@ -49,7 +53,7 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
             paymentMethod,
             orderProducts: productsInCart.map(item => ({id: +item?.id, count: +item?.count}))
         }
-        if(address.value,phone.value){
+        if (address.value && phone.value) {
             createOrder(data)
             updateUser({
                 userId: user?.id,
@@ -62,22 +66,22 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
     }
     return (
         <form className={classes.formCheckout} onSubmit={(e) => e.preventDefault()}>
-            {
-                (error && !isLoading) && <span className={'error'}>Ошибка при создании заказа</span>
-            }
-            <BtnGroup
-                activeOneBtn={typeDelivery === 'Доставка'}
-                activeTwoBtn={typeDelivery === 'Самовывоз'}
-                onClickOneBtn={() => setTypeDelivery('Доставка')}
-                onClickTwoBtn={() => setTypeDelivery('Самовывоз')}
-                textOneBtn={'Доставка'}
-                textTwoBtn={'Самовывоз'}/>
+            <div className={classes.inner}>
+                <BtnGroup
+                    activeOneBtn={typeDelivery === 'Доставка'}
+                    activeTwoBtn={typeDelivery === 'Самовывоз'}
+                    onClickOneBtn={() => setTypeDelivery('Доставка')}
+                    onClickTwoBtn={() => setTypeDelivery('Самовывоз')}
+                    textOneBtn={'Доставка'}
+                    textTwoBtn={'Самовывоз'}/>
+            </div>
             <div className={classes.box}>
                 <SimpleTextField label={"Укажите адрес доставки"} value={address.value} onChange={address.onChange}/>
                 <SimpleTextField label={"Контакты"} type={'phone'} value={phone.value} onChange={phone.onChange}/>
                 <SimpleTextField label={"Имя"} value={name.value} onChange={name.onChange}/>
             </div>
-            <div>
+            <div className={'mb-4'}>
+                <div className={classes.paymentTitle}>Метод оплаты</div>
                 <InputRadio label={'Наличные'} value={'Наличные'} onChange={setPaymentMethod} name={"payment"}/>
                 <InputRadio label={'Эквайринг'} value={'Эквайринг'} onChange={setPaymentMethod} name={"payment"}/>
                 <InputRadio label={'Картой при получении'} value={'Картой при получении'} onChange={setPaymentMethod}
@@ -85,7 +89,8 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
             </div>
             <Button onClick={submitHandler}>Офрмить заказ</Button>
             {modalError && createPortal(
-                <Modal textModal={'Ошибка при оформлении заказа'} onClick={()=>setModalError(false)} textBtn={'Закрыть'} error/>,
+                <Modal textModal={'Ошибка при оформлении заказа'} onClick={() => setModalError(false)}
+                       textBtn={'Закрыть'} error/>,
                 document.body
             )}
         </form>

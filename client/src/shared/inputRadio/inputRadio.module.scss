@@ -3,8 +3,37 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-top: 11px;
+
 }
 .text{
     font-weight: 400;
     font-size: 12px;
+}
+.input{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.icon{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid var(--tg-theme-button-color);
+    position: relative;
+    &.active{
+        &:before{
+            content:'';
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: var(--tg-theme-button-color);
+            border-radius: 50%;
+        }
+    }
 }
