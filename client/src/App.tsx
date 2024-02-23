@@ -11,7 +11,7 @@ import {useAuthUserMutation} from "./store/API/userApi";
 const tg = window.Telegram.WebApp;
 const dataUser = {
     chatId: 1035451470,
-    username: "Amed",
+    username: "Amed152",
 };
 
 interface IRoutes {
@@ -27,7 +27,8 @@ function App() {
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
-        if (!disabled) authUser({chatId: tg?.initDataUnsafe?.user?.id, username: tg?.initDataUnsafe?.user?.username})
+        if (!disabled) authUser(dataUser)
+        // if (!disabled) authUser({chatId: tg?.initDataUnsafe?.user?.id, username: tg?.initDataUnsafe?.user?.username})
         return () => setDisabled(true)
     }, []);
     useEffect(() => {
@@ -39,6 +40,7 @@ function App() {
     }, [user]);
     useEffect(() => {
         if (data) {
+            // dispatch(fetchUser(data?.existUser));
             dispatch(fetchUser(data?.existUser));
             localStorage.setItem('food-delivery-token', JSON.stringify(data?.access_token))
         }

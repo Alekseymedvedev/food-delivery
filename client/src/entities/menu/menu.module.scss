@@ -37,7 +37,11 @@
 }
 
 .label {
-  padding: 2px 4px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--accent-color);
   color: var(--black-color);
   border-radius: 50%;
