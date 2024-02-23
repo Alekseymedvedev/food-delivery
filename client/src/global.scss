@@ -55,13 +55,13 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--tg-theme-button-color);
+  background-color: #F3D535;
   border-radius: 20px;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--tg-theme-button-color) transparent;
+  scrollbar-color: #F3D535 transparent;
 }
 
 a {
