@@ -22,7 +22,6 @@ export const MainLayout: FC<IType> = ({
     const navigate = useNavigate();
     return (
         <div className="container">
-            <div>
                 <h1 className={textCenter ? "h1 textCenter" : "h1"}>
                     {!homePage &&
                         <span className={"back"} onClick={() => navigate(-1)}>
@@ -33,8 +32,8 @@ export const MainLayout: FC<IType> = ({
                 </h1>
                 {isSearch && <Search/>}
                 {children}
-            </div>
             <Menu/>
+            <div className="menuBg"></div>
         </div>
     );
 };

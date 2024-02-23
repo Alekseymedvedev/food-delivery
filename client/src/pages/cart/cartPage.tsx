@@ -24,27 +24,29 @@ const CartPage = () => {
                 checkout ?
                     <FormCheckout onSubmit={ordersHandler}/>
                     :
-                    <>
-                        <div className={classes.list}>
-                            {
-                                productsInCart && productsInCart.map(item =>
-                                    <div key={item.id} >
-                                        <Product data={item} inCart count={item.count ? item.count : 0}/>
-                                        <div className={classes.divider}></div>
-                                    </div>
-                                )
-                            }
-                        </div>
-                        <div className={classes.sum}>
-                            <span>Итого:</span>
-                            <span>
+                    <div className={classes.cart}>
+                        <div>
+                            <div className={classes.list}>
+                                {
+                                    productsInCart && productsInCart.map(item =>
+                                        <div key={item.id}>
+                                            <Product data={item} inCart count={item.count ? item.count : 0}/>
+                                            <div className={classes.divider}></div>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                            <div className={classes.sum}>
+                                <span>Итого:</span>
+                                <span>
                                 {
                                     productsInCart && productsInCart.reduce((acc, item) => acc + (+item?.price * (item.count ? item.count : 0)), 0)
                                 }
                             </span>
+                            </div>
                         </div>
                         <Button onClick={() => setCheckout(true)}>Оформить заказ</Button>
-                    </>
+                    </div>
             }
 
         </MainLayout>

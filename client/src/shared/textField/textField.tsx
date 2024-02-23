@@ -33,25 +33,27 @@ export const TextField: FC<IType> = memo(
                         {error && <span className={"error"}>Файл не выбран</span>}
                     </label>
                     :
-                    <label className={classes.label}>
-                        {
-                            description ?
-                                <textarea className={classes.textarea} placeholder="Описание" value={value}
-                                          onChange={onChange}></textarea>
-                                :
-                                <>
-                                    {label && <span className={classes.text}>{label}</span>}
+                    <>
+                        <label className={classes.label}>
+                            {label && <span className={classes.text}>{label}</span>}
+
+                            {
+                                description ?
+                                    <textarea className={classes.textarea} placeholder="Описание" value={value}
+                                              onChange={onChange}></textarea>
+                                    :
                                     <input
-                                        className={borderAccent ? classes.borderAccent : ''}
+                                        className={borderAccent ? classes.borderAccent : classes.input}
                                         type={type ? type : "text"}
                                         placeholder={placeholder ? placeholder : ''}
                                         value={value}
                                         onChange={onChange}/>
-                                </>
 
-                        }
+                            }
+                        </label>
                         {error && <span className={"error"}>Поле обязательно к заполнению</span>}
-                    </label>
+
+                    </>
                 }
             </>
         );

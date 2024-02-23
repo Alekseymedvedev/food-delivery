@@ -8,7 +8,7 @@ import {fetchUser} from "./store/slice/userSlice";
 import {adminRoutes, routes} from "./routes/routes";
 import {useAuthUserMutation} from "./store/API/userApi";
 // @ts-ignore
-const tg = window.Telegram.WebApp;
+// const tg = window.Telegram.WebApp;
 const dataUser = {
     chatId: 1035451470,
     username: "Amed152",
@@ -20,7 +20,7 @@ interface IRoutes {
 }
 
 function App() {
-    const {tg} = useTelegram();
+    // const {tg} = useTelegram();
     const [disabled, setDisabled] = useState(false)
     const dispatch = useAppDispatch();
     const {user} = useAppSelector((state) => state.userReducer);

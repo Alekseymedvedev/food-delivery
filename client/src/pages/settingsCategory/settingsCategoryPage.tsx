@@ -10,9 +10,8 @@ import {BtnGroup} from "../../shared/btnGroup/btnGroup";
 const SettingsCategoryPage = () => {
     const {id} = useParams()
     const [addNewProductForm, setAddNewProduct] = useState(false)
-    const [editCategory, setEditCategory] = useState(false)
+    const [editCategory, setEditCategory] = useState(true)
     const {data, isError} = useGetCategoryQuery(`${id}`)
-    console.log(editCategory);
 
     const [btn, setBtn] = useState(1)
 
@@ -24,15 +23,16 @@ const SettingsCategoryPage = () => {
         <MainLayout heading={'Настройка'} textCenter>
             <div className="mb-6">
                 <BtnGroup
-                    activeOneBtn={!addNewProductForm}
-                    activeTwoBtn={addNewProductForm}
-                    onClickOneBtn={() => setEditCategory(true)}
+                    activeOneBtn={editCategory}
+                    activeTwoBtn={!editCategory}
+                    onClickOneBtn={() => {
+                        setEditCategory(true)
+                        setAddNewProduct(false)
+                    }}
                     onClickTwoBtn={addHandler}
                     textOneBtn={'Редактировать'}
                     textTwoBtn={'Блюдо +'}/>
             </div>
-            {/*<Button onClick={() => setEditCategory(true)}>Редактировать категорию</Button>*/}
-            {/*<Button onClick={addHandler}>Добавить блюдо +</Button>*/}
             {
                 (addNewProductForm && !editCategory) && <AddAndEditForm addNewProductForm categoryId={id}/>
             }
@@ -43,9 +43,9 @@ const SettingsCategoryPage = () => {
 
             {
                 (!addNewProductForm) && data?.products?.map(item =>
-                    <div className="mb-4">
-                        <NavLink key={item.id} to={`settings-product/${item.id}`}>
-                            <Product data={item} />
+                    <div className="mb-4" key={item.id} >
+                        <NavLink to={`settings-product/${item.id}`}>
+                            <Product data={item} editAdmin/>
                         </NavLink>
                     </div>
                 )

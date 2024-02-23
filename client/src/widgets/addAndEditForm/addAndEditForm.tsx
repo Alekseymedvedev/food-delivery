@@ -51,7 +51,7 @@ export const AddAndEditForm: FC<IType> = memo(({
     const [updateProduct, {error: errorUpdateProduct}] = useUpdateProductMutation()
     const submitHandler = () => {
         if (addCategoryForm) {
-            if (nameInput.value === '') {
+            if (nameInput.value === '' && file) {
                 nameInput.setError(true)
             } else {
                 const formData = new FormData();
@@ -132,15 +132,15 @@ export const AddAndEditForm: FC<IType> = memo(({
                 <div>
                     {
                         (addCategoryForm || updateCategoryForm) &&
-                        <>
+                        <div className={classes.box}>
                             <TextField label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
                             <TextField label={'Название'} onChange={nameInput.onChange} value={nameInput.value}
                                        error={nameInput.error}/>
-                        </>
+                        </div>
                     }
                     {
                         (addNewProductForm || updateProductForm) &&
-                        <>
+                        <div className={classes.box}>
                             <TextField label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
 
                             {
@@ -160,7 +160,7 @@ export const AddAndEditForm: FC<IType> = memo(({
                                        value={descriptionInput.value} error={descriptionInput.error} description/>
                             <TextField label={'Цена'} onChange={priceInput.onChange} value={priceInput.value}
                                        error={priceInput.error}/>
-                        </>
+                        </div>
                     }
                 </div>
                 <Button onClick={submitHandler}>Сохранить</Button>
