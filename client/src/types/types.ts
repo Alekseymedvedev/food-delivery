@@ -26,6 +26,7 @@ export interface IOrderCreate {
   phone?: string;
   name?: string;
   paymentMethod?: string;
+  status?: string;
   sum?: number;
   orderProducts: { id: number; count: number }[];
 }

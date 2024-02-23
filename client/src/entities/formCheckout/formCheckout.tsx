@@ -51,7 +51,8 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
             phone: phone.value,
             name: name.value,
             paymentMethod,
-            orderProducts: productsInCart.map(item => ({id: +item?.id, count: +item?.count}))
+            orderProducts: productsInCart.map(item => ({id: +item?.id, count: +item?.count})),
+            status:'новый'
         }
         if (address.value && phone.value) {
             createOrder(data)
