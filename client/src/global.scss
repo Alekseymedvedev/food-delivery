@@ -15,7 +15,12 @@
   --color-white: #ffffff;
   --color-error: #FF3737;
 }
+.darkTheme {
+  --tg-theme-bg-color: #000;
+  --tg-theme-text-color: #ffffff;
+  --tg-theme-hint-color: #8E8E8E;
 
+}
 
 body {
   --tg-theme-bg-color: #ffffff;
@@ -38,12 +43,7 @@ body {
   padding: 32px 19px 0px 19px;
 
 }
-.darkTheme {
-  --tg-theme-bg-color: #000;
-  --tg-theme-text-color: #ffffff;
-  --tg-theme-hint-color: #8E8E8E;
 
-}
 *::-webkit-scrollbar {
   width: 3px;
 }
