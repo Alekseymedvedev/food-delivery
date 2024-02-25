@@ -10,7 +10,6 @@ import {SettingsIcon} from "../../shared/images/icons/settingsIcon";
 import {StatisticsIcon} from "../../shared/images/icons/statisticsIcon";
 
 const linkArr = [
-    {to: "payment", text: "Платежи", icon: <PaymentIcon/>},
     {to: "orders", text: "Заказы", icon: <OrdersIcon/>},
     {to: "/profile", text: "Профиль", icon: <ProfileIcon isSimple/>},
     {to: "/more/favorites", text: "Избранное ", icon: <FavoritesIcon />},
@@ -18,6 +17,7 @@ const linkArr = [
 const linkArrAdmin = [
     {to: "/more/statistics", text: "Статистика", icon: <StatisticsIcon isSimple/>},
     {to: "/more/settings", text: "Настойка товаров", icon: <SettingsIcon/>},
+    {to: "/more/change-status-order", text: "Изменение статуса заказа", icon: <OrdersIcon/>},
 ];
 const MorePage = () => {
     const {user} = useAppSelector((state) => state.userReducer);

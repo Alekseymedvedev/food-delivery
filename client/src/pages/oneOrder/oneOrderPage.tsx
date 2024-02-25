@@ -14,7 +14,7 @@ const OneOrderPage = () => {
 
     const [activeBtn, setActiveBtn] = useState('Доставка')
     if (error) return <h2 className={'error'}>Данные о товаре не загружены</h2>
-    console.log(activeBtn)
+    console.log(data)
     return (
         <MainLayout heading={`Заказ №${id}`} textCenter>
 

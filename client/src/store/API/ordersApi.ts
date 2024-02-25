@@ -8,20 +8,33 @@ export const ordersApi = createApi({
     }),
     tagTypes: ['Orders'],
     endpoints: (build) => ({
-        getOrders: build.query<IOrder[], number| string>({
+        getOrders: build.query<IOrder[], number | string>({
             query: () => ({
                 url: '',
             }),
         }),
-        getOneOrder: build.query<IOrder, number| string>({
+        getAllOrdersUser: build.query<IOrder[], number | string>({
             query: (id) => ({
-                url: `${id}`,
+                url: `/${id}`,
+            }),
+        }),
+        getOneOrder: build.query<IOrder, number | string>({
+            query: (id) => ({
+                url: `/${id}`,
             }),
         }),
         createNewOrder: build.mutation({
             query: (body) => ({
                 url: ``,
                 method: 'Post',
+                body
+            }),
+            invalidatesTags: ['Orders']
+        }),
+        updateOrder: build.mutation({
+            query: ({id, body}) => ({
+                url: `${id}`,
+                method: 'PATCH',
                 body
             }),
             invalidatesTags: ['Orders']
@@ -40,7 +53,9 @@ export const ordersApi = createApi({
 
 export const {
     useGetOrdersQuery,
+    useGetAllOrdersUserQuery,
     useGetOneOrderQuery,
     useCreateNewOrderMutation,
+    useUpdateOrderMutation,
     useDeleteOrderMutation,
 } = ordersApi;

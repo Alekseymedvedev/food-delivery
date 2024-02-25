@@ -2,7 +2,8 @@
 import React,{FC,memo}  from "react";
 import classes from './orders.module.scss'
 import {Order} from "../../entities/order/order";
-import {useGetOrdersQuery} from "../../store/API/ordersApi";
+import {useGetAllOrdersUserQuery} from "../../store/API/ordersApi";
+import {useAppSelector} from "../../hooks/useRedux";
 
 
 interface IType{
@@ -10,13 +11,18 @@ interface IType{
 }
 
 export const Orders: FC<IType> = memo(({children}) => {
-    const {data,error,isLoading}= useGetOrdersQuery('')
+    const {user} = useAppSelector((state) => state.userReducer);
+    const {data,error,isLoading}= useGetAllOrdersUserQuery(1)
     return (
         <div className={classes.orders}>
+
             {
-                data && data?.map(item=>
-                    <Order key={item.id} data={item}/>
-                )
+                data?.length ? data?.map(item=>
+                     <Order key={item.id} data={item}/>
+
+                ):
+                    <div>Заказов не найдено</div>
+
             }
         </div>
     )

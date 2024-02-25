@@ -5,9 +5,10 @@ import {IOrder} from "../../types/types";
 
 interface IType {
     data: IOrder
+    ordersUser?: boolean
 }
 
-export const Order: FC<IType> = memo(({data}) => {
+export const Order: FC<IType> = memo(({data,ordersUser}) => {
     return (
         <div className={classes.order}>
             <div className={classes.title}>

@@ -31,7 +31,7 @@ export interface IOrderCreate {
   orderProducts: { id: number; count: number }[];
 }
 export interface IOrder {
-  id?: number | string;
+  id: number | string;
   userId?: number;
   address?: string;
   typeDelivery?: string;

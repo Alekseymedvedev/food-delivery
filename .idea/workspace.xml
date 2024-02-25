@@ -5,7 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/changeStatusOrder/changeStatusOrderPage.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/notification/notificationPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/order/order.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/order/order.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/more/morePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/more/morePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/notufication/notuficationPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/notification/notificationPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/notufication/notuficationPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/notification/notificationPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/oneOrder/oneOrderPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/oneOrder/oneOrderPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/routes/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes/routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/select/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/select/select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/ordersApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/ordersApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/widgets/orders/orders.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/orders/orders.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/categories/categories.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/categories/categories.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/orders/dto/create-order.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/orders/dto/create-order.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/orders/orders.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/orders/orders.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/orders/orders.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/orders/orders.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/orders/orders.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/orders/orders.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/orders/orders.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/orders/orders.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.model.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +46,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -127,23 +150,7 @@
       <workItem from="1707981531523" duration="71599000" />
       <workItem from="1708281242665" duration="6859000" />
       <workItem from="1708327602641" duration="35687000" />
-      <workItem from="1708684188447" duration="13898000" />
-    </task>
-    <task id="LOCAL-00016" summary="commit">
-      <option name="closed" value="true" />
-      <created>1707808504088</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1707808504103</updated>
-    </task>
-    <task id="LOCAL-00017" summary="commit">
-      <option name="closed" value="true" />
-      <created>1707828849023</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1707828849023</updated>
+      <workItem from="1708684188447" duration="30874000" />
     </task>
     <task id="LOCAL-00018" summary="commit">
       <option name="closed" value="true" />
@@ -521,7 +528,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708698129674</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="commit">
+      <option name="closed" value="true" />
+      <created>1708698320905</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1708698320905</updated>
+    </task>
+    <task id="LOCAL-00066" summary="commit">
+      <option name="closed" value="true" />
+      <created>1708698406123</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1708698406123</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -10,7 +10,7 @@ interface IType{
 
 export const Select: FC<IType> = memo(({onChange,dataOption}) => {
     return (
-        <select className={classes.select} onChange={onChange}>
+        <select className={classes.select} onChange={(e)=>onChange(e.target.value)}>
             {dataOption.map((item,index) => (
                 <option key={item} value={item}>{item}</option>
             ))}
