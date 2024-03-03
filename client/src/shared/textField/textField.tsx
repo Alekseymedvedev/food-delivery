@@ -30,7 +30,7 @@ export const TextField: FC<IType> = memo(
                                 onChangeFile && onChangeFile(e?.target?.files?.[0])
                             }
                         />
-                        {error && <span className={"error"}>Файл не выбран</span>}
+                        {error && <span className={`error ${classes.errorFile}`}>Файл не выбран</span>}
                     </label>
                     :
                     <>
