@@ -6,19 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/entities/menu/menu.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/menu/menu.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/entities/menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/menu/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useInputRadio.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useInputRadio.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/changeStatusOrder/changeStatusOrderPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/changeStatusOrder/changeStatusOrderPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/more/morePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/more/morePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/notification/notificationPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/notification/notificationPage.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/notification/notificationPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/notification/notificationPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/inputRadio/inputRadio.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/inputRadio/inputRadio.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/inputRadio/inputRadio.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/inputRadio/inputRadio.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/API/ordersApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/ordersApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/widgets/orders/orders.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/orders/orders.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,23 +131,7 @@
       <workItem from="1708327602641" duration="35687000" />
       <workItem from="1708684188447" duration="33704000" />
       <workItem from="1708928219519" duration="1364000" />
-      <workItem from="1709446226299" duration="29799000" />
-    </task>
-    <task id="LOCAL-00035" summary="commit">
-      <option name="closed" value="true" />
-      <created>1708261613480</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1708261613480</updated>
-    </task>
-    <task id="LOCAL-00036" summary="commit">
-      <option name="closed" value="true" />
-      <created>1708261790512</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1708261790512</updated>
+      <workItem from="1709446226299" duration="31033000" />
     </task>
     <task id="LOCAL-00037" summary="commit">
       <option name="closed" value="true" />
@@ -536,7 +509,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709468466779</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="commit">
+      <option name="closed" value="true" />
+      <created>1709491338818</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1709491338819</updated>
+    </task>
+    <task id="LOCAL-00085" summary="commit">
+      <option name="closed" value="true" />
+      <created>1709491616612</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1709491616612</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

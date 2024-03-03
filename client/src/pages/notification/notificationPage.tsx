@@ -25,7 +25,7 @@ const NotificationPage = () => {
                         {
                             item.notifications ?
                                 <div className={classes.item}>
-                                    <div className={classes.text}>Статус заказ</div>
+                                    <div className={classes.text}>Статус заказа №{item.id}</div>
                                     <div className={classes.value}>{item?.status}</div>
                                 </div>
                                 : <div>Нет новых уведомлений</div>
