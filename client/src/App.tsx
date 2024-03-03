@@ -9,6 +9,7 @@ import {adminRoutes, routes, superAdminRoutes} from "./routes/routes";
 import {useAuthUserMutation} from "./store/API/userApi";
 
 const dataUser = {
+    id:1,
     chatId: 1035451470,
     username: "Amed152",
 };
@@ -26,12 +27,12 @@ function App() {
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
-         if (!disabled) authUser(dataUser)
-        // if (!disabled) authUser({
-        //     chatId: tg?.initDataUnsafe?.user?.id,
-        //     username: tg?.initDataUnsafe?.user?.username,
-        //     queryId: tg?.initDataUnsafe?.query_id
-        // })
+         // authUser(dataUser)
+        if (!disabled) authUser({
+            chatId: tg?.initDataUnsafe?.user?.id,
+            username: tg?.initDataUnsafe?.user?.username,
+            queryId: tg?.initDataUnsafe?.query_id
+        })
         return () => setDisabled(true)
     }, []);
     useEffect(() => {

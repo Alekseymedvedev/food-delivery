@@ -12,7 +12,7 @@ interface IType{
 
 export const Orders: FC<IType> = memo(({children}) => {
     const {user} = useAppSelector((state) => state.userReducer);
-    const {data,error,isLoading}= useGetAllOrdersUserQuery(1)
+    const {data,error,isLoading}= useGetAllOrdersUserQuery(`${user?.id}`)
     return (
         <div className={classes.orders}>
 
