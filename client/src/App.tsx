@@ -19,7 +19,7 @@ interface IRoutes {
 }
 
 function App() {
-     const {tg} = useTelegram();
+    const {tg} = useTelegram();
     const [disabled, setDisabled] = useState(false)
     const dispatch = useAppDispatch();
     const {user} = useAppSelector((state) => state.userReducer);
@@ -27,12 +27,16 @@ function App() {
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
         // if (!disabled) authUser(dataUser)
-         if (!disabled) authUser({chatId: tg?.initDataUnsafe?.user?.id, username: tg?.initDataUnsafe?.query_id})
+        if (!disabled) authUser({
+            chatId: tg?.initDataUnsafe?.user?.id,
+            username: tg?.initDataUnsafe?.user?.username,
+            queryId: tg?.initDataUnsafe?.query_id
+        })
         return () => setDisabled(true)
     }, []);
     useEffect(() => {
         if (user?.role === "admin") {
-            setAllRoutes([...routes, ...adminRoutes,...superAdminRoutes]);
+            setAllRoutes([...routes, ...adminRoutes, ...superAdminRoutes]);
         } else {
             setAllRoutes([...routes]);
         }
