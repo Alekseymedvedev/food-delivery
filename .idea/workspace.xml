@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/bot/bot.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/bot/bot.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/categories/categories.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/categories/categories.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/categories/categories.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/categories/categories.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/orders/orders.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/orders/orders.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/orders/orders.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/orders/orders.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/products/products.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/products/products.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/products/products.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/products/products.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/search/search.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/search/search.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/search/search.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/search/search.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/users/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.service.ts" afterDir="false" />
-    </list>
+    <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,15 +127,7 @@
       <workItem from="1708327602641" duration="35687000" />
       <workItem from="1708684188447" duration="33704000" />
       <workItem from="1708928219519" duration="1364000" />
-      <workItem from="1709446226299" duration="4123000" />
-    </task>
-    <task id="LOCAL-00025" summary="commit">
-      <option name="closed" value="true" />
-      <created>1708258231498</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1708258231498</updated>
+      <workItem from="1709446226299" duration="4466000" />
     </task>
     <task id="LOCAL-00026" summary="commit">
       <option name="closed" value="true" />
@@ -537,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708875932581</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="commit">
+      <option name="closed" value="true" />
+      <created>1709455475243</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1709455475243</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
