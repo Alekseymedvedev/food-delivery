@@ -12,10 +12,15 @@ interface IType {
 
 export const Search: FC<IType> = memo(({children}) => {
     const [query, setQuery] = useState('')
+    const [skip, setSkip] = useState(true)
     const [products, setProducts] = useState<IProduct[]>()
-    const {data, error, isLoading} = useSearchQuery(`/?search=${query}`, {skip: !query})
+    const {data, error, isLoading} = useSearchQuery(`/?search=${query}`, {skip})
+
     useEffect(() => {
-        setProducts(data)
+        if(query.length >1){
+            setSkip(false)
+            setProducts(data)
+        }
     }, [data, query]);
     return (
         <div className={classes.search}>
@@ -31,9 +36,7 @@ export const Search: FC<IType> = memo(({children}) => {
                         <SearchIcon/>
                     </span>
                 }
-
             </label>
-
             {
                 query &&
                 <div className={classes.box}>
@@ -42,7 +45,7 @@ export const Search: FC<IType> = memo(({children}) => {
                             products?.map(item =>
                                 <div className={classes.inner}>
                                     <div className={classes.image}>
-                                        <img src={item.image} alt={item.title}/>
+                                        <img src={process.env.REACT_APP_API_URL + item.image} alt={item.title}/>
                                     </div>
                                     <div>
                                         <div className={classes.title}>{item.title}</div>

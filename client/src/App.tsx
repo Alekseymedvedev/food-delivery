@@ -5,7 +5,7 @@ import {Route, Routes} from "react-router-dom";
 import {useTelegram} from "./hooks/useTelegram";
 import {useAppDispatch, useAppSelector} from "./hooks/useRedux";
 import {fetchUser} from "./store/slice/userSlice";
-import {adminRoutes, routes} from "./routes/routes";
+import {adminRoutes, routes, superAdminRoutes} from "./routes/routes";
 import {useAuthUserMutation} from "./store/API/userApi";
 
 const dataUser = {
@@ -26,13 +26,13 @@ function App() {
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
-        if (!disabled) authUser(dataUser)
-        // if (!disabled) authUser({chatId: tg?.initDataUnsafe?.user?.id, username: tg?.initDataUnsafe?.user?.username})
+        // if (!disabled) authUser(dataUser)
+         if (!disabled) authUser({chatId: tg?.initDataUnsafe?.user?.id, username: tg?.initDataUnsafe?.user?.username})
         return () => setDisabled(true)
     }, []);
     useEffect(() => {
         if (user?.role === "admin") {
-            setAllRoutes([...routes, ...adminRoutes]);
+            setAllRoutes([...routes, ...adminRoutes,...superAdminRoutes]);
         } else {
             setAllRoutes([...routes]);
         }

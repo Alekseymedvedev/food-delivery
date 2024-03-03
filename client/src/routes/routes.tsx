@@ -13,6 +13,7 @@ import {OneOrderPage} from "../pages/oneOrder/oneOrderPageLazy";
 import {StatisticsPage} from "../pages/statistics/statisticsPageLazy";
 import {FavoritesPage} from "../pages/favorites/favoritesPageLazy";
 import {ChangeStatusOrderPage} from "../pages/changeStatusOrder/changeStatusOrderPageLazy";
+import {UpdateRoleUserPage} from "../pages/updateRoleUser/updateRoleUserPageLazy";
 
 
 export const routes = [
@@ -34,5 +35,7 @@ export const adminRoutes =[
     {path: "/more/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
     {path: "/more/statistics", element: <StatisticsPage/>},
     {path: "/more/change-status-order", element: <ChangeStatusOrderPage/>},
-
+]
+export const superAdminRoutes =[
+    {path: "/update", element: <UpdateRoleUserPage/>}
 ]

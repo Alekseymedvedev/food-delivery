@@ -22,6 +22,12 @@ export const userApi = createApi({
                 body
             }),
         }),
+        updateRoleUser: build.mutation({
+            query: ({userId, body}) => ({
+                url: `/user/update`,
+                method: 'PATCH',
+            }),
+        }),
         deleteUser: build.mutation({
             query(id) {
                 return {
@@ -34,4 +40,7 @@ export const userApi = createApi({
     }),
 });
 
-export const {useAuthUserMutation, useDeleteUserMutation,  useUpdateUserMutation} = userApi;
+export const {useAuthUserMutation,
+    useUpdateRoleUserMutation,
+    useDeleteUserMutation,
+    useUpdateUserMutation} = userApi;

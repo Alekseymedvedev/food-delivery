@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit" />
+    <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/search/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/search/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/updateRoleUser/updateRoleUserPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/updateRoleUser/updateRoleUserPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/routes/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes/routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/userApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/userApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +30,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -127,15 +136,7 @@
       <workItem from="1708327602641" duration="35687000" />
       <workItem from="1708684188447" duration="33704000" />
       <workItem from="1708928219519" duration="1364000" />
-      <workItem from="1709446226299" duration="4776000" />
-    </task>
-    <task id="LOCAL-00027" summary="commit">
-      <option name="closed" value="true" />
-      <created>1708259794715</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1708259794715</updated>
+      <workItem from="1709446226299" duration="6925000" />
     </task>
     <task id="LOCAL-00028" summary="commit">
       <option name="closed" value="true" />
@@ -521,7 +522,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709455606413</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="commit">
+      <option name="closed" value="true" />
+      <created>1709455866125</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1709455866125</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
