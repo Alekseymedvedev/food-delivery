@@ -12,16 +12,19 @@ export const ordersApi = createApi({
             query: () => ({
                 url: '',
             }),
+            providesTags: ['Orders'],
         }),
         getAllOrdersUser: build.query<IOrder[], number | string>({
             query: (id) => ({
-                url: `/${id}`,
+                url: `/user/${id}`,
             }),
+            providesTags: ['Orders'],
         }),
         getOneOrder: build.query<IOrder, number | string>({
             query: (id) => ({
                 url: `/${id}`,
             }),
+            providesTags: ['Orders'],
         }),
         createNewOrder: build.mutation({
             query: (body) => ({

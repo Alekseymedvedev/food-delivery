@@ -18,7 +18,8 @@ const ChangeStatusOrderPage = () => {
         updateStatus({
             id,
             body: {
-                status: select
+                status: select,
+                notifications: true
             }
         })
     }

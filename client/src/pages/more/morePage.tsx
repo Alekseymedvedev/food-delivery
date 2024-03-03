@@ -8,6 +8,7 @@ import {OrdersIcon} from "../../shared/images/icons/ordersIcon";
 import {ProfileIcon} from "../../shared/images/icons/profileIcon";
 import {SettingsIcon} from "../../shared/images/icons/settingsIcon";
 import {StatisticsIcon} from "../../shared/images/icons/statisticsIcon";
+import {NotificationIcon} from "../../shared/images/icons/notificationIcon";
 
 const linkArr = [
     {to: "orders", text: "Заказы", icon: <OrdersIcon/>},

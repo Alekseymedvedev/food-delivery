@@ -1,4 +1,4 @@
-import React, {FC, memo} from "react";
+import React, {FC, memo, useEffect, useState} from "react";
 import classes from "./menu.module.scss";
 import {NavLink} from "react-router-dom";
 import {HomeIcon} from "../../shared/images/icons/homeIcon";
@@ -7,6 +7,7 @@ import {NotificationIcon} from "../../shared/images/icons/notificationIcon";
 import {CartIcon} from "../../shared/images/icons/cartIcon";
 import {ProfileIcon} from "../../shared/images/icons/profileIcon";
 import {useAppSelector} from "../../hooks/useRedux";
+import {useGetAllOrdersUserQuery} from "../../store/API/ordersApi";
 
 interface IType {
     children?: React.ReactNode;
@@ -21,6 +22,18 @@ const linkArr = [
 ];
 export const Menu: FC<IType> = memo(({children}) => {
     const {countProducts} = useAppSelector(state => state.productReducer)
+    const {user} = useAppSelector((state) => state.userReducer);
+    const {data,error,isLoading}= useGetAllOrdersUserQuery(`${user?.id}`,{skip:!user?.id})
+    const [newNotification,setNewNotification]=useState(0)
+
+    useEffect(() => {
+        const classesArr = [classes.notification]
+        if (data) {
+            data.map(item=>{
+                item?.notifications && setNewNotification(newNotification+1)
+            })
+        }
+    }, [data]);
     return (
         <nav className={classes.menu}>
             {linkArr.map((item) => (
@@ -35,6 +48,10 @@ export const Menu: FC<IType> = memo(({children}) => {
                             e.preventDefault()
                     }}
                 >
+                    {
+                        (item.text === 'Уведомления' && newNotification) &&
+                        <span className={classes.label}>{newNotification}</span>
+                    }
                     {
                         item.text === 'Корзина' &&
                         <span className={classes.label}>{countProducts}</span>

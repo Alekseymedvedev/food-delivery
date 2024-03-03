@@ -9,7 +9,6 @@ import {adminRoutes, routes, superAdminRoutes} from "./routes/routes";
 import {useAuthUserMutation} from "./store/API/userApi";
 
 const dataUser = {
-    id:1,
     chatId: 1035451470,
     username: "Amed152",
 };
@@ -27,14 +26,19 @@ function App() {
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
-         // authUser(dataUser)
-        if (!disabled) authUser({
-            chatId: tg?.initDataUnsafe?.user?.id,
-            username: tg?.initDataUnsafe?.user?.username,
-            queryId: tg?.initDataUnsafe?.query_id
-        })
-        return () => setDisabled(true)
+         authUser(dataUser)
+        // if (!disabled) authUser({
+        //     chatId: tg?.initDataUnsafe?.user?.id,
+        //     username: tg?.initDataUnsafe?.user?.username,
+        //     queryId: tg?.initDataUnsafe?.query_id
+        // })
     }, []);
+    useEffect(() => {
+        if (data) {
+            dispatch(fetchUser(data?.existUser));
+            localStorage.setItem('food-delivery-token', JSON.stringify(data?.access_token))
+        }
+    }, [data]);
     useEffect(() => {
         if (user?.role === "admin") {
             setAllRoutes([...routes, ...adminRoutes, ...superAdminRoutes]);
@@ -42,25 +46,23 @@ function App() {
             setAllRoutes([...routes]);
         }
     }, [user]);
-    useEffect(() => {
-        if (data) {
-            dispatch(fetchUser(data?.existUser));
-            localStorage.setItem('food-delivery-token', JSON.stringify(data?.access_token))
-        }
-    }, [data]);
 
     return (
-        <Routes>
-            {allRoutes &&
-                allRoutes.map((route) => (
-                    <Route
-                        key={route?.path}
-                        path={route?.path}
-                        element={route?.element}
-                    />
-                ))}
-        </Routes>
-
+        <>
+            {
+                data &&
+                <Routes>
+                    {allRoutes &&
+                        allRoutes.map((route) => (
+                            <Route
+                                key={route?.path}
+                                path={route?.path}
+                                element={route?.element}
+                            />
+                        ))}
+                </Routes>
+            }
+        </>
     );
 }
 
