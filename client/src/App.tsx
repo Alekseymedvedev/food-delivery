@@ -27,7 +27,7 @@ function App() {
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
         // if (!disabled) authUser(dataUser)
-         if (!disabled) authUser({chatId:tg?.initDataUnsafe})
+         if (!disabled) authUser({chatId: tg?.initDataUnsafe?.user?.id, username: tg?.initDataUnsafe?.query_id})
         return () => setDisabled(true)
     }, []);
     useEffect(() => {
