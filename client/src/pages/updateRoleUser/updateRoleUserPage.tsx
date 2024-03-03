@@ -12,7 +12,7 @@ const UpdateRoleUserPage = () => {
     const input = useInput('')
     const [update]=useUpdateRoleUserMutation()
     const handler = () => {
-        update(input)
+        update({username: input.value})
     }
     return (
         <MainLayout heading={'Обновление роли пользователя'}>

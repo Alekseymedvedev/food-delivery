@@ -14,6 +14,7 @@ import {useAppSelector} from "../../hooks/useRedux";
 import {createPortal} from "react-dom";
 import {Modal} from "../../entities/modal/modal";
 import {InputRadio} from "../../shared/inputRadio/inputRadio";
+import {useInputRadio} from "../../hooks/useInputRadio";
 
 
 interface IType {
@@ -41,7 +42,9 @@ export const AddAndEditForm: FC<IType> = memo(({
     const [textModal, setTextModal] = useState('')
     const {user} = useAppSelector((state) => state.userReducer);
     const [select, setSelect] = useState('')
-    const [disabledProduct, setDisabledProduct] = useState(false)
+    // const [disabledProduct, setDisabledProduct] = useState(false)
+    const disabledProduct = useInputRadio('')
+    const visibleProduct = useInputRadio('')
     const [file, setFile] = useState<any>()
     const nameInput = useInput(categoryData ? categoryData?.title : productData ? productData?.title : '')
     const descriptionInput = useInput(productData ? productData?.description : '')
@@ -51,7 +54,31 @@ export const AddAndEditForm: FC<IType> = memo(({
     const [updateCategory, {error: errorUpdateCategory}] = useUpdateCategoryMutation()
     const [addNewProduct, {error: errorAddNewProduct}] = useCreateNewProductMutation()
     const [updateProduct, {error: errorUpdateProduct,isLoading,data}] = useUpdateProductMutation()
-    const submitHandler =  () => {
+
+    // useEffect(() => {
+    //     if(errorUpdateProduct || errorAddNewCategory || errorUpdateCategory || errorAddNewProduct)
+    //         if (errorUpdateProduct !== undefined) {
+    //             setTextModal('Ошибка при редактировании блюда')
+    //         } else {
+    //             setTextModal('Блюдо успешно обновлено')
+    //         }
+    //     if (errorAddNewCategory) {
+    //         setTextModal('Ошибка при добавлении категории')
+    //     } else {
+    //         setTextModal('Категория успешно добавлена')
+    //     }
+    //     if (errorUpdateCategory) {
+    //         setTextModal('Ошибка при редактировании категории')
+    //     } else {
+    //         setTextModal('Категория успешно обновлена')
+    //     }
+    //     if (errorAddNewProduct) {
+    //         setTextModal('Ошибка при добавлении блюда')
+    //     } else {
+    //         setTextModal('Блюдо успешно добавлено')
+    //     }
+    // }, [errorUpdateProduct,errorAddNewCategory,errorUpdateCategory,errorAddNewProduct]);
+    const submitHandler = async  () => {
         if (addCategoryForm) {
             if (nameInput.value === '' && file) {
                 nameInput.setError(true)
@@ -77,7 +104,8 @@ export const AddAndEditForm: FC<IType> = memo(({
             formData.append('userName', user?.name ? user?.name : '');
 
             updateCategory({id: categoryId, body: formData}).then(() => {
-                if (errorUpdateCategory) {
+
+                if (errorUpdateCategory ) {
                     setTextModal('Ошибка при редактировании категории')
                 } else {
                     setTextModal('Категория успешно обновлена')
@@ -117,15 +145,14 @@ export const AddAndEditForm: FC<IType> = memo(({
             formData.append('userName', user?.name ? user?.name : '');
             descriptionInput.value && formData.append('description', descriptionInput.value);
             select && formData.append("categoryId", select);
-            formData.append("disabled", `${disabledProduct}`);
+            formData.append("disabled", `${false}`);
 
-            updateProduct({id: productId, body: formData}).then(() => {
-                    if (errorUpdateProduct !== undefined) {
-                        setTextModal('Ошибка при редактировании блюда')
-                    } else {
-                        setTextModal('Блюдо успешно обновлено')
-                    }
-
+            await updateProduct({id: productId, body: formData}).then( () => {
+                if (errorUpdateProduct == undefined) {
+                    setTextModal('Блюдо успешно обновлено')
+                } else {
+                    setTextModal('Ошибка при редактировании блюда')
+                }
             });
         }
     }
@@ -147,8 +174,8 @@ export const AddAndEditForm: FC<IType> = memo(({
                         <div className={classes.box}>
                             <div className={classes.productDisabled}>
                                 Отображение в каталоге
-                                <InputRadio label={'Не виден'} onChange={setDisabledProduct} name={"disabled"}/>
-                                <InputRadio label={'Виден'} onChange={setDisabledProduct} name={"disabled"}/>
+                                <InputRadio label={'Не виден'} checked={disabledProduct.checked} onChange={disabledProduct.onChange} name={"disabled"}/>
+                                <InputRadio label={'Виден'} checked={visibleProduct.checked} onChange={visibleProduct.onChange} name={"disabled"}/>
 
                             </div>
                             <TextField label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
@@ -187,4 +214,4 @@ export const AddAndEditForm: FC<IType> = memo(({
         </>
 
     )
-}) 
+})

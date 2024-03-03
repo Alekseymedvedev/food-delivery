@@ -22,12 +22,14 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
     const classesArr = [classes.product]
     if (oneProduct) classesArr.push(classes.oneProduct)
     if (inCart || inOrder) classesArr.push(classes.small)
+    // if (!data?.disabled) classesArr.push(classes.disabled)
+
     const [favouritesProduct, setFavouritesProduct] = useState<IProduct[]>()
 
     useEffect(() => {
-        const local =localStorage.getItem('food-delivery-favorites')
-        const favorites = JSON.parse( local ? local : '[]');
-       if(favorites) setFavouritesProduct(favorites)
+        const local = localStorage.getItem('food-delivery-favorites')
+        const favorites = JSON.parse(local ? local : '[]');
+        if (favorites) setFavouritesProduct(favorites)
     }, []);
 
     const toggleFavorite = (e: any,) => {
@@ -47,6 +49,16 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
 
     return (
         <div className={classesArr.join(' ')}>
+            {
+                !data?.disabled &&
+                <>
+                    <div className={classes.disabled}></div>
+
+                    <span className={!data?.disabled ? `error ${classes.textError}` : ''}>
+                    К сожалению данный товар временно отсутствует
+                </span>
+                </>
+            }
             <div className={classes.image}>
                 <img src={process.env.REACT_APP_API_URL + data?.image} alt={data?.title}/>
             </div>
