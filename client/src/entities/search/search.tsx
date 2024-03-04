@@ -15,9 +15,9 @@ export const Search: FC<IType> = memo(({children}) => {
     const [skip, setSkip] = useState(true)
     const [products, setProducts] = useState<IProduct[]>()
     const {data, error, isLoading} = useSearchQuery(`/?search=${query}`, {skip})
-
+    console.log(query.length)
     useEffect(() => {
-        if(query.length >1){
+        if (query.length > 1) {
             setSkip(false)
             setProducts(data)
         }
@@ -38,7 +38,7 @@ export const Search: FC<IType> = memo(({children}) => {
                 }
             </label>
             {
-                query &&
+                query.length > 1 &&
                 <div className={classes.box}>
                     {
                         (products?.length) ?

@@ -49,6 +49,7 @@ export interface IUser {
     id?: number;
     chatId?: number;
     role?: string;
+    username?: string;
     name?: string;
     email?: string;
     gender?: string;

@@ -29,74 +29,81 @@ interface IType {
 }
 
 export const AddAndEditForm: FC<IType> = ({
-                                                   categoryId,
-                                                   categoryData,
-                                                   productId,
-                                                   productData,
-                                                   addCategoryForm,
-                                                   updateCategoryForm,
-                                                   addNewProductForm,
-                                                   updateProductForm,
-                                               }) => {
+                                              categoryId,
+                                              categoryData,
+                                              productId,
+                                              productData,
+                                              addCategoryForm,
+                                              updateCategoryForm,
+                                              addNewProductForm,
+                                              updateProductForm,
+                                          }) => {
     const {data: dataCategories, error: dataError} = useGetCategoriesQuery('')
     const [textModal, setTextModal] = useState('')
     const {user} = useAppSelector((state) => state.userReducer);
     const [select, setSelect] = useState('')
-      const [disabledProduct, setDisabledProduct] = useState(true)
+    const [disabledProduct, setDisabledProduct] = useState(true)
 
     const [file, setFile] = useState<any>()
     const nameInput = useInput(categoryData ? categoryData?.title : productData ? productData?.title : '')
     const descriptionInput = useInput(productData ? productData?.description : '')
     const priceInput = useInput(productData ? productData?.price : '')
 
-    const [addNewCategory, {error: errorAddNewCategory,data:DataCreateCategory}] = useCreateNewCategoryMutation()
-    const [updateCategory, {error: errorUpdateCategory,data:UpdateCreateCategory}] = useUpdateCategoryMutation()
-    const [addNewProduct, {error: errorAddNewProduct,data:DataCreateProduct}] = useCreateNewProductMutation()
-    const [updateProduct, {error: errorUpdateProduct,isLoading,data:dataUpdateProduct}] = useUpdateProductMutation()
+    const [addNewCategory, {
+        error: errorAddNewCategory,
+        isLoading: isLoadingCreateCategory
+    }] = useCreateNewCategoryMutation()
+    const [updateCategory, {
+        error: errorUpdateCategory,
+        isLoading: isLoadingUpdateCategory
+    }] = useUpdateCategoryMutation()
+    const [addNewProduct, {
+        error: errorAddNewProduct,
+        isLoading: isLoadingCreateProduct
+    }] = useCreateNewProductMutation()
+    const [updateProduct,
+        {error: errorUpdateProduct, isLoading: isLoadingUpdateProduct}] = useUpdateProductMutation()
     useEffect(() => {
-        if(dataUpdateProduct){
-            if (errorUpdateProduct) {
-                setTextModal('Ошибка при редактировании блюда')
-            } else {
-                setTextModal('Блюдо успешно обновлено')
-            }
-        }else if(DataCreateProduct){
-            if (errorAddNewProduct) {
-                setTextModal('Ошибка при добавлении блюда')
-            } else {
-                setTextModal('Блюдо успешно добавлено')
-            }
-        }else if(UpdateCreateCategory){
-            if (errorUpdateCategory) {
-                setTextModal('Ошибка при редактировании категории')
-            } else {
-                setTextModal('Категория успешно обновлена')
-            }
-        }else if(DataCreateCategory){
-            if (errorAddNewCategory) {
-                setTextModal('Ошибка при добавлении категории')
-            } else {
-                setTextModal('Категория успешно добавлена')
-            }
+        if (errorAddNewCategory && !isLoadingCreateCategory) {
+            console.log(errorAddNewCategory)
+            setTextModal('Ошибка при добавлении категории',)
+        } else if (isLoadingCreateCategory) {
+            setTextModal('Категория успешно добавлена')
         }
-    }, [DataCreateCategory,UpdateCreateCategory,DataCreateProduct,dataUpdateProduct]);
-    const submitHandler = async  () => {
+    }, [errorAddNewCategory, isLoadingCreateCategory]);
+    useEffect(() => {
+        if (errorUpdateCategory && !isLoadingUpdateCategory) {
+            setTextModal('Ошибка при редактировании категории')
+        } else if(isLoadingUpdateCategory) {
+            setTextModal('Категория успешно обновлена')
+        }
+    }, [isLoadingUpdateCategory,errorUpdateCategory]);
+    useEffect(() => {
+        if (errorAddNewProduct && !isLoadingCreateProduct) {
+            setTextModal('Ошибка при добавлении блюда')
+        } else if(isLoadingCreateProduct){
+            setTextModal('Блюдо успешно добавлено')
+        }
+    }, [isLoadingCreateProduct,errorAddNewProduct]);
+    useEffect(() => {
+        if (errorUpdateProduct && !isLoadingUpdateProduct) {
+            setTextModal('Ошибка при редактировании блюда')
+        } else if(isLoadingUpdateProduct){
+            setTextModal('Блюдо успешно обновлено')
+        }
+    }, [isLoadingUpdateProduct,errorUpdateProduct]);
+
+    const submitHandler = async () => {
         if (addCategoryForm) {
-            if (nameInput.value === '' && file) {
+            if (nameInput.value === '' || !file) {
                 nameInput.setError(true)
             } else {
                 const formData = new FormData();
                 formData.append('title', nameInput.value);
                 formData.append('image', file);
-                formData.append('userName', user?.name ? user?.name : '');
+                formData.append('userName', user?.username ? user?.username : '');
 
-                addNewCategory(formData).then(() => {
-                    if (errorAddNewCategory) {
-                        setTextModal('Ошибка при добавлении категории')
-                    } else {
-                        setTextModal('Категория успешно добавлена')
-                    }
-                });
+                addNewCategory(formData)
             }
         }
         if (updateCategoryForm) {
@@ -105,14 +112,7 @@ export const AddAndEditForm: FC<IType> = ({
             file && formData.append('image', file);
             formData.append('userName', user?.name ? user?.name : '');
 
-            updateCategory({id: categoryId, body: formData}).then(() => {
-
-                if (errorUpdateCategory ) {
-                    setTextModal('Ошибка при редактировании категории')
-                } else {
-                    setTextModal('Категория успешно обновлена')
-                }
-            });
+            updateCategory({id: categoryId, body: formData})
         }
 
         if (addNewProductForm) {
@@ -130,13 +130,7 @@ export const AddAndEditForm: FC<IType> = ({
                 formData.append("categoryId", `${categoryId}`);
                 formData.append("disabled", `${disabledProduct}`);
 
-                addNewProduct(formData).then(() => {
-                    if (errorAddNewProduct) {
-                        setTextModal('Ошибка при добавлении блюда')
-                    } else {
-                        setTextModal('Блюдо успешно добавлено')
-                    }
-                });
+                addNewProduct(formData)
             }
         }
         if (updateProductForm) {
@@ -170,8 +164,10 @@ export const AddAndEditForm: FC<IType> = ({
                         <div className={classes.box}>
                             <div className={classes.productDisabled}>
                                 Отображение в каталоге
-                                <InputRadio label={'Не виден'} value={false} onChange={setDisabledProduct} name={"disabled"}/>
-                                <InputRadio label={'Виден'} value={true} onChange={setDisabledProduct} name={"disabled"}/>
+                                <InputRadio label={'Не виден'} value={false} onChange={setDisabledProduct}
+                                            name={"disabled"}/>
+                                <InputRadio label={'Виден'} value={true} onChange={setDisabledProduct}
+                                            name={"disabled"}/>
 
                             </div>
                             <TextField label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>

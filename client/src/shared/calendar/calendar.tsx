@@ -22,15 +22,15 @@ export const Calendar: FC<IType> = memo(({changeDate}) => {
         changeDate(`${selectedDay}.${selectedMonth}.${selectedYear}`)
     }, [selectedDay, selectedMonth, selectedYear]);
 
-    const handlerYear = (e: any) => {
-        setSelectedYear(e.target.value)
+    const handlerYear = (val:any) => {
+        setSelectedYear(val)
 
     }
-    const handlerMonth = (e: any) => {
-        if (e < 10) {
-            setSelectedMonth(`0${+e + 1}`)
+    const handlerMonth = (val: any) => {
+        if (val < 10) {
+            setSelectedMonth(`0${+val + 1}`)
         } else {
-            setSelectedMonth(e.target.value)
+            setSelectedMonth(val)
         }
         // changeDate(selectedDate)
     }
@@ -55,7 +55,7 @@ export const Calendar: FC<IType> = memo(({changeDate}) => {
                             onChange={handlerYear}/>
                         <Select
                             dataOption={monthArr}
-                            onChange={(e) => handlerMonth(monthArr.indexOf(e.target.value))}/>
+                            onChange={(e) => handlerMonth(monthArr.indexOf(e))}/>
                     </div>
 
                     <div className={classes.days}>

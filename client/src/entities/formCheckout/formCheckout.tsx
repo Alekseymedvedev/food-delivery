@@ -4,7 +4,7 @@ import {Button} from "../../shared/button/button";
 import {SimpleTextField} from "../../shared/simpleTextField/simpleTextField";
 import {useInput} from "../../hooks/useInput";
 import {InputRadio} from "../../shared/inputRadio/inputRadio";
-import {useAppSelector} from "../../hooks/useRedux";
+import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
 import {useCreateNewOrderMutation} from "../../store/API/ordersApi";
 import {useNavigate} from "react-router-dom";
 import {IOrder, IOrderCreate} from "../../types/types";
@@ -12,6 +12,8 @@ import {BtnGroup} from "../../shared/btnGroup/btnGroup";
 import {useUpdateUserMutation} from "../../store/API/userApi";
 import {createPortal} from "react-dom";
 import {Modal} from "../modal/modal";
+import {useDispatch} from "react-redux";
+import {deleteProductInCart} from "../../store/slice/productsSlice";
 
 interface IType {
     onSubmit: (val: any) => void;
@@ -19,6 +21,7 @@ interface IType {
 
 export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
     const navigate = useNavigate();
+    const dispatch = useAppDispatch()
     const {user} = useAppSelector((state) => state.userReducer);
     const [createOrder, {data: dataCreate, error, isLoading}] = useCreateNewOrderMutation()
     const [updateUser] = useUpdateUserMutation()
@@ -41,6 +44,8 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
         if (!error && !isLoading && dataCreate) {
             localStorage.setItem('productsInCart', '')
             navigate(`/order/${dataCreate.id}`)
+            dispatch(deleteProductInCart())
+
         }
     }, [dataCreate])
 

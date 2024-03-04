@@ -54,9 +54,9 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
                 <>
                     <div className={classes.disabled}></div>
 
-                    <span className={!data?.disabled ? `error ${classes.textError}` : ''}>
-                    К сожалению данный товар временно отсутствует
-                </span>
+                    <span className={`error ${classes.textError}`}>
+                        К сожалению данный товар временно отсутствует
+                    </span>
                 </>
             }
             <div className={classes.image}>

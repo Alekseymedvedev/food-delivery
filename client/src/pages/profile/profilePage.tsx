@@ -18,7 +18,6 @@ const ProfilePage = () => {
     const phoneInput = useInput('')
     const [date, setDate] = useState('')
     const [gender, setGender] = useState({id: 1, text: 'Мужской'})
-    console.log(date)
 
     const handlerSave = () => {
         updateUser({

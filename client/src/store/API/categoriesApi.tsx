@@ -1,11 +1,14 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {ICategory} from "../../types/types";
-
+const token = localStorage.getItem('food-delivery-token');
+const tokenParse = JSON.parse(token ? token:'')
 export const categoriesApi = createApi({
     reducerPath: "categoriesApi",
     baseQuery: fetchBaseQuery({
         baseUrl: `${process.env.REACT_APP_API_URL}categories/`,
-        // baseUrl: `http://localhost:5000/categories`,
+        prepareHeaders: (headers, {getState}) => {
+            headers.set("Authorization", `Bearer ${tokenParse}`)
+        },
     }),
     tagTypes: ['Category'],
     endpoints: (build) => ({

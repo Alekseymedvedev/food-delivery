@@ -20,7 +20,6 @@ interface IRoutes {
 
 function App() {
     const {tg} = useTelegram();
-    const [disabled, setDisabled] = useState(false)
     const dispatch = useAppDispatch();
     const {user} = useAppSelector((state) => state.userReducer);
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();

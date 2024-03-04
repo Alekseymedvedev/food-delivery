@@ -10,6 +10,7 @@ const initialState: IUserState = {
     id: 0,
     chatId: 0,
     role: 'admin',
+    username: '',
     name: '',
     email: '',
     gender: '',

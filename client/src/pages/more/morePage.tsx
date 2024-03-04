@@ -16,7 +16,7 @@ const linkArr = [
     {to: "/more/favorites", text: "Избранное ", icon: <FavoritesIcon />},
 ];
 const linkArrAdmin = [
-    {to: "/more/statistics", text: "Статистика", icon: <StatisticsIcon isSimple/>},
+    // {to: "/more/statistics", text: "Статистика", icon: <StatisticsIcon isSimple/>},
     {to: "/more/settings", text: "Настойка товаров", icon: <SettingsIcon/>},
     {to: "/more/change-status-order", text: "Изменение статуса заказа", icon: <OrdersIcon/>},
 ];

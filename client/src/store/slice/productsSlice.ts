@@ -42,8 +42,12 @@ export const products = createSlice({
             state.countProducts = state.productsInCart.length
             localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart))
         },
+        deleteProductInCart(state: IProductsState){
+            state.productsInCart = []
+            state.countProducts = 0
+        }
     },
 });
 
-export const {getProducts, addProductToCart, decrement} = products.actions;
+export const {getProducts, addProductToCart, decrement,deleteProductInCart} = products.actions;
 export default products.reducer;
