@@ -22,3 +22,15 @@
   font-size: 14px;
   color: var(--tg-theme-button-color);
 }
+.value{
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 12px;
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  font-size: 12px;
+  text-align: center;
+}
+.text{
+  width: 100%;
+}
