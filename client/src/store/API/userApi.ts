@@ -24,8 +24,8 @@ export const userApi = createApi({
             }),
         }),
         updateRoleUser: build.mutation({
-            query: (id) => ({
-                url: `/user/update${id}`,
+            query: ({id}) => ({
+                url: `/user/update/${id}`,
                 headers: { Authorization: `Bearer ${token}` },
                 method: 'PATCH',
             }),

@@ -14,6 +14,7 @@ const UpdateRoleUserPage = () => {
     const input = useInput('')
     const [update]=useUpdateRoleUserMutation()
     const handler = () => {
+        console.log(id)
         update({id})
     }
     return (

@@ -25,12 +25,12 @@ function App() {
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
-         // authUser(dataUser)
-         authUser({
-            chatId: tg?.initDataUnsafe?.user?.id,
-            username: tg?.initDataUnsafe?.user?.username,
-            queryId: tg?.initDataUnsafe?.query_id
-        })
+        authUser(dataUser)
+        //  authUser({
+        //     chatId: tg?.initDataUnsafe?.user?.id,
+        //     username: tg?.initDataUnsafe?.user?.username,
+        //     queryId: tg?.initDataUnsafe?.query_id
+        // })
     }, []);
     useEffect(() => {
         if (data) {
@@ -39,8 +39,10 @@ function App() {
         }
     }, [data]);
     useEffect(() => {
-        if (user?.role === "admin") {
+        if (user?.role === "superAdmin") {
             setAllRoutes([...routes, ...adminRoutes, ...superAdminRoutes]);
+        } else if (user?.role === "admin") {
+            setAllRoutes([...routes, ...adminRoutes]);
         } else {
             setAllRoutes([...routes]);
         }
