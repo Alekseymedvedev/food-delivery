@@ -1,22 +1,26 @@
 
 import {MainLayout} from "../../layout/mainLayout"
 import classes from "../../entities/search/search.module.scss";
-import React from "react";
+import React, {useEffect} from "react";
 import {TextField} from "../../shared/textField/textField";
 import {useInput} from "../../hooks/useInput";
 import {useGetUserQuery, useUpdateRoleUserMutation} from "../../store/API/userApi";
 import {Button} from "../../shared/button/button";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 
 const UpdateRoleUserPage = () => {
+    const navigate = useNavigate();
     const {id} = useParams()
-    const input = useInput('')
     const {data} = useGetUserQuery(`${id}`)
-    const [update]=useUpdateRoleUserMutation()
-    console.log(data)
+    const [update,{data:dataUpdateUser,isLoading,error}]=useUpdateRoleUserMutation()
+
+    useEffect(() => {
+        if(dataUpdateUser && !isLoading && !error){
+            navigate(`/`)
+        }
+    }, [isLoading,error]);
     const handler = () => {
-        console.log(id)
         update({id})
     }
     return (
