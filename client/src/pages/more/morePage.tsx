@@ -32,7 +32,7 @@ const MorePage = () => {
                     ))
                 }
                 {
-                    user?.role === 'admin' && linkArrAdmin?.map(item => (
+                    (user?.role === 'admin' || user?.role === 'superAdmin') && linkArrAdmin?.map(item => (
                         <NavLink key={item.to} to={item.to} className={classes.link}>
                             {item.icon}
                             <span>{item.text}</span>
