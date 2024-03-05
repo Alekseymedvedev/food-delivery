@@ -4,7 +4,7 @@ import classes from "../../entities/search/search.module.scss";
 import React from "react";
 import {TextField} from "../../shared/textField/textField";
 import {useInput} from "../../hooks/useInput";
-import {useUpdateRoleUserMutation} from "../../store/API/userApi";
+import {useGetUserQuery, useUpdateRoleUserMutation} from "../../store/API/userApi";
 import {Button} from "../../shared/button/button";
 import {useParams} from "react-router-dom";
 
@@ -12,7 +12,9 @@ import {useParams} from "react-router-dom";
 const UpdateRoleUserPage = () => {
     const {id} = useParams()
     const input = useInput('')
+    const {data} = useGetUserQuery(`${id}`)
     const [update]=useUpdateRoleUserMutation()
+    console.log(data)
     const handler = () => {
         console.log(id)
         update({id})

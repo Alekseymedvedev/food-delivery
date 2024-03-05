@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import {IOrder} from "../../types/types";
+import {ICategory, IOrder} from "../../types/types";
 import {token} from "./getTokenApi";
 
 export const userApi = createApi({
@@ -14,6 +14,11 @@ export const userApi = createApi({
                 url: `auth`,
                 method: 'Post',
                 body
+            }),
+        }),
+        getUser: build.query<ICategory, string>({
+            query: (id) => ({
+                url: `/${id}`,
             }),
         }),
         updateUser: build.mutation({
@@ -42,7 +47,9 @@ export const userApi = createApi({
     }),
 });
 
-export const {useAuthUserMutation,
+export const {
+    useAuthUserMutation,
+    useGetUserQuery,
     useUpdateRoleUserMutation,
     useDeleteUserMutation,
     useUpdateUserMutation} = userApi;
