@@ -1,9 +1,13 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import {token} from "./getTokenApi";
 
 export const productsApi = createApi({
     reducerPath: "productsApi",
     baseQuery: fetchBaseQuery({
         baseUrl: `${process.env.REACT_APP_API_URL}products`,
+        prepareHeaders: (headers, {getState}) => {
+            headers.set("Authorization", `Bearer ${token}`)
+        },
     }),
     tagTypes: ['Products'],
     endpoints: (build) => ({
@@ -11,11 +15,13 @@ export const productsApi = createApi({
             query: () => ({
                 url: '',
             }),
+            providesTags: ['Products'],
         }),
         getOneProduct: build.query({
             query: (id) => ({
                 url: `${id}`,
             }),
+            providesTags: ['Products'],
         }),
         createNewProduct: build.mutation({
             query: (body) => ({

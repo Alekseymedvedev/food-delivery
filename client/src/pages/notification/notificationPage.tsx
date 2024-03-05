@@ -1,8 +1,8 @@
 import classes from './notificationPage.module.scss'
 import {MainLayout} from "../../layout/mainLayout"
 import {useAppSelector} from "../../hooks/useRedux";
-import {useGetAllOrdersUserQuery, useUpdateOrderMutation} from "../../store/API/ordersApi";
-import React, {useEffect, useState} from "react";
+import {useGetAllOrdersUserQuery, useUpdateOrderNotificationMutation,} from "../../store/API/ordersApi";
+import React  from "react";
 import {Button} from "../../shared/button/button";
 import {NavLink} from "react-router-dom";
 
@@ -10,7 +10,7 @@ import {NavLink} from "react-router-dom";
 const NotificationPage = () => {
     const {user} = useAppSelector((state) => state.userReducer);
     const {data, error, isLoading} = useGetAllOrdersUserQuery(`${user?.id}`, {skip: !user?.id})
-    const [updateStatus] = useUpdateOrderMutation()
+    const [updateStatus] = useUpdateOrderNotificationMutation()
      // const [orderId, setOrderId] = useState(0)
     // useEffect(() => {
     //     if(data) setOrderIndex(data?.length - 1)

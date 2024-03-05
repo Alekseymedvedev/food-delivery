@@ -6,13 +6,15 @@ import {TextField} from "../../shared/textField/textField";
 import {useInput} from "../../hooks/useInput";
 import {useUpdateRoleUserMutation} from "../../store/API/userApi";
 import {Button} from "../../shared/button/button";
+import {useParams} from "react-router-dom";
 
 
 const UpdateRoleUserPage = () => {
+    const {id} = useParams()
     const input = useInput('')
     const [update]=useUpdateRoleUserMutation()
     const handler = () => {
-        update({username: input.value})
+        update({id})
     }
     return (
         <MainLayout heading={'Обновление роли пользователя'}>

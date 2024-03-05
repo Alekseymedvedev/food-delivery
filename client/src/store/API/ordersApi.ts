@@ -1,5 +1,6 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {IOrder} from "../../types/types";
+import {token} from "./getTokenApi";
 
 export const ordersApi = createApi({
     reducerPath: "ordersApi",
@@ -34,23 +35,33 @@ export const ordersApi = createApi({
             }),
             invalidatesTags: ['Orders']
         }),
-        updateOrder: build.mutation({
+        updateOrderStatus: build.mutation({
             query: ({id, body}) => ({
                 url: `${id}`,
+               headers: { Authorization: `Bearer ${token}` },
                 method: 'PATCH',
                 body
             }),
             invalidatesTags: ['Orders']
         }),
-        deleteOrder: build.mutation({
-            query(id) {
-                return {
-                    url: `${id}`,
-                    method: 'DELETE',
-                }
-            },
+        updateOrderNotification: build.mutation({
+            query: ({id, body}) => ({
+                url: `user/${id}`,
+                method: 'PATCH',
+                body
+            }),
             invalidatesTags: ['Orders']
         }),
+
+        // deleteOrder: build.mutation({
+        //     query(id) {
+        //         return {
+        //             url: `${id}`,
+        //             method: 'DELETE',
+        //         }
+        //     },
+        //     invalidatesTags: ['Orders']
+        // }),
     }),
 });
 
@@ -59,6 +70,6 @@ export const {
     useGetAllOrdersUserQuery,
     useGetOneOrderQuery,
     useCreateNewOrderMutation,
-    useUpdateOrderMutation,
-    useDeleteOrderMutation,
+    useUpdateOrderStatusMutation,
+    useUpdateOrderNotificationMutation
 } = ordersApi;

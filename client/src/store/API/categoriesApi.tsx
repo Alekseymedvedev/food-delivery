@@ -1,13 +1,13 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {ICategory} from "../../types/types";
-const token = localStorage.getItem('food-delivery-token');
-const tokenParse = JSON.parse(token ? token:'')
+import {token} from "./getTokenApi";
+
 export const categoriesApi = createApi({
     reducerPath: "categoriesApi",
     baseQuery: fetchBaseQuery({
         baseUrl: `${process.env.REACT_APP_API_URL}categories/`,
         prepareHeaders: (headers, {getState}) => {
-            headers.set("Authorization", `Bearer ${tokenParse}`)
+            headers.set("Authorization", `Bearer ${token}`)
         },
     }),
     tagTypes: ['Category'],
@@ -16,11 +16,13 @@ export const categoriesApi = createApi({
             query: () => ({
                 url: '',
             }),
+            providesTags: ['Category'],
         }),
         getCategory: build.query<ICategory, string>({
             query: (id) => ({
                 url: id,
             }),
+            providesTags: ['Category'],
         }),
         createNewCategory: build.mutation({
             query: (body) => ({

@@ -1,5 +1,5 @@
 import {MainLayout} from "../../layout/mainLayout"
-import {useGetOrdersQuery, useUpdateOrderMutation} from "../../store/API/ordersApi";
+import {useGetOrdersQuery, useUpdateOrderStatusMutation,} from "../../store/API/ordersApi";
 import React, {useState} from "react";
 import classes from './changeStatusOrderPage.module.scss'
 import {NavLink} from "react-router-dom";
@@ -9,7 +9,7 @@ import {Select} from "../../shared/select/select";
 const variants = ['новый', 'готовиться', 'готово к выдаче', 'выдано в доставку', 'получен']
 const ChangeStatusOrderPage = () => {
     const {data, isError, isLoading} = useGetOrdersQuery('')
-    const [updateStatus] = useUpdateOrderMutation()
+    const [updateStatus] = useUpdateOrderStatusMutation()
     const [select, setSelect] = useState('')
     if (isError) {
         return <h2 className={'error'}>Произошла ошибка при загрузке данных. Попробуйте обновить страницу</h2>

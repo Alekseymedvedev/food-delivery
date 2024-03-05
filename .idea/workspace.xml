@@ -5,30 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/client/src/store/API/getTokenApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/entities/formCheckout/formCheckout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/formCheckout/formCheckout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/entities/menu/menu.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/menu/menu.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/entities/search/search.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/search/search.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/entities/search/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/search/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/menu/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/order/order.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/order/order.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/more/morePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/more/morePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/notification/notificationPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/notification/notificationPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/changeStatusOrder/changeStatusOrderPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/changeStatusOrder/changeStatusOrderPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/notification/notificationPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/notification/notificationPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/profile/profilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/profile/profilePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/calendar/calendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/calendar/calendar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/updateRoleUser/updateRoleUserPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/updateRoleUser/updateRoleUserPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/routes/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes/routes.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/API/categoriesApi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/categoriesApi.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/slice/productsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/slice/productsSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/slice/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/slice/userSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/ordersApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/ordersApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/productsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/productsApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/userApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/userApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/categories/categories.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/categories/categories.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/categories/categories.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/categories/categories.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/strategy/strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/strategy/strategy.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +30,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="HTML File" />
         <option value="SCSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -64,7 +56,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/aleks/Desktop/web/food-delivery/client/src/hooks",
+    "last_opened_file_path": "C:/Users/aleks/Desktop/web/food-delivery",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -73,7 +65,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "inlay.hints",
     "ts.external.directory.path": "C:\\Users\\aleks\\Desktop\\web\\food-delivery\\client\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -152,15 +144,8 @@
       <workItem from="1708327602641" duration="35687000" />
       <workItem from="1708684188447" duration="33704000" />
       <workItem from="1708928219519" duration="1364000" />
-      <workItem from="1709446226299" duration="56617000" />
-    </task>
-    <task id="LOCAL-00042" summary="commit">
-      <option name="closed" value="true" />
-      <created>1708285767505</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1708285767505</updated>
+      <workItem from="1709446226299" duration="58554000" />
+      <workItem from="1709623043289" duration="8205000" />
     </task>
     <task id="LOCAL-00043" summary="commit">
       <option name="closed" value="true" />
@@ -546,7 +531,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709495590176</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="commit">
+      <option name="closed" value="true" />
+      <created>1709570818917</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1709570818917</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

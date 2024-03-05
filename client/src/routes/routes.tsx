@@ -37,5 +37,5 @@ export const adminRoutes =[
     {path: "/more/change-status-order", element: <ChangeStatusOrderPage/>},
 ]
 export const superAdminRoutes =[
-    {path: "/update", element: <UpdateRoleUserPage/>}
+    {path: "/update-user/:id", element: <UpdateRoleUserPage/>}
 ]

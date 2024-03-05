@@ -5,10 +5,9 @@ import {IOrder} from "../../types/types";
 
 interface IType {
     data: IOrder
-    ordersUser?: boolean
 }
 
-export const Order: FC<IType> = memo(({data,ordersUser}) => {
+export const Order: FC<IType> = memo(({data}) => {
     return (
         <div className={classes.order}>
             <div className={classes.title}>
@@ -18,7 +17,7 @@ export const Order: FC<IType> = memo(({data,ordersUser}) => {
             <div className={classes.box}>
                 {
                     data.orderProducts.map(item =>
-                        <span className={classes.text}>-{item.title}</span>
+                        <span key={item.id} className={classes.text}>-{item.title}</span>
                     )
                 }
             </div>

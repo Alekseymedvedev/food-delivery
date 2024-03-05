@@ -27,7 +27,6 @@ export const Menu: FC<IType> = memo(({children}) => {
     const [newNotification,setNewNotification]=useState(0)
 
     useEffect(() => {
-        const classesArr = [classes.notification]
         if (data) {
             data.map(item=>{
                 item?.notifications && setNewNotification(newNotification+1)

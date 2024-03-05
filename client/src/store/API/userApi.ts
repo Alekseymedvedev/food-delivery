@@ -1,5 +1,6 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {IOrder} from "../../types/types";
+import {token} from "./getTokenApi";
 
 export const userApi = createApi({
     reducerPath: "userApi",
@@ -23,10 +24,10 @@ export const userApi = createApi({
             }),
         }),
         updateRoleUser: build.mutation({
-            query: (body) => ({
-                url: `/user/update`,
+            query: (id) => ({
+                url: `/user/update${id}`,
+                headers: { Authorization: `Bearer ${token}` },
                 method: 'PATCH',
-                body
             }),
         }),
         deleteUser: build.mutation({
