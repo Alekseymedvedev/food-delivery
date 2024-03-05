@@ -7,12 +7,11 @@ import {InputRadio} from "../../shared/inputRadio/inputRadio";
 import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
 import {useCreateNewOrderMutation} from "../../store/API/ordersApi";
 import {useNavigate} from "react-router-dom";
-import {IOrder, IOrderCreate} from "../../types/types";
+import { IOrderCreate} from "../../types/types";
 import {BtnGroup} from "../../shared/btnGroup/btnGroup";
 import {useUpdateUserMutation} from "../../store/API/userApi";
 import {createPortal} from "react-dom";
 import {Modal} from "../modal/modal";
-import {useDispatch} from "react-redux";
 import {deleteProductInCart} from "../../store/slice/productsSlice";
 
 interface IType {

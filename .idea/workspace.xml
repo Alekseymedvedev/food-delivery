@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/entities/formCheckout/formCheckout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/formCheckout/formCheckout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/orders/oneOrderPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/orders/orderPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/profile/profilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/profile/profilePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/simpleTextField/simpleTextField.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/simpleTextField/simpleTextField.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shared/simpleTextField/simpleTextField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/simpleTextField/simpleTextField.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,25 +42,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/aleks/Desktop/web/food-delivery",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "ts.external.directory.path": "C:\\Users\\aleks\\Desktop\\web\\food-delivery\\client\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleks/Desktop/web/food-delivery&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\aleks\\Desktop\\web\\food-delivery\\client\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -131,14 +137,7 @@
       <workItem from="1708928219519" duration="1364000" />
       <workItem from="1709446226299" duration="58554000" />
       <workItem from="1709623043289" duration="15958000" />
-    </task>
-    <task id="LOCAL-00049" summary="commit">
-      <option name="closed" value="true" />
-      <created>1708359942399</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1708359942399</updated>
+      <workItem from="1709651269950" duration="1936000" />
     </task>
     <task id="LOCAL-00050" summary="commit">
       <option name="closed" value="true" />
@@ -524,7 +523,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709642139461</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="commit">
+      <option name="closed" value="true" />
+      <created>1709651429477</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1709651429478</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
