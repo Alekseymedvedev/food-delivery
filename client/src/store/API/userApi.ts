@@ -16,9 +16,9 @@ export const userApi = createApi({
                 body
             }),
         }),
-        getUser: build.query<ICategory, string>({
+        getUser: build.query({
             query: (id) => ({
-                url: `/${id}`,
+                url: `/user/${id}`,
             }),
         }),
         updateUser: build.mutation({

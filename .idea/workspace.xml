@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/userApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/userApi.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,15 +132,7 @@
       <workItem from="1708684188447" duration="33704000" />
       <workItem from="1708928219519" duration="1364000" />
       <workItem from="1709446226299" duration="58554000" />
-      <workItem from="1709623043289" duration="13324000" />
-    </task>
-    <task id="LOCAL-00046" summary="commit">
-      <option name="closed" value="true" />
-      <created>1708334401280</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1708334401280</updated>
+      <workItem from="1709623043289" duration="13704000" />
     </task>
     <task id="LOCAL-00047" summary="commit">
       <option name="closed" value="true" />
@@ -524,7 +518,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709640388302</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="commit">
+      <option name="closed" value="true" />
+      <created>1709640985642</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1709640985642</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

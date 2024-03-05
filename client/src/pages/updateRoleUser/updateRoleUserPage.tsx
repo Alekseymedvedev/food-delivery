@@ -21,9 +21,9 @@ const UpdateRoleUserPage = () => {
     }
     return (
         <MainLayout heading={'Обновление роли пользователя'}>
-            <label className={classes.label}>
-                <TextField value={input.value} onChange={input.onChange}/>
-            </label>
+            <div className="mb-4">
+                Изменить роль пользователя {data?.username} с ID {data?.chatId}
+            </div>
             <Button onClick={handler}>Сохранить</Button>
         </MainLayout>
     );
