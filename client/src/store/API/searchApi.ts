@@ -10,7 +10,6 @@ export const searchApi = createApi({
         search: build.query<IProduct[], string>({
             query: (query) => ({
                 url: `${query}`,
-
             }),
         }),
     }),

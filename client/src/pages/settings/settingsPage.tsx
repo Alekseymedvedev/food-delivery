@@ -12,9 +12,7 @@ import {Loader} from "../../shared/loader/loader";
 const SettingsPage = () => {
     const {data, isError, isLoading} = useGetCategoriesQuery('')
     const [addCategory, setAddCategory] = useState(false)
-    const Handler = () => {
 
-    }
     const addHandler = () => {
         setAddCategory(true)
     }

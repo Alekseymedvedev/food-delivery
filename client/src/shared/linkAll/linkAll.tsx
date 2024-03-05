@@ -1,7 +1,6 @@
 
 import React,{FC,memo}  from "react";
 import classes from './linkAll.module.scss'
-import {NavLink} from "react-router-dom";
 import {ArrowIcon} from "../images/icons/arrowIcon";
 
 

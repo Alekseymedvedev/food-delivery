@@ -42,7 +42,7 @@ export interface IOrder {
     sum?: number;
     orderProducts: IProduct[];
     notifications?: boolean;
-    status?:string;
+    status?: string;
 }
 
 export interface IUser {

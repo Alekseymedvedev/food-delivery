@@ -7,7 +7,6 @@ export const useInputRadio = (initialValue: any) => {
 
 
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log(checked)
         setValue(e.target.value)
         setChecked(e.target.checked)
     }

@@ -22,7 +22,7 @@ export const Calendar: FC<IType> = memo(({changeDate}) => {
         changeDate(`${selectedDay}.${selectedMonth}.${selectedYear}`)
     }, [selectedDay, selectedMonth, selectedYear]);
 
-    const handlerYear = (val:any) => {
+    const handlerYear = (val: any) => {
         setSelectedYear(val)
 
     }

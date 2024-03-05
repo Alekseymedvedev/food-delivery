@@ -23,13 +23,13 @@ const linkArr = [
 export const Menu: FC<IType> = memo(({children}) => {
     const {countProducts} = useAppSelector(state => state.productReducer)
     const {user} = useAppSelector((state) => state.userReducer);
-    const {data,error,isLoading}= useGetAllOrdersUserQuery(`${user?.id}`,{skip:!user?.id})
-    const [newNotification,setNewNotification]=useState(0)
+    const {data, error, isLoading} = useGetAllOrdersUserQuery(`${user?.id}`, {skip: !user?.id})
+    const [newNotification, setNewNotification] = useState(0)
 
     useEffect(() => {
         if (data) {
-            data.map(item=>{
-                item?.notifications && setNewNotification(newNotification+1)
+            data.map(item => {
+                item?.notifications && setNewNotification(newNotification + 1)
             })
         }
     }, [data]);

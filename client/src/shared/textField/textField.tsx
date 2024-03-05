@@ -14,8 +14,7 @@ interface IType {
     borderAccent?: boolean;
 }
 
-export const TextField: FC<IType> = memo(
-    ({placeholder, borderAccent, type, label, value, onChange, onChangeFile, description, error}) => {
+export const TextField: FC<IType> = memo(({placeholder, borderAccent, type, label, value, onChange, onChangeFile, description, error}) => {
 
         return (
             <>

@@ -38,7 +38,7 @@ export const ordersApi = createApi({
         updateOrderStatus: build.mutation({
             query: ({id, body}) => ({
                 url: `${id}`,
-               headers: { Authorization: `Bearer ${token}` },
+                headers: {Authorization: `Bearer ${token}`},
                 method: 'PATCH',
                 body
             }),

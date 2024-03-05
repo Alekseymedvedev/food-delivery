@@ -6,7 +6,7 @@ interface IProductsState {
     productsInCart: IProduct[]
 };
 const data = localStorage.getItem('productsInCart');
-const parseData = JSON.parse(data ?data:'[]')
+const parseData = JSON.parse(data ? data : '[]')
 const initialState: IProductsState = {
     countProducts: parseData?.length,
     productsInCart: parseData
@@ -22,7 +22,7 @@ export const products = createSlice({
         addProductToCart: (state: IProductsState, action: PayloadAction<IProduct>) => {
             const existingProduct = state.productsInCart.find(product => product.id === action.payload.id);
             if (existingProduct) {
-                existingProduct.count = existingProduct.count +1;
+                existingProduct.count = existingProduct.count + 1;
                 localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart));
             } else {
                 state.productsInCart = [...state.productsInCart, action.payload];
@@ -42,12 +42,12 @@ export const products = createSlice({
             state.countProducts = state.productsInCart.length
             localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart))
         },
-        deleteProductInCart(state: IProductsState){
+        deleteProductInCart(state: IProductsState) {
             state.productsInCart = []
             state.countProducts = 0
         }
     },
 });
 
-export const {getProducts, addProductToCart, decrement,deleteProductInCart} = products.actions;
+export const {getProducts, addProductToCart, decrement, deleteProductInCart} = products.actions;
 export default products.reducer;

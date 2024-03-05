@@ -13,27 +13,21 @@ interface IType {
     isSearch?: boolean;
 }
 
-export const MainLayout: FC<IType> = ({
-                                          children,
-                                          heading,
-                                          homePage,
-                                          textCenter,
-                                          isSearch,
-                                      }) => {
+export const MainLayout: FC<IType> = ({children, heading, homePage, textCenter, isSearch,}) => {
     const {tg} = useTelegram();
     const navigate = useNavigate();
     return (
-        <div className={tg?.colorScheme !== 'light' ?'container darkTheme'  :'container'}>
-                <h1 className={textCenter ? "h1 textCenter" : "h1"}>
-                    {!homePage &&
-                        <span className={"back"} onClick={() => navigate(-1)}>
+        <div className={tg?.colorScheme !== 'light' ? 'container darkTheme' : 'container'}>
+            <h1 className={textCenter ? "h1 textCenter" : "h1"}>
+                {!homePage &&
+                    <span className={"back"} onClick={() => navigate(-1)}>
                     <ArrowIconBack/>
                   </span>
-                    }
-                    <span>{heading}</span>
-                </h1>
-                {isSearch && <Search/>}
-                {children}
+                }
+                <span>{heading}</span>
+            </h1>
+            {isSearch && <Search/>}
+            {children}
             <Menu/>
             <div className="menuBg"></div>
         </div>

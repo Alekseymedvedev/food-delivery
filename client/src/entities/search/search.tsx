@@ -15,7 +15,7 @@ export const Search: FC<IType> = memo(({children}) => {
     const [skip, setSkip] = useState(true)
     const [products, setProducts] = useState<IProduct[]>()
     const {data, error, isLoading} = useSearchQuery(`/?search=${query}`, {skip})
-    console.log(query.length)
+
     useEffect(() => {
         if (query.length > 1) {
             setSkip(false)
@@ -43,7 +43,7 @@ export const Search: FC<IType> = memo(({children}) => {
                     {
                         (products?.length) ?
                             products?.map(item =>
-                                <div className={classes.inner}>
+                                <NavLink key={item.id} className={classes.inner} to={`/product/${item.id}`}>
                                     <div className={classes.image}>
                                         <img src={process.env.REACT_APP_API_URL + item.image} alt={item.title}/>
                                     </div>
@@ -51,7 +51,7 @@ export const Search: FC<IType> = memo(({children}) => {
                                         <div className={classes.title}>{item.title}</div>
                                         <div className={classes.price}>{item.price}₽</div>
                                     </div>
-                                </div>
+                                </NavLink>
                             )
                             :
                             <div className={classes.title}>Ничего не найдено</div>

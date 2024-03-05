@@ -12,7 +12,6 @@ const ProductPage = () => {
     const {id} = useParams()
     const {data, isError} = useGetOneProductQuery(`${id}`)
     const dispatch = useAppDispatch()
-    const {countProducts} = useAppSelector(state => state.productReducer)
     const addHandler = () => {
         dispatch(addProductToCart(data))
     }
@@ -24,9 +23,9 @@ const ProductPage = () => {
             <div className="mb-4">
                 <Product data={data} oneProduct/>
             </div>
-            <Button onClick={addHandler}>
-                Добавить в корзину
-            </Button>
+            {
+               data?.disabled && <Button onClick={addHandler}>Добавить в корзину</Button>
+            }
         </MainLayout>
     );
 };

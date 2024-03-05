@@ -18,7 +18,7 @@ export const Orders: FC<IType> = memo(({children}) => {
         <div className={classes.orders}>
             {
                 data?.length ? data?.map(item =>
-                        <NavLink  key={item.id} to={`/order/${item.id}`}>
+                        <NavLink key={item.id} to={`/order/${item.id}`}>
                             <Order data={item}/>
                         </NavLink>
                     ) :

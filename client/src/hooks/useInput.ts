@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect, useMemo, useState} from "react";
+import React, {ChangeEvent, useEffect,  useState} from "react";
 
 
 export const useInput = (initialValue: any, errorInput?: boolean, clear?: boolean, noValidate?: boolean) => {

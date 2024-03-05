@@ -2,7 +2,7 @@ import classes from './notificationPage.module.scss'
 import {MainLayout} from "../../layout/mainLayout"
 import {useAppSelector} from "../../hooks/useRedux";
 import {useGetAllOrdersUserQuery, useUpdateOrderNotificationMutation,} from "../../store/API/ordersApi";
-import React  from "react";
+import React from "react";
 import {Button} from "../../shared/button/button";
 import {NavLink} from "react-router-dom";
 
@@ -11,11 +11,11 @@ const NotificationPage = () => {
     const {user} = useAppSelector((state) => state.userReducer);
     const {data, error, isLoading} = useGetAllOrdersUserQuery(`${user?.id}`, {skip: !user?.id})
     const [updateStatus] = useUpdateOrderNotificationMutation()
-     // const [orderId, setOrderId] = useState(0)
+    // const [orderId, setOrderId] = useState(0)
     // useEffect(() => {
     //     if(data) setOrderIndex(data?.length - 1)
     // }, [data]);
-    const handler = (orderId:number | string) => {
+    const handler = (orderId: number | string) => {
         data && updateStatus({
             id: orderId,
             body: {
@@ -27,7 +27,6 @@ const NotificationPage = () => {
     return (
         <MainLayout heading={'Уведомления'}>
             <div className={classes.list}>
-
                 {
                     data?.length && data?.map(item =>
                         <>
@@ -49,24 +48,6 @@ const NotificationPage = () => {
                         </>
                     )
                 }
-                {/*{*/}
-                {/*    data &&*/}
-                {/*    data[orderIndex]?.notifications ?*/}
-                {/*        <>*/}
-                {/*            <div className={classes.item}>*/}
-                {/*                <div className={classes.text}>Заказ №{data[orderIndex]?.id}</div>*/}
-                {/*                <div className={classes.value}>{data[orderIndex]?.status}</div>*/}
-                {/*            </div>*/}
-                {/*            <div className={classes.box}>*/}
-                {/*                <Button onClick={handler}>Пометить прочитаным</Button>*/}
-                {/*                <NavLink className={classes.link} to={`/order/${data[orderIndex]?.id}`}>Перейти в*/}
-                {/*                    заказ</NavLink>*/}
-                {/*            </div>*/}
-                {/*        </>*/}
-                {/*        : <div>Нет новых уведомлений</div>*/}
-
-
-                {/*}*/}
             </div>
         </MainLayout>
     );

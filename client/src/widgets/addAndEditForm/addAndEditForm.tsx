@@ -4,17 +4,12 @@ import {TextField} from "../../shared/textField/textField";
 import {Button} from "../../shared/button/button";
 import {useInput} from "../../hooks/useInput";
 import {useCreateNewProductMutation, useUpdateProductMutation} from "../../store/API/productsApi";
-import {
-    useCreateNewCategoryMutation,
-    useGetCategoriesQuery,
-    useUpdateCategoryMutation
-} from "../../store/API/categoriesApi";
+import {useCreateNewCategoryMutation, useGetCategoriesQuery, useUpdateCategoryMutation} from "../../store/API/categoriesApi";
 import {ICategory, IProduct} from "../../types/types";
 import {useAppSelector} from "../../hooks/useRedux";
 import {createPortal} from "react-dom";
 import {Modal} from "../../entities/modal/modal";
 import {InputRadio} from "../../shared/inputRadio/inputRadio";
-import {useInputRadio} from "../../hooks/useInputRadio";
 
 
 interface IType {
@@ -49,49 +44,42 @@ export const AddAndEditForm: FC<IType> = ({
     const descriptionInput = useInput(productData ? productData?.description : '')
     const priceInput = useInput(productData ? productData?.price : '')
 
-    const [addNewCategory, {
-        error: errorAddNewCategory,
-        isLoading: isLoadingCreateCategory
-    }] = useCreateNewCategoryMutation()
-    const [updateCategory, {
-        error: errorUpdateCategory,
-        isLoading: isLoadingUpdateCategory
-    }] = useUpdateCategoryMutation()
-    const [addNewProduct, {
-        error: errorAddNewProduct,
-        isLoading: isLoadingCreateProduct
-    }] = useCreateNewProductMutation()
-    const [updateProduct,
-        {error: errorUpdateProduct, isLoading: isLoadingUpdateProduct}] = useUpdateProductMutation()
+    const [addNewCategory, {error: errorAddNewCategory, isLoading: isLoadingCreateCategory}] = useCreateNewCategoryMutation()
+    const [updateCategory, {error: errorUpdateCategory, isLoading: isLoadingUpdateCategory}] = useUpdateCategoryMutation()
+    const [addNewProduct, {error: errorAddNewProduct, isLoading: isLoadingCreateProduct}] = useCreateNewProductMutation()
+    const [updateProduct, {error: errorUpdateProduct, isLoading: isLoadingUpdateProduct}] = useUpdateProductMutation()
+
     useEffect(() => {
         if (errorAddNewCategory && !isLoadingCreateCategory) {
-            console.log(errorAddNewCategory)
             setTextModal('Ошибка при добавлении категории',)
         } else if (isLoadingCreateCategory) {
             setTextModal('Категория успешно добавлена')
         }
     }, [errorAddNewCategory, isLoadingCreateCategory]);
+
     useEffect(() => {
         if (errorUpdateCategory && !isLoadingUpdateCategory) {
             setTextModal('Ошибка при редактировании категории')
-        } else if(isLoadingUpdateCategory) {
+        } else if (isLoadingUpdateCategory) {
             setTextModal('Категория успешно обновлена')
         }
-    }, [isLoadingUpdateCategory,errorUpdateCategory]);
+    }, [isLoadingUpdateCategory, errorUpdateCategory]);
+
     useEffect(() => {
         if (errorAddNewProduct && !isLoadingCreateProduct) {
             setTextModal('Ошибка при добавлении блюда')
-        } else if(isLoadingCreateProduct){
+        } else if (isLoadingCreateProduct) {
             setTextModal('Блюдо успешно добавлено')
         }
-    }, [isLoadingCreateProduct,errorAddNewProduct]);
+    }, [isLoadingCreateProduct, errorAddNewProduct]);
+
     useEffect(() => {
         if (errorUpdateProduct && !isLoadingUpdateProduct) {
             setTextModal('Ошибка при редактировании блюда')
-        } else if(isLoadingUpdateProduct){
+        } else if (isLoadingUpdateProduct) {
             setTextModal('Блюдо успешно обновлено')
         }
-    }, [isLoadingUpdateProduct,errorUpdateProduct]);
+    }, [isLoadingUpdateProduct, errorUpdateProduct]);
 
     const submitHandler = async () => {
         if (addCategoryForm) {
@@ -171,7 +159,6 @@ export const AddAndEditForm: FC<IType> = ({
 
                             </div>
                             <TextField label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
-
                             {
                                 updateProductForm &&
                                 <select value={select} onChange={(e) => setSelect(e.target.value)}>

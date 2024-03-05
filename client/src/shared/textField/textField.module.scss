@@ -7,17 +7,20 @@
   background-color: var(--bg-grey-color);
   position: relative;
 }
-.labelFile{
+
+.labelFile {
   position: relative;
 }
-.errorFile{
+
+.errorFile {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   font-size: 18px;
   font-weight: 600;
 }
+
 .input {
   color: var(--tg-theme-hint-color);
   font-weight: 500;

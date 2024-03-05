@@ -1,7 +1,6 @@
 import classes from './profilePage.module.scss'
 import {MainLayout} from "../../layout/mainLayout"
 import {Calendar} from "../../shared/calendar/calendar";
-import {TextField} from "../../shared/textField/textField";
 import {useInput} from "../../hooks/useInput";
 import React, {useState} from "react";
 import {SimpleTextField} from "../../shared/simpleTextField/simpleTextField";

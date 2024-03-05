@@ -3,13 +3,15 @@
   display: flex;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid var( --tg-theme-button-color);
+  border: 1px solid var(--tg-theme-button-color);
+
   button {
     width: 100%;
     padding: 10px 39px;
     cursor: pointer;
+
     &.active {
-      background: var( --tg-theme-button-color);
+      background: var(--tg-theme-button-color);
     }
   }
 }

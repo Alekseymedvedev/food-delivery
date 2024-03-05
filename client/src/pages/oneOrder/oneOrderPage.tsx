@@ -1,23 +1,19 @@
 import {MainLayout} from "../../layout/mainLayout"
 import classes from "./oneOrderPage.module.scss";
-import {Button} from "../../shared/button/button";
-import React, {useState} from "react";
+import React from "react";
 import {NavLink, useParams} from "react-router-dom";
 import {useGetOneOrderQuery} from "../../store/API/ordersApi";
 import {Product} from "../../entities/product/product";
-import {BtnGroup} from "../../shared/btnGroup/btnGroup";
 
 
 const OneOrderPage = () => {
     const {id} = useParams()
     const {data, error, isLoading} = useGetOneOrderQuery(`${id}`)
 
-    const [activeBtn, setActiveBtn] = useState('Доставка')
     if (error) return <h2 className={'error'}>Данные о товаре не загружены</h2>
-    console.log(data)
+
     return (
         <MainLayout heading={`Заказ №${id}`} textCenter>
-
             <div>
                 <div className={classes.products}>
                     {

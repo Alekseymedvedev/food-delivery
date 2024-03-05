@@ -5,7 +5,7 @@ import productReducer from "./slice/productsSlice"
 import userReducer from "./slice/userSlice"
 import {ordersApi} from "./API/ordersApi";
 import {searchApi} from "./API/searchApi";
-import { userApi } from "./API/userApi";
+import {userApi} from "./API/userApi";
 
 const rootReducer = combineReducers({
     [productsApi.reducerPath]: productsApi.reducer,

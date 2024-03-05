@@ -7,7 +7,7 @@ import {InputRadio} from "../../shared/inputRadio/inputRadio";
 import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
 import {useCreateNewOrderMutation} from "../../store/API/ordersApi";
 import {useNavigate} from "react-router-dom";
-import { IOrderCreate} from "../../types/types";
+import {IOrderCreate} from "../../types/types";
 import {BtnGroup} from "../../shared/btnGroup/btnGroup";
 import {useUpdateUserMutation} from "../../store/API/userApi";
 import {createPortal} from "react-dom";
@@ -15,10 +15,10 @@ import {Modal} from "../modal/modal";
 import {deleteProductInCart} from "../../store/slice/productsSlice";
 
 interface IType {
-    onSubmit: (val: any) => void;
+
 }
 
-export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
+export const FormCheckout: FC<IType> = memo(() => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch()
     const {user} = useAppSelector((state) => state.userReducer);
@@ -39,12 +39,12 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
             setModalError(true)
         }
     }, [error, isLoading])
+
     useEffect(() => {
         if (!error && !isLoading && dataCreate) {
             localStorage.setItem('productsInCart', '')
             navigate(`/order/${dataCreate.id}`)
             dispatch(deleteProductInCart())
-
         }
     }, [dataCreate])
 
@@ -58,7 +58,7 @@ export const FormCheckout: FC<IType> = memo(({onSubmit}) => {
             name: name.value,
             paymentMethod,
             orderProducts: productsInCart.map(item => ({id: +item?.id, count: +item?.count})),
-            status:'новый'
+            status: 'новый'
         }
         if (address.value && phone.value) {
             createOrder(data)

@@ -1,35 +1,41 @@
-.title{
+.title {
   margin-bottom: 10px;
   font-weight: 500;
   font-size: 15px;
 }
-.title{
+
+.title {
   margin-bottom: 9px;
   font-weight: 500;
   font-size: 15px;
 }
-.box{
+
+.box {
   margin-bottom: 26px;
   display: flex;
   flex-direction: column;
   gap: 22px;
 }
-.genderGroup{
+
+.genderGroup {
   margin-bottom: 26px;
   display: flex;
   gap: 7px;
 }
-.btn{
+
+.btn {
   padding: 13px 24px;
   border-radius: 16px;
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
   cursor: pointer;
-  &.active{
+
+  &.active {
     color: var(--color-white);
     background-color: var(--accent-color);
   }
 }
-.calendar{
+
+.calendar {
   margin-bottom: 26px;
 }

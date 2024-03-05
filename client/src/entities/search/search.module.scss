@@ -15,12 +15,8 @@
   border-radius: 16px;
 }
 
-//[type="search"]::-webkit-search-cancel-button {
-//  -webkit-appearance: none;
-//  appearance: none;
-//}
 
-::placeholder { /* Most modern browsers support this now. */
+::placeholder {
   color: var(--bg-grey-color);
 }
 

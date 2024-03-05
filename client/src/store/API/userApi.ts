@@ -8,7 +8,6 @@ export const userApi = createApi({
         baseUrl: `${process.env.REACT_APP_API_URL}`,
     }),
     endpoints: (build) => ({
-
         authUser: build.mutation({
             query: (body) => ({
                 url: `auth`,
@@ -31,7 +30,7 @@ export const userApi = createApi({
         updateRoleUser: build.mutation({
             query: ({id}) => ({
                 url: `/user/update/${id}`,
-                headers: { Authorization: `Bearer ${token}` },
+                headers: {Authorization: `Bearer ${token}`},
                 method: 'PATCH',
             }),
         }),
@@ -52,4 +51,5 @@ export const {
     useGetUserQuery,
     useUpdateRoleUserMutation,
     useDeleteUserMutation,
-    useUpdateUserMutation} = userApi;
+    useUpdateUserMutation
+} = userApi;

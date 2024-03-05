@@ -3,17 +3,14 @@ import {NavLink} from "react-router-dom";
 import {MainLayout} from "../../layout/mainLayout";
 import {FavoritesIcon} from "../../shared/images/icons/favoritesIcon";
 import {useAppSelector} from "../../hooks/useRedux";
-import {PaymentIcon} from "../../shared/images/icons/paymentIcon";
 import {OrdersIcon} from "../../shared/images/icons/ordersIcon";
 import {ProfileIcon} from "../../shared/images/icons/profileIcon";
 import {SettingsIcon} from "../../shared/images/icons/settingsIcon";
-import {StatisticsIcon} from "../../shared/images/icons/statisticsIcon";
-import {NotificationIcon} from "../../shared/images/icons/notificationIcon";
 
 const linkArr = [
     {to: "orders", text: "Заказы", icon: <OrdersIcon/>},
     {to: "/profile", text: "Профиль", icon: <ProfileIcon isSimple/>},
-    {to: "/more/favorites", text: "Избранное ", icon: <FavoritesIcon />},
+    {to: "/more/favorites", text: "Избранное ", icon: <FavoritesIcon/>},
 ];
 const linkArrAdmin = [
     // {to: "/more/statistics", text: "Статистика", icon: <StatisticsIcon isSimple/>},
@@ -35,7 +32,7 @@ const MorePage = () => {
                     ))
                 }
                 {
-                    user?.role === 'admin' &&  linkArrAdmin?.map(item => (
+                    user?.role === 'admin' && linkArrAdmin?.map(item => (
                         <NavLink key={item.to} to={item.to} className={classes.link}>
                             {item.icon}
                             <span>{item.text}</span>

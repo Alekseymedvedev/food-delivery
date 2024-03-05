@@ -1,8 +1,7 @@
 import {MainLayout} from "../../layout/mainLayout"
-import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
+import {useAppSelector} from "../../hooks/useRedux";
 import {Product} from "../../entities/product/product";
-import {useEffect, useState} from "react";
-import {getProducts} from "../../store/slice/productsSlice";
+import {useState} from "react";
 import classes from "./cartPage.module.scss"
 import {Button} from "../../shared/button/button";
 import {FormCheckout} from "../../entities/formCheckout/formCheckout";
@@ -10,19 +9,14 @@ import {FormCheckout} from "../../entities/formCheckout/formCheckout";
 
 const CartPage = () => {
 
-    const dispatch = useAppDispatch()
     const {productsInCart} = useAppSelector(state => state.productReducer)
-
     const [checkout, setCheckout] = useState(false)
 
-    const ordersHandler = (data: any) => {
-
-    }
     return (
         <MainLayout heading={checkout ? 'Оформление заказа' : 'Корзина'} textCenter>
             {
                 checkout ?
-                    <FormCheckout onSubmit={ordersHandler}/>
+                    <FormCheckout/>
                     :
                     <div className={classes.cart}>
                         <div>
@@ -48,7 +42,6 @@ const CartPage = () => {
                         <Button onClick={() => setCheckout(true)}>Оформить заказ</Button>
                     </div>
             }
-
         </MainLayout>
     );
 };

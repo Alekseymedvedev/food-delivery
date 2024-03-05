@@ -13,7 +13,6 @@ const SettingsCategoryPage = () => {
     const [editCategory, setEditCategory] = useState(true)
     const {data, isError} = useGetCategoryQuery(`${id}`)
 
-    const [btn, setBtn] = useState(1)
 
     const addHandler = () => {
         setAddNewProduct(true)
