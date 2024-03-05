@@ -15,7 +15,7 @@ export const Calendar: FC<IType> = memo(({changeDate}) => {
     const [selectedYear, setSelectedYear] = useState(2024)
     const [countDay, setCountDay] = useState(31)
     const [active, setActive] = useState(false)
-    // console.log(selectedDate)
+
     useEffect(() => {
         setCountDay(new Date(selectedYear, +selectedMonth, 0).getDate())
         setSelectedDate(`${selectedDay}.${selectedMonth}.${selectedYear}`)
@@ -32,7 +32,7 @@ export const Calendar: FC<IType> = memo(({changeDate}) => {
         } else {
             setSelectedMonth(val)
         }
-        // changeDate(selectedDate)
+
     }
     const handlerDay = (day: any) => {
         if (day < 10) {
@@ -40,7 +40,6 @@ export const Calendar: FC<IType> = memo(({changeDate}) => {
         } else {
             setSelectedDay(day)
         }
-        // changeDate(selectedDate)
     }
     return (
         <div className={active ? `${classes.calendar} ${classes.active}` : classes.calendar}>
