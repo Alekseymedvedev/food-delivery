@@ -31,7 +31,8 @@ export const FormCheckout: FC<IType> = memo(() => {
     const name = useInput(user?.name ? user?.name : '')
 
     const [typeDelivery, setTypeDelivery] = useState('Доставка')
-    const [paymentMethod, setPaymentMethod] = useState('Наличные')
+    const [paymentMethod, setPaymentMethod] = useState('')
+    const [paymentMethodError, setPaymentMethodError] = useState(false)
     const [modalError, setModalError] = useState(false)
 
     useEffect(() => {
@@ -50,6 +51,7 @@ export const FormCheckout: FC<IType> = memo(() => {
 
 
     const submitHandler = () => {
+        if(!paymentMethod)setPaymentMethodError(true)
         const data: IOrderCreate = {
             userId: user?.id,
             address: address.value,
@@ -60,7 +62,7 @@ export const FormCheckout: FC<IType> = memo(() => {
             orderProducts: productsInCart.map(item => ({id: +item?.id, count: +item?.count})),
             status: 'новый'
         }
-        if (address.value && phone.value) {
+        if (address.value && phone.value && paymentMethod) {
             createOrder(data)
             updateUser({
                 userId: user?.id,
@@ -88,7 +90,10 @@ export const FormCheckout: FC<IType> = memo(() => {
                 <SimpleTextField label={"Имя"} value={name.value} onChange={name.onChange}/>
             </div>
             <div className={'mb-4'}>
-                <div className={classes.paymentTitle}>Метод оплаты</div>
+                <div className={classes.paymentTitle}>
+                     <div>Метод оплаты</div>
+                    {paymentMethodError && <div className={'error'}>Выберите метод оплаты</div>}
+                </div>
                 <InputRadio label={'Наличные'} value={'Наличные'} onChange={setPaymentMethod} name={"payment"}/>
                 <InputRadio label={'Эквайринг'} value={'Эквайринг'} onChange={setPaymentMethod} name={"payment"}/>
                 <InputRadio label={'Картой при получении'} value={'Картой при получении'} onChange={setPaymentMethod}
