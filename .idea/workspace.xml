@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/changeStatusOrder/changeStatusOrderPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/changeStatusOrder/changeStatusOrderPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/oneOrder/oneOrderPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/oneOrder/oneOrderPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/product/productPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/product/productPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/settingsCategory/settingsCategoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/settingsCategory/settingsCategoryPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/loader/loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/loader/loader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/widgets/categories/categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/categories/categories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/widgets/orders/orders.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/orders/orders.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layout/mainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layout/mainLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/getTokenApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/getTokenApi.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,15 +136,9 @@
       <workItem from="1709623043289" duration="15958000" />
       <workItem from="1709651269950" duration="14090000" />
       <workItem from="1709704280127" duration="2087000" />
-      <workItem from="1709706565725" duration="13930000" />
-    </task>
-    <task id="LOCAL-00072" summary="commit">
-      <option name="closed" value="true" />
-      <created>1708873845494</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1708873845494</updated>
+      <workItem from="1709706565725" duration="15306000" />
+      <workItem from="1709757968907" duration="299000" />
+      <workItem from="1709758365628" duration="296000" />
     </task>
     <task id="LOCAL-00073" summary="commit">
       <option name="closed" value="true" />
@@ -535,7 +524,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709720841283</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="commit">
+      <option name="closed" value="true" />
+      <created>1709723732139</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1709723732139</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
