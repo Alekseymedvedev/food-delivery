@@ -2,22 +2,35 @@ import classes from './profilePage.module.scss'
 import {MainLayout} from "../../layout/mainLayout"
 import {Calendar} from "../../shared/calendar/calendar";
 import {useInput} from "../../hooks/useInput";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {SimpleTextField} from "../../shared/simpleTextField/simpleTextField";
 import {useUpdateUserMutation} from "../../store/API/userApi";
 import {Button} from "../../shared/button/button";
 import {useAppSelector} from "../../hooks/useRedux";
+import {createPortal} from "react-dom";
+import {Modal} from "../../entities/modal/modal";
+import {Loader} from "../../shared/loader/loader";
 
 
 const ProfilePage = () => {
     const {user} = useAppSelector((state) => state.userReducer);
-    const [updateUser] = useUpdateUserMutation()
+    const [updateUser,{data,isLoading,isError}] = useUpdateUserMutation()
     const nameInput = useInput('')
     const emailInput = useInput('')
     const phoneInput = useInput('')
     const [date, setDate] = useState('')
     const [gender, setGender] = useState({id: 1, text: 'Мужской'})
-
+    const [modal, setModal] = useState(false)
+    const [textModal, setTextModal] = useState('')
+    useEffect(()=>{
+        if(isError){
+            setTextModal('Ошибка при обновлении профиля')
+        }else{
+            setTextModal('Профиль обновлен')
+        }
+       if(data) setModal(true)
+    },[data])
+    console.log(data)
     const handlerSave = () => {
         updateUser({
             userId: user?.id,
@@ -33,6 +46,7 @@ const ProfilePage = () => {
     return (
         <MainLayout heading={'Профиль'} textCenter>
             <form onSubmit={(e) => e.preventDefault()}>
+                {isLoading && <Loader circle/>}
                 <div className={classes.title}>Мои данные</div>
                 <div className={classes.box}>
                     <SimpleTextField placeholder={'Имя'} onChange={nameInput.onChange} value={nameInput.value}
@@ -68,6 +82,11 @@ const ProfilePage = () => {
                 </div>
                 <Button onClick={handlerSave}>Сохранить</Button>
             </form>
+            {modal && createPortal(
+                <Modal textModal={textModal} onClick={() => setModal(false)}
+                       textBtn={'Закрыть'}/>,
+                document.body
+            )}
         </MainLayout>
     );
 };
