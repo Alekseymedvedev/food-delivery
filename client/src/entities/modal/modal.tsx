@@ -14,7 +14,7 @@ interface IType {
 export const Modal: FC<IType> = memo(({textModal, textBtn, onClick, error}) => {
     const {tg} = useTelegram();
     return (
-        <div className={tg?.colorScheme !== 'light' ? classes.modal: `${classes.modal} container`}>
+        <div className={tg?.colorScheme !== 'light' ? classes.modal: `${classes.modal} darkTheme`}>
             <div className={classes.overlay}></div>
             <div className={error ? `${classes.modalContent} ${classes.error}` : classes.modalContent}>
                 <div className={classes.text}>{textModal}</div>
