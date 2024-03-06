@@ -2,7 +2,7 @@ import classes from './profilePage.module.scss'
 import {MainLayout} from "../../layout/mainLayout"
 import {Calendar} from "../../shared/calendar/calendar";
 import {useInput} from "../../hooks/useInput";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useLayoutEffect, useState} from "react";
 import {SimpleTextField} from "../../shared/simpleTextField/simpleTextField";
 import {useUpdateUserMutation} from "../../store/API/userApi";
 import {Button} from "../../shared/button/button";
@@ -14,22 +14,25 @@ import {Loader} from "../../shared/loader/loader";
 
 const ProfilePage = () => {
     const {user} = useAppSelector((state) => state.userReducer);
-    const [updateUser,{data,isLoading,isError}] = useUpdateUserMutation()
+    const [updateUser, {data, isLoading, isError}] = useUpdateUserMutation()
+
     const nameInput = useInput('')
     const emailInput = useInput('')
     const phoneInput = useInput('')
+
     const [date, setDate] = useState('')
     const [gender, setGender] = useState({id: 1, text: 'Мужской'})
     const [modal, setModal] = useState(false)
     const [textModal, setTextModal] = useState('')
-    useEffect(()=>{
-        if(isError){
+
+    useEffect(() => {
+        if (isError) {
             setTextModal('Ошибка при обновлении профиля')
-        }else{
+        } else {
             setTextModal('Профиль обновлен')
         }
-       if(data) setModal(true)
-    },[data])
+        if (data) setModal(true)
+    }, [data])
 
     const handlerSave = () => {
         updateUser({
@@ -80,7 +83,11 @@ const ProfilePage = () => {
                         value={phoneInput.value}
                         borderAccent/>
                 </div>
-                <Button onClick={handlerSave}>Сохранить</Button>
+                {
+                    (nameInput.visible || emailInput.visible || phoneInput.visible) &&
+                    <Button onClick={handlerSave}>Сохранить</Button>
+                }
+
             </form>
             {modal && createPortal(
                 <Modal textModal={textModal} onClick={() => setModal(false)}

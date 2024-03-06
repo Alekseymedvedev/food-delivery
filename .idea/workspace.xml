@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/entities/menu/menu.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/menu/menu.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/entities/modal/modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/modal/modal.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/more/morePage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/more/morePage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/images/icons/favoritesIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/images/icons/favoritesIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/images/icons/homeIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/images/icons/homeIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/images/icons/ordersIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/images/icons/ordersIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/images/icons/profileIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/images/icons/profileIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/images/icons/settingsIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/images/icons/settingsIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useInput.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/profile/profilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/profile/profilePage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,15 +135,7 @@
       <workItem from="1709623043289" duration="15958000" />
       <workItem from="1709651269950" duration="14090000" />
       <workItem from="1709704280127" duration="2087000" />
-      <workItem from="1709706565725" duration="10336000" />
-    </task>
-    <task id="LOCAL-00070" summary="commit">
-      <option name="closed" value="true" />
-      <created>1708873429435</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1708873429435</updated>
+      <workItem from="1709706565725" duration="11545000" />
     </task>
     <task id="LOCAL-00071" summary="commit">
       <option name="closed" value="true" />
@@ -536,7 +521,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709714679133</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="commit">
+      <option name="closed" value="true" />
+      <created>1709719634920</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1709719634920</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
