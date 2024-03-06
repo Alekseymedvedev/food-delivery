@@ -21,9 +21,9 @@
   padding: 10px;
   border: 1px solid var(--accent-color);
   border-radius: 16px;
-  background-color: var(--color-white);
+  background-color: var(--tg-theme-bg-color);
   position: absolute;
-  top: 35px;
+  top: -5px;
   left: 0;
   z-index: 1;
 }
@@ -58,7 +58,7 @@
   align-items: center;
   width: 25px;
   height: 25px;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--tg-theme-hint-color);
 
   &.active {
     background-color: var(--accent-color);

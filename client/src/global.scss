@@ -6,11 +6,6 @@
   --tg-theme-button-color: #F3D535;
   --tg-theme-button-text-color: #2D3146;
   --accent-color: #F3D535;
-  //--button-background-color: #F3D535;
-  //--button-text-color: #ffffff;
-  //--accent-color: #F3D535;
-  //--black-color: #2D3146;
-  //--text-color: #8E8E8E;
   --bg-grey-color: #DEDEDE;
   --color-white: #ffffff;
   --color-error: #FF3737;
@@ -39,12 +34,19 @@ body {
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 
+  svg {
+    fill: var(--tg-theme-text-color)
+  }
+
   &.darkTheme {
     --tg-theme-bg-color: #000;
     --tg-theme-text-color: #ffffff;
     --tg-theme-hint-color: #8E8E8E;
     --bg-grey-color: #313131;
 
+    svg {
+      fill: #2D3146
+    }
   }
 }
 
@@ -80,6 +82,7 @@ select {
   padding: 6px;
   border-radius: 12px;
   color: var(--tg-theme-hint-color);
+  background-color: var(--tg-theme-bg-color);
   border: 1px solid var(--tg-theme-button-color);
   text-align: center;
 }

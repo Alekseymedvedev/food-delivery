@@ -5,6 +5,7 @@ import App from './App';
 import {BrowserRouter} from 'react-router-dom';
 import {Provider} from "react-redux";
 import {setupStore} from "./store/store";
+import {Loader} from "./shared/loader/loader";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -14,7 +15,7 @@ root.render(
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
-                <Suspense fallback={"Загрузка"}>
+                <Suspense fallback={<Loader circle/>}>
                     <App/>
                 </Suspense>
             </BrowserRouter>

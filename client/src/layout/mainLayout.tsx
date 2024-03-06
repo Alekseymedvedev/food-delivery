@@ -17,7 +17,7 @@ export const MainLayout: FC<IType> = ({children, heading, homePage, textCenter, 
     const {tg} = useTelegram();
     const navigate = useNavigate();
     return (
-        <div className={tg?.colorScheme !== 'light' ? 'container darkTheme' : 'container'}>
+        <div className={tg?.colorScheme !== 'light' ? 'container darkTheme' : 'container darkTheme'}>
             <h1 className={textCenter ? "h1 textCenter" : "h1"}>
                 {!homePage &&
                     <span className={"back"} onClick={() => navigate(-1)}>
