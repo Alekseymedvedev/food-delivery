@@ -30,7 +30,7 @@ const ProfilePage = () => {
         }
        if(data) setModal(true)
     },[data])
-    console.log(data)
+
     const handlerSave = () => {
         updateUser({
             userId: user?.id,
@@ -46,7 +46,7 @@ const ProfilePage = () => {
     return (
         <MainLayout heading={'Профиль'} textCenter>
             <form onSubmit={(e) => e.preventDefault()}>
-                {isLoading && <Loader circle/>}
+                {isLoading && <Loader height={100}/>}
                 <div className={classes.title}>Мои данные</div>
                 <div className={classes.box}>
                     <SimpleTextField placeholder={'Имя'} onChange={nameInput.onChange} value={nameInput.value}

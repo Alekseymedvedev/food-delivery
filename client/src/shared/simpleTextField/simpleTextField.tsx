@@ -25,7 +25,7 @@ export const SimpleTextField: FC<IType> = memo(({placeholder, type, label, value
                             mask={'+7 999 999 99 99'}
                             value={value}
                             onChange={onChange}/>
-                        {error && <span className="error"></span>}
+                        {error && <span className="error">Поле обязательно к заполнению</span>}
                     </label>
                     :
                     <label className={classes.label}>
@@ -36,7 +36,7 @@ export const SimpleTextField: FC<IType> = memo(({placeholder, type, label, value
                             type="text"
                             value={value}
                             onChange={onChange}/>
-                        {error && <span className="error"></span>}
+                        {error && <span className="error">Поле обязательно к заполнению</span>}
                     </label>
                 }
             </>
