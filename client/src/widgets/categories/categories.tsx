@@ -19,7 +19,7 @@ export const Categories: FC<IType> = memo(({children}) => {
     }
     return (
         <div>
-            {isLoading && <Loader height={164}/>}
+            {isLoading && <Loader height={184}/>}
             {
                 data && data.map((item: ICategory) =>
                     <NavLink key={item.id} to={`/category/${item.id}`}>

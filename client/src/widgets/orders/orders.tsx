@@ -4,6 +4,7 @@ import {Order} from "../../entities/order/order";
 import {useGetAllOrdersUserQuery} from "../../store/API/ordersApi";
 import {useAppSelector} from "../../hooks/useRedux";
 import {NavLink} from "react-router-dom";
+import {Loader} from "../../shared/loader/loader";
 
 
 interface IType {
@@ -16,6 +17,7 @@ export const Orders: FC<IType> = memo(({children}) => {
 
     return (
         <div className={classes.orders}>
+            {isLoading && <Loader height={75}/>}
             {
                 data?.length ? data?.map(item =>
                         <NavLink key={item.id} to={`/order/${item.id}`}>

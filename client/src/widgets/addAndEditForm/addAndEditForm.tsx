@@ -10,6 +10,7 @@ import {useAppSelector} from "../../hooks/useRedux";
 import {createPortal} from "react-dom";
 import {Modal} from "../../entities/modal/modal";
 import {InputRadio} from "../../shared/inputRadio/inputRadio";
+import {Loader} from "../../shared/loader/loader";
 
 
 interface IType {
@@ -136,7 +137,15 @@ export const AddAndEditForm: FC<IType> = ({
     }
     return (
         <>
-
+            {
+                (
+                    isLoadingCreateCategory ||
+                    isLoadingUpdateCategory ||
+                    isLoadingCreateProduct ||
+                    isLoadingUpdateProduct
+                )
+                && <Loader circle/>
+            }
             <form className={classes.addAndEditForm}>
                 <div className={'mb-4'}>
                     {

@@ -5,13 +5,14 @@ import {useGetCategoryQuery} from "../../store/API/categoriesApi";
 import {NavLink, useParams} from "react-router-dom";
 import {Product} from "../../entities/product/product";
 import {BtnGroup} from "../../shared/btnGroup/btnGroup";
+import {Loader} from "../../shared/loader/loader";
 
 
 const SettingsCategoryPage = () => {
     const {id} = useParams()
     const [addNewProductForm, setAddNewProduct] = useState(false)
     const [editCategory, setEditCategory] = useState(true)
-    const {data, isError} = useGetCategoryQuery(`${id}`)
+    const {data, isError,isLoading} = useGetCategoryQuery(`${id}`)
 
 
     const addHandler = () => {
@@ -32,6 +33,7 @@ const SettingsCategoryPage = () => {
                     textOneBtn={'Редактировать'}
                     textTwoBtn={'Блюдо +'}/>
             </div>
+
             {
                 (addNewProductForm && !editCategory) && <AddAndEditForm addNewProductForm categoryId={id}/>
             }

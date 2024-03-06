@@ -4,6 +4,7 @@ import React from "react";
 import {NavLink, useParams} from "react-router-dom";
 import {useGetOneOrderQuery} from "../../store/API/ordersApi";
 import {Product} from "../../entities/product/product";
+import {Loader} from "../../shared/loader/loader";
 
 
 const OneOrderPage = () => {
@@ -16,6 +17,7 @@ const OneOrderPage = () => {
         <MainLayout heading={`Заказ №${id}`} textCenter>
             <div>
                 <div className={classes.products}>
+                    {isLoading && <Loader height={86}/>}
                     {
                         data && data?.orderProducts.map(item =>
                             <Product key={item.id} data={item} inOrder/>

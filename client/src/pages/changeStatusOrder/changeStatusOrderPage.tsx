@@ -1,16 +1,32 @@
 import {MainLayout} from "../../layout/mainLayout"
 import {useGetOrdersQuery, useUpdateOrderStatusMutation,} from "../../store/API/ordersApi";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import classes from './changeStatusOrderPage.module.scss'
 import {NavLink} from "react-router-dom";
 import {Button} from "../../shared/button/button";
 import {Select} from "../../shared/select/select";
+import {Loader} from "../../shared/loader/loader";
+import {createPortal} from "react-dom";
+import {Modal} from "../../entities/modal/modal";
 
 const variants = ['новый', 'готовиться', 'готово к выдаче', 'выдано в доставку', 'получен']
 const ChangeStatusOrderPage = () => {
     const {data, isError, isLoading} = useGetOrdersQuery('')
-    const [updateStatus] = useUpdateOrderStatusMutation()
+    const [updateStatus,{data:dataUpdate, isError:isErrorUpdate, isLoading:isLoadingUpdate}] = useUpdateOrderStatusMutation()
     const [select, setSelect] = useState('')
+
+    const [modal, setModal] = useState(false)
+    const [textModal, setTextModal] = useState('')
+
+    useEffect(() => {
+        if (isErrorUpdate) {
+            setTextModal('Ошибка при обновлении статуса')
+        } else {
+            setTextModal('Статус обновлен')
+        }
+        if (dataUpdate) setModal(true)
+    }, [dataUpdate])
+
     if (isError) {
         return <h2 className={'error'}>Произошла ошибка при загрузке данных. Попробуйте обновить страницу</h2>
     }
@@ -26,6 +42,8 @@ const ChangeStatusOrderPage = () => {
     return (
         <MainLayout heading={'Изменение статуса заказа'}>
             <div className={classes.list}>
+                {isLoadingUpdate && <Loader circle/>}
+                {isLoading && <Loader height={118}/>}
                 {
                     data && data.map(item =>
                         <div className={classes.box} key={item?.id}>
@@ -41,6 +59,11 @@ const ChangeStatusOrderPage = () => {
                     )
                 }
             </div>
+            {modal && createPortal(
+                <Modal textModal={textModal} onClick={() => setModal(false)}
+                       textBtn={'Закрыть'}/>,
+                document.body
+            )}
         </MainLayout>
     );
 };

@@ -6,11 +6,12 @@ import {Button} from "../../shared/button/button";
 import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
 import {addProductToCart} from "../../store/slice/productsSlice";
 import React from "react";
+import {Loader} from "../../shared/loader/loader";
 
 
 const ProductPage = () => {
     const {id} = useParams()
-    const {data, isError} = useGetOneProductQuery(`${id}`)
+    const {data, isError,isLoading} = useGetOneProductQuery(`${id}`)
     const dispatch = useAppDispatch()
     const addHandler = () => {
         dispatch(addProductToCart(data))
@@ -21,6 +22,7 @@ const ProductPage = () => {
     return (
         <MainLayout heading={data?.title} textCenter>
             <div className="mb-4">
+                {isLoading && <Loader height={428}/>}
                 <Product data={data} oneProduct/>
             </div>
             {
