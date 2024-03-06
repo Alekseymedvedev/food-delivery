@@ -9,8 +9,10 @@
     width: 100%;
     padding: 10px 39px;
     cursor: pointer;
+    color: var(--color-white);
 
     &.active {
+      color: var(--tg-theme-button-text-color);
       background: var(--tg-theme-button-color);
     }
   }
