@@ -46,7 +46,7 @@ const ProfilePage = () => {
     return (
         <MainLayout heading={'Профиль'} textCenter>
             <form onSubmit={(e) => e.preventDefault()}>
-                {isLoading && <Loader height={100}/>}
+                {isLoading && <Loader circle/>}
                 <div className={classes.title}>Мои данные</div>
                 <div className={classes.box}>
                     <SimpleTextField placeholder={'Имя'} onChange={nameInput.onChange} value={nameInput.value}
