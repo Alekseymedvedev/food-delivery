@@ -44,9 +44,7 @@ body {
     --tg-theme-hint-color: #8E8E8E;
     --bg-grey-color: #313131;
 
-    svg {
-      fill: #2D3146
-    }
+
   }
 }
 
@@ -134,4 +132,11 @@ select {
 
 .mb-6 {
   margin-bottom: 24px;
+}
+.loader{
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }

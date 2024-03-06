@@ -50,6 +50,7 @@ export const Calendar: FC<IType> = memo(({changeDate}) => {
                 <div className={classes.item}>
                     <div className={classes.box}>
                         <Select
+                            initValue={1990}
                             dataOption={Array.from({length: 100}, (_, i) => new Date().getFullYear() - i)}
                             onChange={handlerYear}/>
                         <Select

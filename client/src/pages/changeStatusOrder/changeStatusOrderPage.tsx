@@ -31,7 +31,7 @@ const ChangeStatusOrderPage = () => {
                         <div className={classes.box} key={item?.id}>
                             <div className={classes.item}>
                                 <div className={classes.title}>Заказ №{item?.id}</div>
-                                <Select onChange={setSelect} dataOption={variants} defaultValue={item?.status}/>
+                                <Select onChange={setSelect} dataOption={variants} initValue={item?.status}/>
                             </div>
                             <div className={classes.inner}>
                                 <NavLink className={classes.link} to={`/order/${item.id}`}>Перейти в заказ</NavLink>

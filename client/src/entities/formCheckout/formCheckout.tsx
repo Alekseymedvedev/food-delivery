@@ -13,6 +13,7 @@ import {useUpdateUserMutation} from "../../store/API/userApi";
 import {createPortal} from "react-dom";
 import {Modal} from "../modal/modal";
 import {deleteProductInCart} from "../../store/slice/productsSlice";
+import {Loader} from "../../shared/loader/loader";
 
 interface IType {
 
@@ -75,6 +76,7 @@ export const FormCheckout: FC<IType> = memo(() => {
     }
     return (
         <form className={classes.formCheckout} onSubmit={(e) => e.preventDefault()}>
+            {isLoading && <Loader circle/>}
             <div className={classes.inner}>
                 <BtnGroup
                     activeOneBtn={typeDelivery === 'Доставка'}
