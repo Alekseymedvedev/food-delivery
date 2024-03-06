@@ -21,17 +21,16 @@
   font-weight: 400;
   font-size: 10px;
   color: var(--bg-grey-color);
-  fill: var(--bg-grey-color);
   line-height: 12px;
   position: relative;
+  --icon-color: #DEDEDE;
 
   &.active {
     color: var(--tg-theme-button-color);
-    fill: var(--tg-theme-button-color);
-  }
 
-  svg {
-    fill: inherit;
+    svg {
+      fill: var(--accent-color)
+    }
   }
 }
 
