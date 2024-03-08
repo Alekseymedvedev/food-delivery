@@ -10,8 +10,12 @@ export const userApi = createApi({
     endpoints: (build) => ({
         authUser: build.mutation({
             query: (body) => ({
+                mode: 'no-cors',
                 url: `auth`,
                 method: 'Post',
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body
             }),
         }),
