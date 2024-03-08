@@ -11,6 +11,7 @@ import {useAuthUserMutation} from "./store/API/userApi";
 const dataUser = {
     chatId: 1035451470,
     username: "Amed152",
+    queryId: "AAFOvLc9AAAAAE68tz2o81k0"
 };
 
 interface IRoutes {
@@ -25,7 +26,11 @@ function App() {
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
-        authUser(dataUser)
+         authUser({
+             chatId: 1035451470,
+             username: 'Amed152',
+             queryId: 'AAFOvLc9AAAAAE68tz3ynEhS'
+         })
         //  authUser({
         //     chatId: tg?.initDataUnsafe?.user?.id,
         //     username: tg?.initDataUnsafe?.user?.username,
