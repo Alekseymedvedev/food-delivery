@@ -137,6 +137,7 @@ export const AddAndEditForm: FC<IType> = ({
         }
     }
     const deleteProductHandler = () => {
+        console.log(productId)
         deleteProduct(productId)
     }
     return (
@@ -160,12 +161,17 @@ export const AddAndEditForm: FC<IType> = ({
                                        error={nameInput.error}/>
                         </div>
                     }
+
                     {
                         (addNewProductForm || updateProductForm) &&
                         <div className={classes.box}>
-                            <div className="mb-4">
-                                <Button onClick={deleteProductHandler}>Удалить блюдо</Button>
-                            </div>
+                            {
+                                updateProductForm &&
+                                <div className="mb-4">
+                                    <Button onClick={deleteProductHandler}>Удалить блюдо</Button>
+                                </div>
+                            }
+
                             <div className={classes.productDisabled}>
                                 Отображение в каталоге
                                 <InputRadio label={'Не виден'} value={false} onChange={setDisabledProduct}
