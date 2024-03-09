@@ -10,7 +10,7 @@ interface IType {
 }
 
 export const InputRadio: FC<IType> = ({checked, value, onChange, name, label}) => {
-    console.log(checked)
+
     return (
         <label className={classes.label}>
             <input className={classes.customRadio} type="radio" name={name} value={value}
