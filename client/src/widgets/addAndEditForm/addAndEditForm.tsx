@@ -3,7 +3,7 @@ import classes from './addAndEditForm.module.scss'
 import {TextField} from "../../shared/textField/textField";
 import {Button} from "../../shared/button/button";
 import {useInput} from "../../hooks/useInput";
-import {useCreateNewProductMutation, useUpdateProductMutation} from "../../store/API/productsApi";
+import {useCreateNewProductMutation, useDeleteProductMutation, useUpdateProductMutation} from "../../store/API/productsApi";
 import {useCreateNewCategoryMutation, useGetCategoriesQuery, useUpdateCategoryMutation} from "../../store/API/categoriesApi";
 import {ICategory, IProduct} from "../../types/types";
 import {useAppSelector} from "../../hooks/useRedux";
@@ -49,6 +49,7 @@ export const AddAndEditForm: FC<IType> = ({
     const [updateCategory, {error: errorUpdateCategory, isLoading: isLoadingUpdateCategory}] = useUpdateCategoryMutation()
     const [addNewProduct, {error: errorAddNewProduct, isLoading: isLoadingCreateProduct}] = useCreateNewProductMutation()
     const [updateProduct, {error: errorUpdateProduct, isLoading: isLoadingUpdateProduct}] = useUpdateProductMutation()
+    const [deleteProduct, {error: errorDeleteProduct, isLoading: isLoadingDeleteProduct}] = useDeleteProductMutation()
 
     useEffect(() => {
         if (errorAddNewCategory && !isLoadingCreateCategory) {
@@ -135,6 +136,9 @@ export const AddAndEditForm: FC<IType> = ({
             updateProduct({id: productId, body: formData})
         }
     }
+    const deleteProductHandler = () => {
+        deleteProduct(productId)
+    }
     return (
         <>
             {
@@ -159,6 +163,9 @@ export const AddAndEditForm: FC<IType> = ({
                     {
                         (addNewProductForm || updateProductForm) &&
                         <div className={classes.box}>
+                            <div className="mb-4">
+                                <Button onClick={deleteProductHandler}>Удалить блюдо</Button>
+                            </div>
                             <div className={classes.productDisabled}>
                                 Отображение в каталоге
                                 <InputRadio label={'Не виден'} value={false} onChange={setDisabledProduct}
