@@ -53,7 +53,7 @@ export const AddAndEditForm: FC<IType> = ({
     const [addNewProduct, {error: errorAddNewProduct, isLoading: isLoadingCreateProduct}] = useCreateNewProductMutation()
     const [updateProduct, {error: errorUpdateProduct, isLoading: isLoadingUpdateProduct}] = useUpdateProductMutation()
     const [deleteProduct, {data: dataDeleteProduct,error: errorDeleteProduct, isLoading: isLoadingDeleteProduct}] = useDeleteProductMutation()
-    
+
     useEffect(() => {
         if (dataDeleteProduct && !errorDeleteProduct && !isLoadingDeleteProduct) {
             navigate(`/more/settings`)
