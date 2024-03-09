@@ -11,6 +11,7 @@ import {createPortal} from "react-dom";
 import {Modal} from "../../entities/modal/modal";
 import {InputRadio} from "../../shared/inputRadio/inputRadio";
 import {Loader} from "../../shared/loader/loader";
+import {useNavigate} from "react-router-dom";
 
 
 interface IType {
@@ -34,6 +35,8 @@ export const AddAndEditForm: FC<IType> = ({
                                               addNewProductForm,
                                               updateProductForm,
                                           }) => {
+    const navigate = useNavigate();
+
     const {data: dataCategories, error: dataError} = useGetCategoriesQuery('')
     const [textModal, setTextModal] = useState('')
     const {user} = useAppSelector((state) => state.userReducer);
@@ -49,7 +52,13 @@ export const AddAndEditForm: FC<IType> = ({
     const [updateCategory, {error: errorUpdateCategory, isLoading: isLoadingUpdateCategory}] = useUpdateCategoryMutation()
     const [addNewProduct, {error: errorAddNewProduct, isLoading: isLoadingCreateProduct}] = useCreateNewProductMutation()
     const [updateProduct, {error: errorUpdateProduct, isLoading: isLoadingUpdateProduct}] = useUpdateProductMutation()
-    const [deleteProduct, {error: errorDeleteProduct, isLoading: isLoadingDeleteProduct}] = useDeleteProductMutation()
+    const [deleteProduct, {data: dataDeleteProduct,error: errorDeleteProduct, isLoading: isLoadingDeleteProduct}] = useDeleteProductMutation()
+
+    useEffect(() => {
+        if (dataDeleteProduct && !errorDeleteProduct && !isLoadingDeleteProduct) {
+            navigate(`/more/settings-category/${categoryId}`)
+        }
+    }, [dataDeleteProduct]);
 
     useEffect(() => {
         if (errorAddNewCategory && !isLoadingCreateCategory) {
@@ -136,6 +145,7 @@ export const AddAndEditForm: FC<IType> = ({
             updateProduct({id: productId, body: formData})
         }
     }
+
     const deleteProductHandler = () => {
         deleteProduct(productId)
     }
