@@ -93,16 +93,20 @@ export const FormCheckout: FC<IType> = memo(() => {
                 <SimpleTextField label={"Контакты"} type={'phone'} value={phone.value} onChange={phone.onChange} error={phone.error}/>
                 <SimpleTextField label={"Имя"} value={name.value} onChange={name.onChange}/>
             </div>
-            <div className={'mb-4'}>
-                <div className={classes.paymentTitle}>
-                    <div>Метод оплаты</div>
-                    {paymentMethodError && <div className={'error'}>Выберите метод оплаты</div>}
+            {
+                typeDelivery === 'Доставка' &&
+                <div className={'mb-4'}>
+                    <div className={classes.paymentTitle}>
+                        <div>Метод оплаты</div>
+                        {paymentMethodError && <div className={'error'}>Выберите метод оплаты</div>}
+                    </div>
+                    <InputRadio label={'Наличные'} value={'Наличные'} onChange={setPaymentMethod} name={"payment"}/>
+                    <InputRadio label={'Эквайринг'} value={'Эквайринг'} onChange={setPaymentMethod} name={"payment"}/>
+                    <InputRadio label={'Картой при получении'} value={'Картой при получении'} onChange={setPaymentMethod}
+                                name={"payment"}/>
                 </div>
-                <InputRadio label={'Наличные'} value={'Наличные'} onChange={setPaymentMethod} name={"payment"}/>
-                <InputRadio label={'Эквайринг'} value={'Эквайринг'} onChange={setPaymentMethod} name={"payment"}/>
-                <InputRadio label={'Картой при получении'} value={'Картой при получении'} onChange={setPaymentMethod}
-                            name={"payment"}/>
-            </div>
+            }
+
             <Button onClick={submitHandler}>Офрмить заказ</Button>
             {modalError && createPortal(
                 <Modal textModal={'Ошибка при оформлении заказа'} onClick={() => setModalError(false)}
