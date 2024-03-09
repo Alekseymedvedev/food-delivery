@@ -137,7 +137,6 @@ export const AddAndEditForm: FC<IType> = ({
         }
     }
     const deleteProductHandler = () => {
-        console.log(productId)
         deleteProduct(productId)
     }
     return (
@@ -147,7 +146,8 @@ export const AddAndEditForm: FC<IType> = ({
                     isLoadingCreateCategory ||
                     isLoadingUpdateCategory ||
                     isLoadingCreateProduct ||
-                    isLoadingUpdateProduct
+                    isLoadingUpdateProduct ||
+                    isLoadingDeleteProduct
                 )
                 && <Loader circle/>
             }
