@@ -5,7 +5,7 @@ import {token} from "./getTokenApi";
 export const ordersApi = createApi({
     reducerPath: "ordersApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: `${process.env.REACT_APP_API_URL}orders`,
+        baseUrl: `${process.env.REACT_APP_API_URL}api/orders`,
     }),
     tagTypes: ['Orders'],
     endpoints: (build) => ({

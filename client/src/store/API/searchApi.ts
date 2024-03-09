@@ -4,7 +4,7 @@ import { IProduct} from "../../types/types";
 export const searchApi = createApi({
     reducerPath: "searchApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: `${process.env.REACT_APP_API_URL}search`,
+        baseUrl: `${process.env.REACT_APP_API_URL}api/search`,
     }),
     endpoints: (build) => ({
         search: build.query<IProduct[], string>({

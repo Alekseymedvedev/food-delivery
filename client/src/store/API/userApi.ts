@@ -1,17 +1,15 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import {ICategory, IOrder} from "../../types/types";
 import {token} from "./getTokenApi";
 
 export const userApi = createApi({
     reducerPath: "userApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: `${process.env.REACT_APP_API_URL}`,
+        baseUrl: `${process.env.REACT_APP_API_URL}api`,
     }),
     endpoints: (build) => ({
         authUser: build.mutation({
             query: (body) => ({
-                // mode: 'no-cors',
-                url: `auth`,
+                url: `/auth`,
                 method: 'Post',
                 headers: {
                     "Content-Type": "application/json",

@@ -77,10 +77,12 @@ export const AddAndEditForm: FC<IType> = ({
     }, [isLoadingUpdateCategory, errorUpdateCategory]);
 
     useEffect(() => {
+
         if (errorAddNewProduct && !isLoadingCreateProduct) {
             setTextModal('Ошибка при добавлении блюда')
         } else if (isLoadingCreateProduct) {
             setTextModal('Блюдо успешно добавлено')
+            navigate(`/more/settings-category/${categoryId}`)
         }
     }, [isLoadingCreateProduct, errorAddNewProduct]);
 

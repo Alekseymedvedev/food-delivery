@@ -5,7 +5,7 @@ import {token} from "./getTokenApi";
 export const categoriesApi = createApi({
     reducerPath: "categoriesApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: `${process.env.REACT_APP_API_URL}categories/`,
+        baseUrl: `${process.env.REACT_APP_API_URL}api/categories/`,
         prepareHeaders: (headers, {getState}) => {
             headers.set("Authorization", `Bearer ${token}`)
         },
