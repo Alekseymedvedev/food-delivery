@@ -45,7 +45,7 @@ export const Search: FC<IType> = memo(({children}) => {
                             products?.map(item =>
                                 <NavLink key={item.id} className={classes.inner} to={`/product/${item.id}`}>
                                     <div className={classes.image}>
-                                        <img src={process.env.REACT_APP_API_URL + item.image} alt={item.title}/>
+                                        <img src={'http://95.163.229.74:5000/' + item.image} alt={item.title}/>
                                     </div>
                                     <div>
                                         <div className={classes.title}>{item.title}</div>

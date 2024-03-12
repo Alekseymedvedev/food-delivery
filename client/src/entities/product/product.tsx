@@ -60,7 +60,7 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
                 </>
             }
             <div className={classes.image}>
-                <img src={process.env.REACT_APP_API_URL + data?.image} alt={data?.title}/>
+                <img src={'http://95.163.229.74:5000/' + data?.image} alt={data?.title}/>
             </div>
             <div className={classes.box}>
                 <div className={classes.title}>
