@@ -16,7 +16,7 @@ export const Category: FC<IType> = memo(({data, inkAll}) => {
                 {inkAll && <LinkAll link={`category/${data.id}`}/>}
             </h2>
             <div className={classes.image}>
-                <img src={'http://95.163.229.74:5000/' + data.image} alt={data.title}/>
+                <img src={process.env.REACT_APP_API_URL + data.image} alt={data.title}/>
             </div>
         </div>
     );

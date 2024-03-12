@@ -50,22 +50,23 @@ export const FormCheckout: FC<IType> = memo(() => {
         }
     }, [dataCreate])
 
-
+    console.log(typeDelivery)
     const submitHandler = () => {
         const data: IOrderCreate = {
             userId: user?.id,
-            address: address.value,
+            address: typeDelivery === 'Доставка' ? address.value :'Самовывоз',
             typeDelivery,
             phone: phone.value,
             name: name.value,
-            paymentMethod,
+            paymentMethod: typeDelivery === 'Доставка' ? paymentMethod : 'Наличные',
             orderProducts: productsInCart.map(item => ({id: +item?.id, count: +item?.count})),
             status: 'новый'
         }
         if (!paymentMethod) setPaymentMethodError(true)
         if (!address.value) address.setError(true)
         if (!phone.value) phone.setError(true)
-        if (address.value && phone.value && paymentMethod) {
+        if (data.address && data.phone && data.paymentMethod) {
+            console.log(typeDelivery)
             createOrder(data)
             updateUser({
                 userId: user?.id,
@@ -89,7 +90,10 @@ export const FormCheckout: FC<IType> = memo(() => {
                     textTwoBtn={'Самовывоз'}/>
             </div>
             <div className={classes.box}>
-                <SimpleTextField label={"Укажите адрес доставки"} value={address.value} onChange={address.onChange} error={address.error}/>
+                {
+                    typeDelivery === 'Доставка' &&
+                    <SimpleTextField label={"Укажите адрес доставки"} value={address.value} onChange={address.onChange} error={address.error}/>
+                }
                 <SimpleTextField label={"Контакты"} type={'phone'} value={phone.value} onChange={phone.onChange} error={phone.error}/>
                 <SimpleTextField label={"Имя"} value={name.value} onChange={name.onChange}/>
             </div>
