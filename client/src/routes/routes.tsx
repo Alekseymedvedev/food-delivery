@@ -14,6 +14,7 @@ import {StatisticsPage} from "../pages/statistics/statisticsPageLazy";
 import {FavoritesPage} from "../pages/favorites/favoritesPageLazy";
 import {ChangeStatusOrderPage} from "../pages/changeStatusOrder/changeStatusOrderPageLazy";
 import {UpdateRoleUserPage} from "../pages/updateRoleUser/updateRoleUserPageLazy";
+import {AddAminPage} from "../pages/addAmin/addAminPageLazy";
 
 
 export const routes = [
@@ -37,5 +38,6 @@ export const adminRoutes =[
     {path: "/more/change-status-order", element: <ChangeStatusOrderPage/>},
 ]
 export const superAdminRoutes =[
-    {path: "/update-user/:id", element: <UpdateRoleUserPage/>}
+    {path: "/update-user/:id", element: <UpdateRoleUserPage/>},
+    {path: "/more/add-admin", element: <AddAminPage/>}
 ]

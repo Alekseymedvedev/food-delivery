@@ -21,10 +21,13 @@ interface IType {
 
 export const FormCheckout: FC<IType> = memo(() => {
     const navigate = useNavigate();
+
     const dispatch = useAppDispatch()
     const {user} = useAppSelector((state) => state.userReducer);
+
     const [createOrder, {data: dataCreate, error, isLoading}] = useCreateNewOrderMutation()
     const [updateUser] = useUpdateUserMutation()
+
     const {productsInCart} = useAppSelector(state => state.productReducer)
 
     const address = useInput(user?.address ? user?.address : '')
@@ -35,7 +38,6 @@ export const FormCheckout: FC<IType> = memo(() => {
     const [paymentMethod, setPaymentMethod] = useState('')
     const [paymentMethodError, setPaymentMethodError] = useState(false)
     const [modalError, setModalError] = useState(false)
-
     useEffect(() => {
         if (error && !isLoading) {
             setModalError(true)
@@ -50,7 +52,7 @@ export const FormCheckout: FC<IType> = memo(() => {
         }
     }, [dataCreate])
 
-    console.log(typeDelivery)
+
     const submitHandler = () => {
         const data: IOrderCreate = {
             userId: user?.id,
@@ -105,7 +107,7 @@ export const FormCheckout: FC<IType> = memo(() => {
                         {paymentMethodError && <div className={'error'}>Выберите метод оплаты</div>}
                     </div>
                     <InputRadio label={'Наличные'} value={'Наличные'} onChange={setPaymentMethod} name={"payment"}/>
-                    <InputRadio label={'Эквайринг'} value={'Эквайринг'} onChange={setPaymentMethod} name={"payment"}/>
+                    {/*<InputRadio label={'Эквайринг'} value={'Эквайринг'} onChange={setPaymentMethod} name={"payment"}/>*/}
                     <InputRadio label={'Картой при получении'} value={'Картой при получении'} onChange={setPaymentMethod}
                                 name={"payment"}/>
                 </div>

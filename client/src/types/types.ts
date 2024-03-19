@@ -8,6 +8,7 @@ export interface IProduct {
     categoryId: number;
     description?: string;
     count: number;
+    grams: number;
     disabled: boolean;
 }
 

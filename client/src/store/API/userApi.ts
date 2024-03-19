@@ -18,6 +18,11 @@ export const userApi = createApi({
                 body
             }),
         }),
+        getAllUsers: build.query({
+            query: () => ({
+                url: `/user`,
+            }),
+        }),
         getUser: build.query({
             query: (id) => ({
                 url: `/user/${id}`,
@@ -52,6 +57,7 @@ export const userApi = createApi({
 export const {
     useAuthUserMutation,
     useGetUserQuery,
+    useGetAllUsersQuery,
     useUpdateRoleUserMutation,
     useDeleteUserMutation,
     useUpdateUserMutation

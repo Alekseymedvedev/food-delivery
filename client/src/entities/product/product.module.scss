@@ -30,7 +30,9 @@
     fill: var(--accent-color);
   }
 }
-
+.grams{
+  color: var(--tg-theme-hint-color) ;
+}
 .description {
   max-width: 190px;
   margin-bottom: 13px;

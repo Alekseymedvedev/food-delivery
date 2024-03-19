@@ -6,6 +6,7 @@ import userReducer from "./slice/userSlice"
 import {ordersApi} from "./API/ordersApi";
 import {searchApi} from "./API/searchApi";
 import {userApi} from "./API/userApi";
+import {contactsApi} from "./API/contactsApi";
 
 const rootReducer = combineReducers({
     [productsApi.reducerPath]: productsApi.reducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     [ordersApi.reducerPath]: ordersApi.reducer,
     [searchApi.reducerPath]: searchApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
+    [contactsApi.reducerPath]: contactsApi.reducer,
     productReducer,
     userReducer,
 
@@ -27,6 +29,7 @@ export const setupStore = () =>
             ordersApi.middleware,
             searchApi.middleware,
             userApi.middleware,
+            contactsApi.middleware,
         ),
     });
 

@@ -4,7 +4,12 @@ import {TextField} from "../../shared/textField/textField";
 import {Button} from "../../shared/button/button";
 import {useInput} from "../../hooks/useInput";
 import {useCreateNewProductMutation, useDeleteProductMutation, useUpdateProductMutation} from "../../store/API/productsApi";
-import {useCreateNewCategoryMutation, useGetCategoriesQuery, useUpdateCategoryMutation} from "../../store/API/categoriesApi";
+import {
+    useCreateNewCategoryMutation,
+    useDeleteCategoryMutation,
+    useGetCategoriesQuery,
+    useUpdateCategoryMutation
+} from "../../store/API/categoriesApi";
 import {ICategory, IProduct} from "../../types/types";
 import {useAppSelector} from "../../hooks/useRedux";
 import {createPortal} from "react-dom";
@@ -45,6 +50,7 @@ export const AddAndEditForm: FC<IType> = ({
 
     const [file, setFile] = useState<any>()
     const nameInput = useInput(categoryData ? categoryData?.title : productData ? productData?.title : '')
+    const gramInput = useInput( productData ? productData?.grams : '')
     const descriptionInput = useInput(productData ? productData?.description : '')
     const priceInput = useInput(productData ? productData?.price : '')
 
@@ -52,13 +58,25 @@ export const AddAndEditForm: FC<IType> = ({
     const [updateCategory, {error: errorUpdateCategory, isLoading: isLoadingUpdateCategory}] = useUpdateCategoryMutation()
     const [addNewProduct, {error: errorAddNewProduct, isLoading: isLoadingCreateProduct}] = useCreateNewProductMutation()
     const [updateProduct, {error: errorUpdateProduct, isLoading: isLoadingUpdateProduct}] = useUpdateProductMutation()
-    const [deleteProduct, {data: dataDeleteProduct,error: errorDeleteProduct, isLoading: isLoadingDeleteProduct}] = useDeleteProductMutation()
+    const [deleteProduct, {
+        data: dataDeleteProduct,
+        error: errorDeleteProduct,
+        isLoading: isLoadingDeleteProduct
+    }] = useDeleteProductMutation()
+    const [deleteCategory, {
+        data: dataDeleteCategory,
+        error: errorDeleteCategory,
+        isLoading: isLoadingDeleteCategory
+    }] = useDeleteCategoryMutation()
 
     useEffect(() => {
         if (dataDeleteProduct && !errorDeleteProduct && !isLoadingDeleteProduct) {
             navigate(`/more/settings`)
         }
-    }, [dataDeleteProduct]);
+        if(dataDeleteCategory && !errorDeleteCategory && !isLoadingDeleteCategory){
+            navigate(`/more/settings`)
+        }
+    }, [dataDeleteProduct,dataDeleteCategory]);
 
     useEffect(() => {
         if (errorAddNewCategory && !isLoadingCreateCategory) {
@@ -115,15 +133,17 @@ export const AddAndEditForm: FC<IType> = ({
 
             updateCategory({id: categoryId, body: formData})
         }
-
         if (addNewProductForm) {
-            if (nameInput.value === '' || priceInput.value === '' || descriptionInput.value === '' || !file) {
+
+            if (nameInput.value === '' || gramInput.value === '' || priceInput.value === '' || descriptionInput.value === '' || !file) {
                 nameInput.value === '' && nameInput.setError(true)
+                gramInput.value === '' && gramInput.setError(true)
                 priceInput.value === '' && priceInput.setError(true)
                 descriptionInput.value === '' && descriptionInput.setError(true)
             } else {
                 const formData = new FormData();
                 formData.append('title', nameInput.value);
+                formData.append('grams', gramInput.value);
                 formData.append('price', priceInput.value);
                 formData.append('image', file);
                 formData.append('userName', user?.name ? user?.name : '');
@@ -137,6 +157,7 @@ export const AddAndEditForm: FC<IType> = ({
         if (updateProductForm) {
             const formData = new FormData();
             nameInput.value && formData.append('title', nameInput.value);
+            gramInput.value && formData.append('grams', gramInput.value);
             priceInput.value && formData.append('price', priceInput.value);
             file && formData.append('image', file);
             formData.append('userName', user?.name ? user?.name : '');
@@ -151,6 +172,9 @@ export const AddAndEditForm: FC<IType> = ({
     const deleteProductHandler = () => {
         deleteProduct(productId)
     }
+    const deleteCategoryHandler = () => {
+        deleteCategory(categoryId)
+    }
     return (
         <>
             {
@@ -159,7 +183,8 @@ export const AddAndEditForm: FC<IType> = ({
                     isLoadingUpdateCategory ||
                     isLoadingCreateProduct ||
                     isLoadingUpdateProduct ||
-                    isLoadingDeleteProduct
+                    isLoadingDeleteProduct ||
+                    isLoadingDeleteCategory
                 )
                 && <Loader circle/>
             }
@@ -168,6 +193,12 @@ export const AddAndEditForm: FC<IType> = ({
                     {
                         (addCategoryForm || updateCategoryForm) &&
                         <div className={classes.box}>
+                            {
+                                updateCategoryForm &&
+                                <div className="mb-4">
+                                    <Button onClick={deleteCategoryHandler}>Удалить категорию</Button>
+                                </div>
+                            }
                             <TextField label={'Изображение'} type={'file'} onChangeFile={setFile} error={!file}/>
                             <TextField label={'Название'} onChange={nameInput.onChange} value={nameInput.value}
                                        error={nameInput.error}/>
@@ -183,6 +214,7 @@ export const AddAndEditForm: FC<IType> = ({
                                     <Button onClick={deleteProductHandler}>Удалить блюдо</Button>
                                 </div>
                             }
+
 
                             <div className={classes.productDisabled}>
                                 Отображение в каталоге
@@ -206,6 +238,8 @@ export const AddAndEditForm: FC<IType> = ({
                             }
                             <TextField label={'Название'} onChange={nameInput.onChange} value={nameInput.value}
                                        error={nameInput.error}/>
+                            <TextField label={'Вес'} onChange={gramInput.onChange} value={gramInput.value}
+                                       error={gramInput.error}/>
                             <TextField label={'Описание'} onChange={descriptionInput.onChange}
                                        value={descriptionInput.value} error={descriptionInput.error} description/>
                             <TextField label={'Цена'} onChange={priceInput.onChange} value={priceInput.value}

@@ -16,6 +16,7 @@ const linkArrAdmin = [
     // {to: "/more/statistics", text: "Статистика", icon: <StatisticsIcon isSimple/>},
     {to: "/more/settings", text: "Настойка товаров", icon: <SettingsIcon/>},
     {to: "/more/change-status-order", text: "Изменение статуса заказа", icon: <OrdersIcon/>},
+    {to: "/more/add-admin", text: "Изменение роли пользователя", icon: <SettingsIcon/>},
 ];
 const MorePage = () => {
     const {user} = useAppSelector((state) => state.userReducer);

@@ -13,18 +13,19 @@ import {Loader} from "../../shared/loader/loader";
 
 
 const ProfilePage = () => {
-    const {user} = useAppSelector((state) => state.userReducer);
+    const {user} = useAppSelector((state) => state.userReducer);useEffect(() => {}, [user]);
     const [updateUser, {data, isLoading, isError}] = useUpdateUserMutation()
 
-    const nameInput = useInput('')
-    const emailInput = useInput('')
-    const phoneInput = useInput('')
+    const nameInput = useInput(user.name)
+    const emailInput = useInput(user.email)
+    const phoneInput = useInput(user.phone)
 
     const [date, setDate] = useState('')
     const [gender, setGender] = useState({id: 1, text: 'Мужской'})
     const [modal, setModal] = useState(false)
     const [textModal, setTextModal] = useState('')
 
+    useEffect(() => {}, [user]);
     useEffect(() => {
         if (isError) {
             setTextModal('Ошибка при обновлении профиля')
