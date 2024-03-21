@@ -26,12 +26,11 @@ function App() {
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
     useEffect(() => {
-        authUser({chatId:tg?.initDataUnsafe})
-         // authUser({
-         //     chatId: 1035451470,
-         //     username: 'Amed152',
-         //     queryId: 'AAFOvLc9AAAAAE68tz3ynEhS'
-         // })
+         authUser({
+             chatId: 1035451470,
+             username: 'Amed152',
+             queryId: 'AAFOvLc9AAAAAE68tz3ynEhS'
+         })
         //  authUser({
         //     chatId: tg?.initDataUnsafe?.user?.id,
         //     username: tg?.initDataUnsafe?.user?.username,
