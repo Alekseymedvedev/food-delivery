@@ -22,7 +22,7 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
     const classesArr = [classes.product]
     if (oneProduct) classesArr.push(classes.oneProduct)
     if (inCart || inOrder) classesArr.push(classes.small)
-    // if (!data?.disabled) classesArr.push(classes.disabled)
+
 
     const [favouritesProduct, setFavouritesProduct] = useState<IProduct[]>()
 

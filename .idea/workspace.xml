@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/client/src/store/API/contactsApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/entities/formCheckout/formCheckout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/formCheckout/formCheckout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/entities/product/product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/entities/product/product.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/cart/cartPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/cart/cartPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/more/morePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/more/morePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/profile/profilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/profile/profilePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/routes/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes/routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/button/button.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/button/button.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/textField/textField.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/textField/textField.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/changeStatusOrder/changeStatusOrderPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/changeStatusOrder/changeStatusOrderPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/categoriesApi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/categoriesApi.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/getTokenApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/apiToken.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/ordersApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/ordersApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/API/productsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/productsApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/API/userApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/API/userApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/widgets/addAndEditForm/addAndEditForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,25 +45,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/aleks/Desktop/web/food-delivery/client/src/store/API",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.TypeScript",
-    "ts.external.directory.path": "C:\\Users\\aleks\\Desktop\\web\\food-delivery\\client\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleks/Desktop/web/food-delivery&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.TypeScript&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\aleks\\Desktop\\web\\food-delivery\\client\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -153,15 +146,9 @@
       <workItem from="1709757968907" duration="299000" />
       <workItem from="1709758365628" duration="48636000" />
       <workItem from="1710328249788" duration="540000" />
-      <workItem from="1710761770000" duration="12156000" />
-    </task>
-    <task id="LOCAL-00104" summary="commit">
-      <option name="closed" value="true" />
-      <created>1709671471886</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1709671471886</updated>
+      <workItem from="1710761770000" duration="14381000" />
+      <workItem from="1710942534920" duration="1015000" />
+      <workItem from="1711018618199" duration="357000" />
     </task>
     <task id="LOCAL-00105" summary="commit">
       <option name="closed" value="true" />
@@ -547,7 +534,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710246082571</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="commit">
+      <option name="closed" value="true" />
+      <created>1710848861885</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1710848861885</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
