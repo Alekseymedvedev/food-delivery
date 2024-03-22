@@ -1,5 +1,5 @@
 import {MainLayout} from "../../layout/mainLayout"
-import {useGetAllUsersQuery,  useUpdateUserMutation} from "../../store/API/userApi";
+import {useGetAllUsersQuery, useUpdateUserMutation} from "../../store/API/userApi";
 import classes from "../changeStatusOrder/changeStatusOrderPage.module.scss";
 import {Select} from "../../shared/select/select";
 import {NavLink} from "react-router-dom";
@@ -9,12 +9,12 @@ import React, {useEffect, useState} from "react";
 
 const AddAminPage = () => {
     const {data} = useGetAllUsersQuery('')
-    const [updateUser,{data:dataUpdateUser,isLoading,error}]=useUpdateUserMutation()
+    const [updateUser, {data: dataUpdateUser, isLoading, error}] = useUpdateUserMutation()
     const [select, setSelect] = useState('')
     const [userId, setUserId] = useState('')
     console.log(data)
     useEffect(() => {
-        if(dataUpdateUser && !isLoading && !error){
+        if (dataUpdateUser && !isLoading && !error) {
 
         }
     }, [dataUpdateUser]);
@@ -22,37 +22,39 @@ const AddAminPage = () => {
         updateUser({
             userId,
             body: {
-                role:select,
+                role: select,
             }
         })
     }
-    const handlerSelect = (id:string,role:string) => {
+    const handlerSelect = (id: string, role: string) => {
         setUserId(id)
         setSelect(role)
     }
     return (
         <MainLayout heading={'Изменение роли пользователя'}>
-            <div>
+            <div className={classes.list}>
                 {
                     data && data.map((item: any) =>
 
-                        <div className={classes.box} key={item?.id}>
-                            <div className={classes.item}>
-                                <div className={classes.title}>Пользователь:</div>
-                                <div className={classes.title}>
-                                    {item?.username ? item?.username : item?.chatId}
-                                </div>
+                        item.role === 'admin' ?
+                            <div className={classes.box} key={item?.id}>
+                                <div className={classes.item}>
+                                    <div className={classes.title}>Пользователь:</div>
+                                    <div className={classes.title}>
+                                        {item?.username ? item?.username : item?.chatId}
+                                    </div>
 
-                                {/*<Select onChange={setSelect} dataOption={['admin','user']} initValue={item?.status}/>*/}
+                                    {/*<Select onChange={setSelect} dataOption={['admin','user']} initValue={item?.status}/>*/}
+                                </div>
+                                <div className={classes.inner}>
+                                    <select onChange={(e) => handlerSelect(item?.id, e.target.value)}>
+                                        <option value={'admin'}>Администратор</option>
+                                        <option value={'user'}>Пользователь</option>
+                                    </select>
+                                    <Button onClick={handlerSubmit}>Сохранить</Button>
+                                </div>
                             </div>
-                            <div className={classes.inner}>
-                                <select onChange={(e) => handlerSelect(item?.id, e.target.value)}>
-                                    <option value={'admin'}>Администратор</option>
-                                    <option value={'user'}>Пользователь</option>
-                                </select>
-                                <Button onClick={handlerSubmit}>Сохранить</Button>
-                            </div>
-                        </div>
+                            : null
                     )
                 }
             </div>
