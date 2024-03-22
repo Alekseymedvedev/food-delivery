@@ -34,6 +34,13 @@ const OneOrderPage = () => {
                          }
                     </span>
                 </div>
+                <div className={classes.desc}>
+                    <div><span>Адрес: </span>{data?.address}</div>
+                    <div><span>Имя: </span>{data?.name}</div>
+                    <div><span>Телефон: </span>{data?.phone}</div>
+                    <div><span>Тип доставки: </span>{data?.typeDelivery}</div>
+                    <div><span>Метод оплаты: </span>{data?.paymentMethod}</div>
+                </div>
             </div>
             <NavLink className={classes.link} to={'/orders'}>
                 <span className={classes.line}></span>

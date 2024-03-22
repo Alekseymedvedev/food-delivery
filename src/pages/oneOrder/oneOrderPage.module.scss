@@ -11,7 +11,16 @@
   font-weight: 600;
   font-size: 18px;
 }
-
+.desc{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+  span{
+    font-weight: 600;
+  }
+}
 .link {
   display: flex;
   align-items: center;
