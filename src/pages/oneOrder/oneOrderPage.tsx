@@ -32,6 +32,7 @@ const OneOrderPage = () => {
                              data?.orderProducts.reduce((acc, item) =>
                                  acc + (+item?.price * (item.count ? item.count : 0)), 0)
                          }
+                        ₽
                     </span>
                 </div>
                 <div className={classes.desc}>
