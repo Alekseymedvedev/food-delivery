@@ -35,6 +35,7 @@ const OneOrderPage = () => {
                     </span>
                 </div>
                 <div className={classes.desc}>
+                    <div><span>Информация о заказе</div>
                     <div><span>Адрес: </span>{data?.address}</div>
                     <div><span>Имя: </span>{data?.name}</div>
                     <div><span>Телефон: </span>{data?.phone}</div>
