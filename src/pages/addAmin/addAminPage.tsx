@@ -5,6 +5,7 @@ import {Select} from "../../shared/select/select";
 import {NavLink} from "react-router-dom";
 import {Button} from "../../shared/button/button";
 import React, {useEffect, useState} from "react";
+import {Loader} from "../../shared/loader/loader";
 
 
 const AddAminPage = () => {
@@ -12,7 +13,6 @@ const AddAminPage = () => {
     const [updateUser, {data: dataUpdateUser, isLoading, error}] = useUpdateUserMutation()
     const [select, setSelect] = useState('')
     const [userId, setUserId] = useState('')
-    console.log(data)
     useEffect(() => {
         if (dataUpdateUser && !isLoading && !error) {
 
@@ -33,6 +33,9 @@ const AddAminPage = () => {
     return (
         <MainLayout heading={'Изменение роли пользователя'}>
             <div className={classes.list}>
+                {
+                    isLoading && <Loader circle/>
+                }
                 {
                     data && data.map((item: any) =>
 

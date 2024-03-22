@@ -6,6 +6,7 @@ export const userApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: `${process.env.REACT_APP_API_URL}api`,
     }),
+    tagTypes: ['Users'],
     endpoints: (build) => ({
         authUser: build.mutation({
             query: (body) => ({
@@ -17,16 +18,20 @@ export const userApi = createApi({
                 },
                 body
             }),
+
         }),
         getAllUsers: build.query({
             query: () => ({
                 url: `/user`,
             }),
+            providesTags: ['Users'],
+
         }),
         getUser: build.query({
             query: (id) => ({
                 url: `/user/${id}`,
             }),
+            providesTags: ['Users'],
         }),
         updateUser: build.mutation({
             query: ({userId, body}) => ({
@@ -34,6 +39,7 @@ export const userApi = createApi({
                 method: 'PATCH',
                 body
             }),
+            invalidatesTags: ['Users']
         }),
         updateRoleUser: build.mutation({
             query: ({id}) => ({
@@ -41,6 +47,7 @@ export const userApi = createApi({
                 headers: {Authorization: `Bearer ${token}`},
                 method: 'PATCH',
             }),
+            invalidatesTags: ['Users']
         }),
         deleteUser: build.mutation({
             query(id) {
