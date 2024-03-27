@@ -32,7 +32,6 @@ export const Calendar: FC<IType> = memo(({changeDate}) => {
         } else {
             setSelectedMonth(val)
         }
-
     }
     const handlerDay = (day: any) => {
         if (day < 10) {
