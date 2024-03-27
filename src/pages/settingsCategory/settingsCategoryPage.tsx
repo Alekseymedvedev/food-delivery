@@ -19,23 +19,24 @@ const SettingsCategoryPage = () => {
         setAddNewProduct(true)
         setEditCategory(false)
     }
+      const updateHandler = () => {
+          setEditCategory(true)
+          setAddNewProduct(false)
+    }
     return (
         <MainLayout heading={'Настройка'} textCenter>
             <div className="mb-6">
                 <BtnGroup
                     activeOneBtn={editCategory}
                     activeTwoBtn={!editCategory}
-                    onClickOneBtn={() => {
-                        setEditCategory(true)
-                        setAddNewProduct(false)
-                    }}
+                    onClickOneBtn={updateHandler}
                     onClickTwoBtn={addHandler}
                     textOneBtn={'Редактировать'}
                     textTwoBtn={'Блюдо +'}/>
             </div>
 
             {
-                (addNewProductForm && !editCategory) && <AddAndEditForm addNewProductForm categoryId={id}/>
+                (addNewProductForm && !editCategory) && <AddAndEditForm addNewProductForm categoryId={id} updateHandler={updateHandler}/>
             }
             {
                 (!addNewProductForm && editCategory) &&

@@ -28,6 +28,7 @@ interface IType {
     updateCategoryForm?: boolean
     addNewProductForm?: boolean
     updateProductForm?: boolean
+    updateHandler?: ()=>void
 }
 
 export const AddAndEditForm: FC<IType> = ({
@@ -39,6 +40,7 @@ export const AddAndEditForm: FC<IType> = ({
                                               updateCategoryForm,
                                               addNewProductForm,
                                               updateProductForm,
+                                              updateHandler,
                                           }) => {
     const navigate = useNavigate();
 
@@ -100,7 +102,7 @@ export const AddAndEditForm: FC<IType> = ({
             setTextModal('Ошибка при добавлении блюда')
         } else if (isLoadingCreateProduct) {
             setTextModal('Блюдо успешно добавлено')
-            navigate(`/more/settings-category/${categoryId}`)
+            updateHandler && updateHandler()
         }
     }, [isLoadingCreateProduct, errorAddNewProduct]);
 
