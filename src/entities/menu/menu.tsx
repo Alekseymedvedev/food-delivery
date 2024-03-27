@@ -66,7 +66,7 @@ export const Menu: FC<IType> = memo(({children}) => {
             ))}
             {
                 modal && createPortal(
-                    <Modal textModal={'Ваша корзина пуста'} onClick={() => setModal(false)} textBtn={'Закрыть'}/>,
+                    <Modal textModal={'Ваша корзина пустая'} onClick={() => setModal(false)} textBtn={'Закрыть'}/>,
                     document.body
                 )
             }
