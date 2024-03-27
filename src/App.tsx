@@ -35,7 +35,7 @@ function App() {
          authUser({
             chatId: tg?.initDataUnsafe?.user?.id,
             username: tg?.initDataUnsafe?.user?.username,
-            queryId: tg?.initDataUnsafe?.query_id
+            queryId: tg?.initDataUnsafe?.query_id ? tg?.initDataUnsafe?.query_id : 'queryId'
         })
     }, []);
     useEffect(() => {
