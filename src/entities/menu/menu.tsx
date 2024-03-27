@@ -8,6 +8,8 @@ import {CartIcon} from "../../shared/images/icons/cartIcon";
 import {ProfileIcon} from "../../shared/images/icons/profileIcon";
 import {useAppSelector} from "../../hooks/useRedux";
 import {useGetAllOrdersUserQuery} from "../../store/API/ordersApi";
+import {createPortal} from "react-dom";
+import {Modal} from "../modal/modal";
 
 interface IType {
     children?: React.ReactNode;
@@ -25,6 +27,7 @@ export const Menu: FC<IType> = memo(({children}) => {
     const {user} = useAppSelector((state) => state.userReducer);
     const {data, error, isLoading} = useGetAllOrdersUserQuery(`${user?.id}`, {skip: !user?.id})
     const [newNotification, setNewNotification] = useState(0)
+    const [modal, setModal] = useState(false)
 
     useEffect(() => {
         if (data) {
@@ -43,8 +46,10 @@ export const Menu: FC<IType> = memo(({children}) => {
                         isActive ? `${classes.link} ${classes.active}` : classes.link
                     }
                     onClick={(e) => {
-                        if (!countProducts && item.text === 'Корзина')
+                        if (!countProducts && item.text === 'Корзина') {
                             e.preventDefault()
+                            setModal(true)
+                        }
                     }}
                 >
                     {
@@ -59,6 +64,12 @@ export const Menu: FC<IType> = memo(({children}) => {
                     <span className={classes.text}>{item.text}</span>
                 </NavLink>
             ))}
+            {
+                modal && createPortal(
+                    <Modal textModal={'Ваша корзина пуста'} onClick={() => setModal(false)} textBtn={'Закрыть'}/>,
+                    document.body
+                )
+            }
         </nav>
     );
 });
