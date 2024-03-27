@@ -14,7 +14,7 @@ const UpdateRoleUserPage = () => {
     const {id} = useParams()
     const {data} = useGetUserQuery(`${id}`)
     const [update,{data:dataUpdateUser,isLoading,error}]=useUpdateRoleUserMutation()
-
+    console.log(id)
     useEffect(() => {
         if(dataUpdateUser && !isLoading && !error){
             navigate(`/`)
@@ -26,9 +26,9 @@ const UpdateRoleUserPage = () => {
     return (
         <MainLayout heading={'Обновление роли пользователя'}>
             <div className="mb-4">
-                Изменить роль пользователя {data?.username} с ID {data?.chatId}
+                Изменить роль пользователя  {data?.username} с ID {id} на "admin"
             </div>
-            <Button onClick={handler}>Сохранить</Button>
+            <Button onClick={handler}>Изменить</Button>
         </MainLayout>
     );
 };
