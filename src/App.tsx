@@ -1,7 +1,7 @@
 import React, {useEffect, useState,} from "react";
 import "./reset.scss";
 import "./global.scss";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useNavigate} from "react-router-dom";
 import {useTelegram} from "./hooks/useTelegram";
 import {useAppDispatch, useAppSelector} from "./hooks/useRedux";
 import {fetchUser} from "./store/slice/userSlice";
@@ -26,17 +26,24 @@ function App() {
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
     const [authUser, {data, error}] = useAuthUserMutation()
 
+    const navigate = useNavigate()
     useEffect(() => {
+
+        if(tg?.initDataUnsafe?.user?.id){
+           authUser({
+                chatId: tg?.initDataUnsafe?.user?.id,
+                username: tg?.initDataUnsafe?.user?.username,
+                queryId: tg?.initDataUnsafe?.query_id ? tg?.initDataUnsafe?.query_id : 'queryId'
+            })
+            return
+        }else{
+            navigate(`/qrcode`)
+        }
         // authUser({
         //     chatId: 1035451470,
         //     username: 'Amed152',
         //     queryId: 'AAFOvLc9AAAAAE68tz3ynEhS'
         // })
-         authUser({
-            chatId: tg?.initDataUnsafe?.user?.id,
-            username: tg?.initDataUnsafe?.user?.username,
-            queryId: tg?.initDataUnsafe?.query_id ? tg?.initDataUnsafe?.query_id : 'queryId'
-        })
     }, []);
     useEffect(() => {
         if (data) {
@@ -57,7 +64,6 @@ function App() {
     return (
         <>
             {
-                data &&
                 <Routes>
                     {allRoutes &&
                         allRoutes.map((route) => (

@@ -15,6 +15,7 @@ import {FavoritesPage} from "../pages/favorites/favoritesPageLazy";
 import {ChangeStatusOrderPage} from "../pages/changeStatusOrder/changeStatusOrderPageLazy";
 import {UpdateRoleUserPage} from "../pages/updateRoleUser/updateRoleUserPageLazy";
 import {AddAminPage} from "../pages/addAmin/addAminPageLazy";
+import {QrcodePage} from "../pages/qrcode/qrcodePageLazy";
 
 
 export const routes = [
@@ -29,6 +30,7 @@ export const routes = [
     {path: "/more", element: <MorePage/>},
     {path: "/more/orders", element: <OrdersPage/>},
     {path: "/more/favorites", element: <FavoritesPage/>},
+    {path: "/qrcode", element: <QrcodePage/>},
 ]
 export const adminRoutes =[
     {path: "/more/settings", element: <SettingsPage/>},
