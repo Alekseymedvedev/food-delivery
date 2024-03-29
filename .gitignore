@@ -10,7 +10,7 @@
 .idea
 # production
 /build
-
+/.idea
 public
 # misc
 .DS_Store
