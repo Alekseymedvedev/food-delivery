@@ -1,11 +1,13 @@
 .qrcode{
-  max-width: 200px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
-
+.image{
+  max-width: 200px;
+  margin: 0 auto;
+}
 .link{
   max-width: 290px;
   width: 100%;

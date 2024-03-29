@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/public/qrcode.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/qrcode/qrcode.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/0101cbdb-22d0-42a6-8d96-40c10cd31c4e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/0cc03eec-e40f-4e43-a0e3-fdea5ae00cc1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/0f61630e-edea-43b8-94fe-b7c1259a2c59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/10f0d178-740c-442f-963b-4d6254c7099d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/11044326-7c6a-4e14-b405-a60e6b4ec332.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/1600ad93-b215-4923-b549-bb10a4918d7a.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2a7409d2-1763-44c6-9da3-546be246c22d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2c8a7c7b-a692-4a30-a734-87b12bacf1ac.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2cf47bee-ffbf-4f51-8033-3ffbd2d4edd3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/51b498ae-30c8-4057-be4c-1b66d7758ae1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/61598a37-2608-43cd-a06c-729adf40c9fb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/86cb3ea6-b1f6-4240-8b61-3d06f6ef7c37.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/86d05ac1-a272-4ad5-9cf7-1e3c0f02b55e.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/8aeaae38-4560-4561-870a-2455f916357d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/9de774b3-2894-4020-abf1-2325739f3e09.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/a74eccc4-1c19-4ab3-b56c-3600f02407d7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/c1decb12-d465-433d-8306-099a5059724d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cd8d8748-f61d-4996-b403-aeeb2097a93f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/e30366a5-8486-4362-8e2c-5f329309cbc9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/e4fa6df8-70e6-4a78-94e6-1a1e955aeac9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/efed6100-bba8-44cf-b820-a1234a12b322.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/f738ec85-0bb3-4835-9e5d-68bed8faad67.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/f8ce4bb8-48ff-4710-91ce-2a8381c428d2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,23 +142,7 @@
       <workItem from="1711105180354" duration="1962000" />
       <workItem from="1711111044726" duration="2377000" />
       <workItem from="1711263554188" duration="2396000" />
-      <workItem from="1711531723245" duration="15687000" />
-    </task>
-    <task id="LOCAL-00120" summary="commit">
-      <option name="closed" value="true" />
-      <created>1709720841282</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1709720841283</updated>
-    </task>
-    <task id="LOCAL-00121" summary="commit">
-      <option name="closed" value="true" />
-      <created>1709723732139</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1709723732139</updated>
+      <workItem from="1711531723245" duration="16303000" />
     </task>
     <task id="LOCAL-00122" summary="commit">
       <option name="closed" value="true" />
@@ -566,7 +520,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711549607617</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="commit">
+      <option name="closed" value="true" />
+      <created>1711727511723</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1711727511723</updated>
+    </task>
+    <task id="LOCAL-00170" summary="commit">
+      <option name="closed" value="true" />
+      <created>1711727602965</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1711727602966</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
