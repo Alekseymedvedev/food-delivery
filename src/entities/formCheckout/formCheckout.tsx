@@ -52,7 +52,6 @@ export const FormCheckout: FC<IType> = memo(() => {
         }
     }, [dataCreate])
 
-
     const submitHandler = () => {
         const data: IOrderCreate = {
             userId: user?.id,
@@ -66,9 +65,9 @@ export const FormCheckout: FC<IType> = memo(() => {
         }
         if (!paymentMethod) setPaymentMethodError(true)
         if (!address.value) address.setError(true)
-        if (!phone.value) phone.setError(true)
-        if (data.address && data.phone && data.paymentMethod) {
-            console.log(typeDelivery)
+        if (phone.value.includes('_')) phone.setError(true)
+        if (data.address && !data?.phone?.includes('_') && data.paymentMethod) {
+
             createOrder(data)
             updateUser({
                 userId: user?.id,

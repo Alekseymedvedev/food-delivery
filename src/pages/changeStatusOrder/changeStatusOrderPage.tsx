@@ -9,7 +9,7 @@ import {Loader} from "../../shared/loader/loader";
 import {createPortal} from "react-dom";
 import {Modal} from "../../entities/modal/modal";
 
-const variants = ['новый', 'готовиться', 'готово к выдаче', 'выдано в доставку', 'получен']
+const variants = ['новый', 'готовиться', 'готово к выдаче', 'получен','выдано','отменен']
 const ChangeStatusOrderPage = () => {
     const {data, isError, isLoading} = useGetOrdersQuery('')
     const [updateStatus,{data:dataUpdate, isError:isErrorUpdate, isLoading:isLoadingUpdate}] = useUpdateOrderStatusMutation()

@@ -35,8 +35,19 @@ export const products = createSlice({
             if (item?.count !== 1) {
                 if (item) item.count = item?.count && item?.count - 1
             } else {
-                alert('Удалить')
-                const index = state.productsInCart.indexOf(item && item)
+                if (window.confirm('Удалить товар из корзины?')) {
+                    const index = state.productsInCart.indexOf(item && item)
+                    state.productsInCart.splice(index, 1)
+                }
+
+            }
+            state.countProducts = state.productsInCart.length
+            localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart))
+        },
+        deleteSwipeProduct: (state: IProductsState, action: PayloadAction<IProduct>) => {
+            const item = state.productsInCart.find((item: IProduct) => item.id === action.payload.id)
+            if (window.confirm('Удалить товар из корзины?') && item) {
+                const index = state.productsInCart.indexOf(item)
                 state.productsInCart.splice(index, 1)
             }
             state.countProducts = state.productsInCart.length
@@ -49,5 +60,5 @@ export const products = createSlice({
     },
 });
 
-export const {getProducts, addProductToCart, decrement, deleteProductInCart} = products.actions;
+export const {getProducts, addProductToCart, decrement,deleteSwipeProduct, deleteProductInCart} = products.actions;
 export default products.reducer;
