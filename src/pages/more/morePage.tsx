@@ -6,6 +6,7 @@ import {useAppSelector} from "../../hooks/useRedux";
 import {OrdersIcon} from "../../shared/images/icons/ordersIcon";
 import {ProfileIcon} from "../../shared/images/icons/profileIcon";
 import {SettingsIcon} from "../../shared/images/icons/settingsIcon";
+import {StatisticsIcon} from "../../shared/images/icons/statisticsIcon";
 
 const linkArr = [
     {to: "orders", text: "Заказы", icon: <OrdersIcon/>},
@@ -13,7 +14,7 @@ const linkArr = [
     {to: "/more/favorites", text: "Избранное ", icon: <FavoritesIcon/>},
 ];
 const linkArrAdmin = [
-    // {to: "/more/statistics", text: "Статистика", icon: <StatisticsIcon isSimple/>},
+    {to: "/more/statistics", text: "Статистика", icon: <StatisticsIcon isSimple/>},
     {to: "/more/settings", text: "Настойка товаров", icon: <SettingsIcon/>},
     {to: "/more/change-status-order", text: "Изменение статуса заказа", icon: <OrdersIcon/>},
     {to: "/more/add-admin", text: "Изменение роли пользователя", icon: <SettingsIcon/>},

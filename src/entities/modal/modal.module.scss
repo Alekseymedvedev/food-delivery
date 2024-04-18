@@ -32,6 +32,7 @@
   transform: translate(-50%, -50%);
   color: var(--color-error);
   border: 1px solid var(--tg-theme-hint-color);
+  z-index: 100;
   &.error {
     border: 3px solid var(--color-error);
     color: var(--color-error)

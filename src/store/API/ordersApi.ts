@@ -27,6 +27,13 @@ export const ordersApi = createApi({
             }),
             providesTags: ['Orders'],
         }),
+        getStatistics: build.query({
+            query: ({startTime, endTime, catId}) => ({
+                url: `/statistics`,
+                params: catId ? {startTime, endTime, catId: catId} : {startTime, endTime}
+            }),
+            providesTags: ['Orders'],
+        }),
         createNewOrder: build.mutation({
             query: (body) => ({
                 url: ``,
@@ -71,5 +78,6 @@ export const {
     useGetOneOrderQuery,
     useCreateNewOrderMutation,
     useUpdateOrderStatusMutation,
-    useUpdateOrderNotificationMutation
+    useUpdateOrderNotificationMutation,
+    useGetStatisticsQuery
 } = ordersApi;
