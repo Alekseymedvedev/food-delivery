@@ -19,6 +19,13 @@ const linkArrAdmin = [
     {to: "/more/change-status-order", text: "Изменение статуса заказа", icon: <OrdersIcon/>},
     {to: "/more/add-admin", text: "Изменение роли пользователя", icon: <SettingsIcon/>},
 ];
+const linkArrCook = [
+    {to: "/more/settings", text: "Настойка товаров", icon: <SettingsIcon/>},
+    {to: "/more/change-status-order", text: "Изменение статуса заказа", icon: <OrdersIcon/>},
+];
+const linkArrCashier = [
+    {to: "/more/change-status-order", text: "Изменение статуса заказа", icon: <OrdersIcon/>},
+];
 const MorePage = () => {
     const {user} = useAppSelector((state) => state.userReducer);
 
@@ -34,6 +41,22 @@ const MorePage = () => {
                     ))
                 }
                 {
+                    user?.role === 'cashier' && linkArrCashier?.map(item => (
+                        <NavLink key={item.to} to={item.to} className={classes.link}>
+                            {item.icon}
+                            <span>{item.text}</span>
+                        </NavLink>
+                    ))
+                }
+                {
+                    user?.role === 'cook' && linkArrCook?.map(item => (
+                        <NavLink key={item.to} to={item.to} className={classes.link}>
+                            {item.icon}
+                            <span>{item.text}</span>
+                        </NavLink>
+                    ))
+                }
+                {
                     (user?.role === 'admin' || user?.role === 'superAdmin') && linkArrAdmin?.map(item => (
                         <NavLink key={item.to} to={item.to} className={classes.link}>
                             {item.icon}
@@ -41,6 +64,7 @@ const MorePage = () => {
                         </NavLink>
                     ))
                 }
+
             </nav>
         </MainLayout>
     );

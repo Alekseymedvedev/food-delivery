@@ -1,23 +1,22 @@
 import {MainLayout} from "../../layout/mainLayout"
 import {useGetAllUsersQuery, useUpdateUserMutation} from "../../store/API/userApi";
 import classes from "../changeStatusOrder/changeStatusOrderPage.module.scss";
-import {Select} from "../../shared/select/select";
-import {NavLink} from "react-router-dom";
 import {Button} from "../../shared/button/button";
 import React, {useEffect, useState} from "react";
 import {Loader} from "../../shared/loader/loader";
 
-
+export const roles =[
+    {id:1,role:'admin',name:'Администратор'},
+    {id:2,role:'user',name:'Пользователь'},
+    {id:3,role:'cashier',name:'Кассир'},
+    {id:4,role:'cook',name:'Повар'},
+]
 const AddAminPage = () => {
     const {data} = useGetAllUsersQuery('')
     const [updateUser, {data: dataUpdateUser, isLoading, error}] = useUpdateUserMutation()
     const [select, setSelect] = useState('')
     const [userId, setUserId] = useState('')
-    useEffect(() => {
-        if (dataUpdateUser && !isLoading && !error) {
 
-        }
-    }, [dataUpdateUser]);
     const handlerSubmit = () => {
         updateUser({
             userId,
@@ -39,20 +38,21 @@ const AddAminPage = () => {
                 {
                     data && data.map((item: any) =>
 
-                        item.role === 'admin' ?
+                        item.role !== 'user' ?
                             <div className={classes.box} key={item?.id}>
                                 <div className={classes.item}>
                                     <div className={classes.title}>Пользователь:</div>
                                     <div className={classes.title}>
                                         {item?.username ? item?.username : item?.chatId}
                                     </div>
-
-                                    {/*<Select onChange={setSelect} dataOption={['admin','user']} initValue={item?.status}/>*/}
                                 </div>
                                 <div className={classes.inner}>
                                     <select onChange={(e) => handlerSelect(item?.id, e.target.value)}>
-                                        <option value={'admin'}>Администратор</option>
-                                        <option value={'user'}>Пользователь</option>
+                                        {
+                                            roles.map(item =>
+                                                <option key={item.id} value={item.role}>{item.name}</option>
+                                            )
+                                        }
                                     </select>
                                     <Button onClick={handlerSubmit}>Сохранить</Button>
                                 </div>

@@ -118,7 +118,7 @@ button {
     display: flex;
     align-items: center;
     cursor: pointer;
-    width: 25px;
+    width: 30px;
     svg{
       width: 100%;
     }
@@ -134,6 +134,10 @@ button {
     left: 0;
     top: 5px;
     cursor: pointer;
+    width: 30px;
+    svg{
+      width: 100%;
+    }
   }
 }
 

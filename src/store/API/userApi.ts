@@ -42,10 +42,11 @@ export const userApi = createApi({
             invalidatesTags: ['Users']
         }),
         updateRoleUser: build.mutation({
-            query: ({id}) => ({
+            query: ({id,body}) => ({
                 url: `/user/update/${id}`,
                 headers: {Authorization: `Bearer ${token}`},
                 method: 'PATCH',
+                body
             }),
             invalidatesTags: ['Users']
         }),

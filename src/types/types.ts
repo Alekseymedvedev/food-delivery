@@ -44,6 +44,7 @@ export interface IOrder {
     orderProducts: IProduct[];
     notifications?: boolean;
     status?: string;
+    user:{chatId:number | string}
 }
 
 export interface IUser {

@@ -5,10 +5,11 @@ import {Select} from "../select/select";
 
 interface IType {
     changeDate: (val: string) => void,
+    formatISO?:boolean
 }
 
 const monthArr = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-export const Calendar: FC<IType> = memo(({changeDate}) => {
+export const Calendar: FC<IType> = memo(({changeDate,formatISO}) => {
     const [selectedDate, setSelectedDate] = useState('')
     const [selectedDay, setSelectedDay] = useState('01')
     const [selectedMonth, setSelectedMonth] = useState(`01`)
@@ -19,7 +20,12 @@ export const Calendar: FC<IType> = memo(({changeDate}) => {
     useEffect(() => {
         setCountDay(new Date(selectedYear, +selectedMonth, 0).getDate())
         setSelectedDate(`${selectedDay}.${selectedMonth}.${selectedYear}`)
-        changeDate(`${selectedDay}.${selectedMonth}.${selectedYear}`)
+        if(formatISO){
+            changeDate(`${selectedYear}-${selectedMonth}-${selectedDay}`)
+        }else{
+            changeDate(`${selectedDay}.${selectedMonth}.${selectedYear}`)
+        }
+
     }, [selectedDay, selectedMonth, selectedYear]);
 
     const handlerYear = (val: any) => {
@@ -37,7 +43,7 @@ export const Calendar: FC<IType> = memo(({changeDate}) => {
         if (day < 10) {
             setSelectedDay(`0${day}`)
         } else {
-            setSelectedDay(day)
+            setSelectedDay(`${day}`)
         }
     }
     return (

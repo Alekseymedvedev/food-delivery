@@ -66,7 +66,7 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
                 <div className={classes.title}>
                     <span>
                         <span>{data?.title} </span>
-                        <span className={classes.grams}>{data?.grams}гр.</span>
+                        <span className={classes.grams}>{data?.grams}</span>
                     </span>
 
                     {

@@ -30,12 +30,13 @@ const ChangeStatusOrderPage = () => {
     if (isError) {
         return <h2 className={'error'}>Произошла ошибка при загрузке данных. Попробуйте обновить страницу</h2>
     }
-    const handlerSubmit = (id: number | string) => {
+    const handlerSubmit = (id: number | string,chatId:number | string) => {
         updateStatus({
             id,
             body: {
                 status: select,
-                notifications: true
+                notifications: true,
+                chatId
             }
         })
     }
@@ -53,7 +54,7 @@ const ChangeStatusOrderPage = () => {
                             </div>
                             <div className={classes.inner}>
                                 <NavLink className={classes.link} to={`/order/${item.id}`}>Перейти в заказ</NavLink>
-                                <Button onClick={() => handlerSubmit(item?.id)}>Сохранить</Button>
+                                <Button onClick={() => handlerSubmit(item?.id,item?.user.chatId)}>Сохранить</Button>
                             </div>
                         </div>
                     )
