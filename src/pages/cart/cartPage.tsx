@@ -42,8 +42,8 @@ const CartPage = () => {
         }
     }
     const handleSwipeEnd = (e:any) => {
-        dispatch(deleteSwipeProduct(swipeItem))
-        if ((e.clientX <100) && swipeItem) {
+        if ( swipeItem) {
+            dispatch(deleteSwipeProduct(swipeItem))
         }
         setSwipeItem(null);
     };
