@@ -64,6 +64,7 @@ const CartPage = () => {
                                             onTouchEnd={handleSwipeEnd}
                                             onDrag={()=> setSwipeItem(item)}
                                             onDragEnd={handleSwipeEnd}
+                                            onTouchMove={handleSwipeEnd}
                                         >
                                             <Product data={item} inCart count={item.count ? item.count : 0}/>
                                             <div className={classes.divider}></div>
