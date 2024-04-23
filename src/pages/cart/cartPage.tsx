@@ -63,6 +63,7 @@ const CartPage = () => {
                                             onTouchStart={() => setSwipeItem(item)}
                                             onTouchEnd={handleSwipeEnd}
                                             onDrag={()=> setSwipeItem(item)}
+                                            onTouchStart={()=> setSwipeItem(item)}
                                             onDragEnd={handleSwipeEnd}
                                             onTouchMove={handleSwipeEnd}
                                         >
