@@ -42,8 +42,8 @@ const CartPage = () => {
         }
     }
     const handleSwipeEnd = (e:any) => {
+        dispatch(deleteSwipeProduct(swipeItem))
         if ((e.clientX <100) && swipeItem) {
-            dispatch(deleteSwipeProduct(swipeItem))
         }
         setSwipeItem(null);
     };
@@ -63,7 +63,6 @@ const CartPage = () => {
                                             onTouchStart={() => setSwipeItem(item)}
                                             onTouchEnd={handleSwipeEnd}
                                             onDrag={()=> setSwipeItem(item)}
-                                            onTouchStart={()=> setSwipeItem(item)}
                                             onDragEnd={handleSwipeEnd}
                                             onTouchMove={handleSwipeEnd}
                                         >
