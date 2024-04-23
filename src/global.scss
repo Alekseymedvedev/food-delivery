@@ -118,10 +118,7 @@ button {
     display: flex;
     align-items: center;
     cursor: pointer;
-    width: 30px;
-    svg{
-      width: 100%;
-    }
+
   }
 }
 
@@ -131,13 +128,10 @@ button {
 
   & .back {
     position: absolute;
-    left: 0;
-    top: 5px;
+    left: -10px;
+    top: 0px;
     cursor: pointer;
-    width: 30px;
-    svg{
-      width: 100%;
-    }
+
   }
 }
 
