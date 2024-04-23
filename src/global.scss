@@ -115,6 +115,7 @@ button {
   position: relative;
 
   & .back {
+    padding: 10px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -127,6 +128,7 @@ button {
   font-size: 25px;
 
   & .back {
+    padding: 10px;
     position: absolute;
     left: -10px;
     top: 0px;
