@@ -56,16 +56,17 @@ const CartPage = () => {
         }
         setSwipeItem(null);
     };
-    const handleSwipeStart = (e:any,item:IProduct) => {
+    const handleSwipeStart = (e:any,item:IProduct,index:number) => {
+        console.log(productRef.current[index])
         const itemWidth = e.target.offsetWidth;
         const swipeDistance = e.changedTouches[0].clientX - e.target.getBoundingClientRect().left;
         setSwipeItem(item)
-        if (productRef.current) {
-            productRef.current.style.transform = `translateX(-${swipeDistance}px)`;
+        if (productRef.current[index]) {
+            productRef.current[index].style.transform = `translateX(-${swipeDistance}px)`;
         }
         if (swipeDistance+10 < itemWidth / 2) {
-            if (productRef.current) {
-                productRef.current.style.transform = `translateX(${0}px)`;
+            if (productRef.current[index]) {
+                productRef.current[index].style.transform = `translateX(${0}px)`;
             }
         }
     }
@@ -84,8 +85,8 @@ const CartPage = () => {
                                             className={classes.item}
                                             ref={(element:any) => productRef.current[index] = element}
                                             key={item.id}
-                                            onDrag={(e)=>handleSwipeStart(e,item)}
-                                            onTouchStart={(e)=>handleSwipeStart(e,item)}
+                                            onDrag={(e)=>handleSwipeStart(e,item,index)}
+                                            onTouchStart={(e)=>handleSwipeStart(e,item,index)}
                                             onTouchEnd={handleSwipeEnd}
                                             onTouchMove={handleSwipeEnd}
                                         >
