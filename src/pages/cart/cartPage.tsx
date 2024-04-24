@@ -47,7 +47,7 @@ const CartPage = () => {
         const itemWidth = event.target.offsetWidth;
         const swipeDistance = event.changedTouches[0].clientX - event.target.getBoundingClientRect().left;
         if (productRef.current) {
-            productRef.current.style.transform = `translateX(${swipeDistance}px)`;
+            productRef.current.style.transform = `translateX(-${swipeDistance}px)`;
         }
         if ((swipeDistance > itemWidth / 2) && swipeItem) {
             dispatch(deleteSwipeProduct(swipeItem))
