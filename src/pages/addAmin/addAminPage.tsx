@@ -92,7 +92,7 @@ const AddAminPage = () => {
                                     <Button onClick={handlerSubmit}>Сохранить</Button>
                                 </div>
                             </div>
-                            : <div className={classes.title}>Нет зарегестрированых администраторов</div>
+                            : null
                     )
                 }
             </div>
