@@ -11,7 +11,8 @@ import {Modal} from "../../entities/modal/modal";
 
 const variants = ['новый', 'готовиться', 'готово к выдаче', 'получен','выдано','отменен']
 const ChangeStatusOrderPage = () => {
-    const {data, isError, isLoading} = useGetOrdersQuery('')
+    const [page, setPage] = useState(1)
+    const {data, isError, isLoading} = useGetOrdersQuery(page)
     const [updateStatus,{data:dataUpdate, isError:isErrorUpdate, isLoading:isLoadingUpdate}] = useUpdateOrderStatusMutation()
     const [select, setSelect] = useState('')
 
@@ -46,7 +47,7 @@ const ChangeStatusOrderPage = () => {
                 {isLoadingUpdate && <Loader circle/>}
                 {isLoading && <Loader height={118}/>}
                 {
-                    data && data.map(item =>
+                    data && data?.rows.map(item =>
                         <div className={classes.box} key={item?.id}>
                             <div className={classes.item}>
                                 <div className={classes.title}>Заказ №{item?.id}</div>
@@ -59,6 +60,18 @@ const ChangeStatusOrderPage = () => {
                         </div>
                     )
                 }
+                <div className={classes.paginationList}>
+                    {
+                        [1,2,3,4].map((item,index)=>
+                            <button
+                                className={classes.paginationBtn}
+                            onClick={()=>setPage(item)}>
+                                {item}
+                            </button>
+
+                        )
+                    }
+                </div>
             </div>
             {modal && createPortal(
                 <Modal textModal={textModal} onClick={() => setModal(false)}

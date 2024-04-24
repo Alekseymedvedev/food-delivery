@@ -9,9 +9,12 @@ export const ordersApi = createApi({
     }),
     tagTypes: ['Orders'],
     endpoints: (build) => ({
-        getOrders: build.query<IOrder[], number | string>({
-            query: () => ({
+        getOrders: build.query<{ rows: IOrder[] }, number>({
+            query: (page) => ({
                 url: '',
+                params:{
+                    page
+                }
             }),
             providesTags: ['Orders'],
         }),
