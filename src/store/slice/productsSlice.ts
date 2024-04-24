@@ -49,9 +49,10 @@ export const products = createSlice({
             if (window.confirm('Удалить товар из корзины?') && item) {
                 const index = state.productsInCart.indexOf(item)
                 state.productsInCart.splice(index, 1)
+                state.countProducts = state.productsInCart.length
+                localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart))
+                return
             }
-            state.countProducts = state.productsInCart.length
-            localStorage.setItem('productsInCart', JSON.stringify(state.productsInCart))
         },
         deleteProductInCart(state: IProductsState) {
             state.productsInCart = []
