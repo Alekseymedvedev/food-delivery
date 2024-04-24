@@ -7,19 +7,24 @@ import {IProduct} from "../../types/types";
 
 
 interface IType {
-    children?: React.ReactNode
+    url: string
+    callback?: (arr: any) => void
 }
 
-export const Search: FC<IType> = memo(({children}) => {
+export const Search: FC<IType> = memo(({url, callback}) => {
     const [query, setQuery] = useState('')
     const [skip, setSkip] = useState(true)
     const [products, setProducts] = useState<IProduct[]>()
-    const {data, error, isLoading} = useSearchQuery(`/?search=${query}`, {skip})
+    const {data, error, isLoading} = useSearchQuery(`${url}=${query}`, {skip})
 
     useEffect(() => {
         if (query.length > 1) {
             setSkip(false)
-            setProducts(data)
+            if (callback) {
+                callback(data)
+            } else {
+                setProducts(data)
+            }
         }
     }, [data, query]);
     return (
@@ -38,7 +43,7 @@ export const Search: FC<IType> = memo(({children}) => {
                 }
             </label>
             {
-                query.length > 1 &&
+                (query.length > 1 && !callback) &&
                 <div className={classes.box}>
                     {
                         (products?.length) ?

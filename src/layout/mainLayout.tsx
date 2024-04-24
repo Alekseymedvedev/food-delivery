@@ -26,7 +26,7 @@ export const MainLayout: FC<IType> = ({children, heading, homePage, textCenter, 
                 }
                 <span>{heading}</span>
             </h1>
-            {isSearch && <Search/>}
+            {isSearch && <Search url={'search?search'}/>}
             {children}
             <Menu/>
             <div className="menuBg"></div>
