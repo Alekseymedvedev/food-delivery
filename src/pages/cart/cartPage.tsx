@@ -43,16 +43,15 @@ const CartPage = () => {
         }
     }
 
-    const handleSwipeEnd = (e:any) => {
+    const handleSwipeEnd = (e:any,index:number) => {
         const itemWidth = e.target.offsetWidth;
         const swipeDistance = e.changedTouches[0].clientX - e.target.getBoundingClientRect().left;
 
         if ((swipeDistance > itemWidth / 2) && swipeItem) {
-
             dispatch(deleteSwipeProduct(swipeItem))
         }
         if (productRef.current) {
-            productRef.current.style.transform = `translateX(${0}px)`;
+            productRef.current[index].style.transform = `translateX(${0}px)`;
         }
         setSwipeItem(null);
     };
@@ -87,8 +86,8 @@ const CartPage = () => {
                                             key={item.id}
                                             onDrag={(e)=>handleSwipeStart(e,item,index)}
                                             onTouchStart={(e)=>handleSwipeStart(e,item,index)}
-                                            onTouchEnd={handleSwipeEnd}
-                                            onTouchMove={handleSwipeEnd}
+                                            onTouchEnd={(e)=>handleSwipeEnd(e,index)}
+                                            onTouchMove={(e)=>handleSwipeEnd(e,index)}
                                         >
                                             <Product data={item} inCart count={item.count ? item.count : 0}/>
                                             <div className={classes.divider}></div>
