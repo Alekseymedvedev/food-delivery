@@ -31,7 +31,9 @@ function App() {
 
         if(tg?.initDataUnsafe?.user?.id){
            authUser({
-                chatId: tg?.initDataUnsafe?.user
+                chatId: tg?.initDataUnsafe?.user?.id,
+                username: tg?.initDataUnsafe?.user?.username,
+                queryId: tg?.initDataUnsafe?.query_id ? tg?.initDataUnsafe?.query_id : 'queryId'
             })
             return
         }else{
