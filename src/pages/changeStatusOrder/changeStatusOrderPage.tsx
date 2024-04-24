@@ -61,7 +61,7 @@ const ChangeStatusOrderPage = () => {
                     )
                 }
                 {
-                    (data &&  data?.count < data?.rows.length) &&
+                    (data &&  data?.count > data?.rows.length) &&
                     <Button onClick={()=>setPage(page +1)}>Показать еще</Button>
                 }
                 {/*<div className={classes.paginationList}>*/}
