@@ -27,6 +27,10 @@ const StatisticsPage = memo(() => {
     }
     return (
         <MainLayout heading={'Статистика'} textCenter>
+            <div className="mb-4">
+                {catId && <Button onClick={() => setCatId('')}>Назад</Button>}
+            </div>
+
             <div className={classes.box}>
                 <Button onClick={() => handler(today, date)}>Сегодня</Button>
                 <Button
