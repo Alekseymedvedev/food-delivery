@@ -16,6 +16,7 @@ import {ChangeStatusOrderPage} from "../pages/changeStatusOrder/changeStatusOrde
 import {UpdateRoleUserPage} from "../pages/updateRoleUser/updateRoleUserPageLazy";
 import {AddAminPage} from "../pages/addAmin/addAminPageLazy";
 import {QrcodePage} from "../pages/qrcode/qrcodePageLazy";
+import {AllOrdersPage} from "../pages/allOrders/allOrdersPageLazy";
 
 
 export const routes = [
@@ -38,6 +39,7 @@ export const adminRoutes =[
     {path: "/more/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
     {path: "/more/statistics", element: <StatisticsPage/>},
     {path: "/more/change-status-order", element: <ChangeStatusOrderPage/>},
+    {path: "/more/all-orders", element: <AllOrdersPage/>},
 ]
 export const superAdminRoutes =[
     {path: "/update-user/:id", element: <UpdateRoleUserPage/>},

@@ -29,6 +29,7 @@ export interface IOrderCreate {
     paymentMethod?: string;
     status?: string;
     sum?: number;
+    comment?: string;
     orderProducts: { id: number; count: number }[];
 }
 

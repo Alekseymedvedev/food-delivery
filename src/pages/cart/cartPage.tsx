@@ -28,11 +28,11 @@ const CartPage = () => {
          const endHour = parseFloat(timeRange.split("до ")[1]);
          const currentTime = new Date().getHours();
 
-         if (currentTime >= startHour && currentTime < endHour) {
-             setWorktime(true)
-         } else {
-             setWorktime(false)
-         }
+         // if (currentTime >= startHour && currentTime < endHour) {
+         //     setWorktime(true)
+         // } else {
+         //     setWorktime(false)
+         // }
      }
     }, [contactsData]);
     const addOrder = () => {

@@ -14,16 +14,19 @@ const linkArr = [
     {to: "/more/favorites", text: "Избранное ", icon: <FavoritesIcon/>},
 ];
 const linkArrAdmin = [
+    {to: "/more/all-orders", text: "Все заказы", icon: <OrdersIcon/>},,
     {to: "/more/statistics", text: "Статистика", icon: <StatisticsIcon isSimple/>},
     {to: "/more/settings", text: "Настойка товаров", icon: <SettingsIcon/>},
     {to: "/more/change-status-order", text: "Изменение статуса заказа", icon: <OrdersIcon/>},
     {to: "/more/add-admin", text: "Изменение роли пользователя", icon: <SettingsIcon/>},
 ];
 const linkArrCook = [
+    {to: "/more/all-orders", text: "Все заказы", icon: <OrdersIcon/>},
     {to: "/more/settings", text: "Настойка товаров", icon: <SettingsIcon/>},
     {to: "/more/change-status-order", text: "Изменение статуса заказа", icon: <OrdersIcon/>},
 ];
 const linkArrCashier = [
+    {to: "/more/all-orders", text: "Все заказы", icon: <OrdersIcon/>},
     {to: "/more/change-status-order", text: "Изменение статуса заказа", icon: <OrdersIcon/>},
 ];
 const MorePage = () => {
@@ -58,13 +61,12 @@ const MorePage = () => {
                 }
                 {
                     (user?.role === 'admin' || user?.role === 'superAdmin') && linkArrAdmin?.map(item => (
-                        <NavLink key={item.to} to={item.to} className={classes.link}>
-                            {item.icon}
-                            <span>{item.text}</span>
+                        <NavLink key={item?.to} to={item?.to ?? '/'} className={classes.link}>
+                            {item?.icon}
+                            <span>{item?.text}</span>
                         </NavLink>
                     ))
                 }
-
             </nav>
         </MainLayout>
     );

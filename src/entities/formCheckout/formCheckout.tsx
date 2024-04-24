@@ -14,6 +14,7 @@ import {createPortal} from "react-dom";
 import {Modal} from "../modal/modal";
 import {deleteProductInCart} from "../../store/slice/productsSlice";
 import {Loader} from "../../shared/loader/loader";
+import {TextField} from "../../shared/textField/textField";
 
 interface IType {
 
@@ -33,6 +34,7 @@ export const FormCheckout: FC<IType> = memo(() => {
     const address = useInput(user?.address ? user?.address : '')
     const phone = useInput(user?.phone ? user?.phone : '')
     const name = useInput(user?.name ? user?.name : '')
+    const commentInput = useInput('')
 
     const [typeDelivery, setTypeDelivery] = useState('Доставка')
     const [paymentMethod, setPaymentMethod] = useState('')
@@ -61,7 +63,8 @@ export const FormCheckout: FC<IType> = memo(() => {
             name: name.value,
             paymentMethod: typeDelivery === 'Доставка' ? paymentMethod : 'Наличные',
             orderProducts: productsInCart.map(item => ({id: +item?.id, count: +item?.count})),
-            status: 'новый'
+            status: 'новый',
+            comment:commentInput.value
         }
         if (!paymentMethod) setPaymentMethodError(true)
         if (!address.value) address.setError(true)
@@ -97,6 +100,9 @@ export const FormCheckout: FC<IType> = memo(() => {
                 }
                 <SimpleTextField label={"Контакты"} type={'phone'} value={phone.value} onChange={phone.onChange} error={phone.error}/>
                 <SimpleTextField label={"Имя"} value={name.value} onChange={name.onChange}/>
+                <SimpleTextField label={"Имя"} value={name.value} onChange={name.onChange}/>
+                <SimpleTextField label={'Описание'} onChange={commentInput.onChange}
+                           value={commentInput.value} description/>
             </div>
             {
                 typeDelivery === 'Доставка' &&
