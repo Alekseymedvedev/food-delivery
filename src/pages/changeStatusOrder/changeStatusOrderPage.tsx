@@ -60,18 +60,19 @@ const ChangeStatusOrderPage = () => {
                         </div>
                     )
                 }
-                <div className={classes.paginationList}>
-                    {
-                        [1,2,3,4].map((item,index)=>
-                            <button
-                                className={classes.paginationBtn}
-                            onClick={()=>setPage(item)}>
-                                {item}
-                            </button>
+                <Button onClick={()=>setPage(page +1)}>Показать еще</Button>
+                {/*<div className={classes.paginationList}>*/}
+                {/*    {*/}
+                {/*        [1,2,3,4].map((item,index)=>*/}
+                {/*            <button*/}
+                {/*                className={classes.paginationBtn}*/}
+                {/*            onClick={()=>setPage(item)}>*/}
+                {/*                {item}*/}
+                {/*            </button>*/}
 
-                        )
-                    }
-                </div>
+                {/*        )*/}
+                {/*    }*/}
+                {/*</div>*/}
             </div>
             {modal && createPortal(
                 <Modal textModal={textModal} onClick={() => setModal(false)}
