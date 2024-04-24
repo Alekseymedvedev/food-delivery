@@ -51,6 +51,9 @@ const CartPage = () => {
 
             dispatch(deleteSwipeProduct(swipeItem))
         }
+        if (productRef.current) {
+            productRef.current.style.transform = `translateX(${0}px)`;
+        }
         setSwipeItem(null);
     };
     const handleSwipeStart = (e:any,item:IProduct) => {
