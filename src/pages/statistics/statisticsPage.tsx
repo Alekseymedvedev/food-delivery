@@ -19,11 +19,13 @@ const StatisticsPage = memo(() => {
     const [startTime, setStartTime] = useState(date)
     const [startDate, setStartDate] = useState('')
     const [endDate, setEndDate] = useState('')
-    const {data, error, isLoading} = useGetStatisticsQuery({startTime, endTime, catId})
+    const [btnId, setBtnId] = useState(0)
+    const {data} = useGetStatisticsQuery({startTime, endTime, catId})
 
-    const handler = (start: any, end: any) => {
+    const handler = (start: any, end: any, btnId: number) => {
         setStartTime(start)
         setEndTime(end)
+        setBtnId(btnId)
     }
     return (
         <MainLayout heading={'Статистика'} textCenter>
@@ -32,39 +34,49 @@ const StatisticsPage = memo(() => {
             </div>
 
             <div className={classes.box}>
-                <Button onClick={() => handler(today, date)}>Сегодня</Button>
+                <Button active={btnId === 1} onClick={() => handler(today, date, 1)}>Сегодня</Button>
                 <Button
+                    active={btnId === 2}
                     onClick={() => handler(
                         new Date(new Date(date.setDate(date.getDate() - 1)).setHours(0, 0, 0, 0)),
-                        new Date(new Date(date.setDate(date.getDate() - 1)).setHours(23, 59, 59, 999))
+                        new Date(new Date(date.setDate(date.getDate() - 1)).setHours(23, 59, 59, 999)),
+                        2
                     )}>
                     Вчера
                 </Button>
                 <Button
+                    active={btnId === 3}
                     onClick={() => handler(
                         new Date(date.getFullYear(), date.getMonth(), date.getDate() - 7),
-                        date
+                        date,
+                        3
                     )}>
                     За 7 дней
                 </Button>
                 <Button
+                    active={btnId === 4}
                     onClick={() => handler(
                         new Date(date.getFullYear(), date.getMonth(), 1),
-                        new Date(date.getFullYear(), date.getMonth() + 1, 0)
+                        new Date(date.getFullYear(), date.getMonth() + 1, 0),
+                        4
                     )}>
                     Этот месяц
                 </Button>
                 <Button
+                    active={btnId === 5}
                     onClick={() => handler(
                         new Date(endOfPreviousMonth.getFullYear(), endOfPreviousMonth.getMonth(), 1),
-                        new Date(startOfCurrentMonth.getTime() - 1)
+                        new Date(startOfCurrentMonth.getTime() - 1),
+                        5
                     )}>
                     Предыдущий месяц
                 </Button>
                 <Button
+                    active={btnId === 6}
                     onClick={() => handler(
                         new Date(today.getFullYear(), 0, 1),
-                        new Date(today.getFullYear(), 11, 31)
+                        new Date(today.getFullYear(), 11, 31),
+                        6
                     )}>
                     За год
                 </Button>
@@ -76,9 +88,11 @@ const StatisticsPage = memo(() => {
                     <Calendar changeDate={setEndDate} formatISO/>
                 </div>
                 <Button
+                    active={btnId === 7}
                     onClick={() => handler(
                         new Date(new Date(startDate).setHours(0, 0, 0, 0)),
-                        new Date(new Date(endDate).setHours(23, 59, 59, 999))
+                        new Date(new Date(endDate).setHours(23, 59, 59, 999)),
+                        7
                     )}>
                     Применить
                 </Button>

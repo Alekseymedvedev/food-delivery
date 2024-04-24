@@ -43,18 +43,28 @@ const CartPage = () => {
         }
     }
 
-    const handleSwipeEnd = (event:any) => {
-        const itemWidth = event.target.offsetWidth;
-        const swipeDistance = event.changedTouches[0].clientX - event.target.getBoundingClientRect().left;
+    const handleSwipeEnd = (e:any) => {
+        const itemWidth = e.target.offsetWidth;
+        const swipeDistance = e.changedTouches[0].clientX - e.target.getBoundingClientRect().left;
 
         if ((swipeDistance > itemWidth / 2) && swipeItem) {
-            if (productRef.current) {
-                productRef.current.style.transform = `translateX(-${swipeDistance}px)`;
-            }
+            // if (productRef.current) {
+            //     productRef.current.style.transform = `translateX(-${swipeDistance}px)`;
+            // }
             dispatch(deleteSwipeProduct(swipeItem))
         }
         setSwipeItem(null);
     };
+    const handleSwipeStart = (e:any,item:IProduct) => {
+        console.log(e)
+        const itemWidth = e.target.offsetWidth;
+        const swipeDistance = e.changedTouches[0].clientX - e.target.getBoundingClientRect().left;
+        console.log(swipeDistance)
+        setSwipeItem(item)
+        if (productRef.current) {
+            productRef.current.style.transform = `translateX(-${swipeDistance}px)`;
+        }
+    }
     return (
         <MainLayout heading={checkout ? 'Оформление заказа' : 'Корзина'} textCenter>
             {
@@ -70,8 +80,8 @@ const CartPage = () => {
                                             className={classes.item}
                                             ref={productRef}
                                             key={item.id}
-                                            onDrag={handleSwipeEnd}
-                                            onTouchStart={() => setSwipeItem(item)}
+                                            onDragStart={(e)=>handleSwipeStart(e,item)}
+                                            onTouchStart={(e)=>handleSwipeStart(e,item)}
                                             onTouchEnd={handleSwipeEnd}
                                             onTouchMove={handleSwipeEnd}
                                         >
