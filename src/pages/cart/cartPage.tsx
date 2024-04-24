@@ -20,7 +20,7 @@ const CartPage = () => {
     const [worktime, setWorktime] = useState(true)
     const [modal, setModal] = useState(false)
     const [swipeItem, setSwipeItem] = useState<IProduct | null>(null);
-    const productRef = useRef<HTMLDivElement>(null)
+    const productRef = useRef<any>([])
     useEffect(() => {
      if(contactsData){
          const timeRange = contactsData?.worktime;
@@ -79,10 +79,10 @@ const CartPage = () => {
                         <div>
                             <div className={classes.list}>
                                 {
-                                    productsInCart && productsInCart.map(item =>
+                                    productsInCart && productsInCart.map((item,index:number) =>
                                         <div
                                             className={classes.item}
-                                            ref={productRef}
+                                            ref={(element:any) => productRef.current[index] = element}
                                             key={item.id}
                                             onDrag={(e)=>handleSwipeStart(e,item)}
                                             onTouchStart={(e)=>handleSwipeStart(e,item)}
