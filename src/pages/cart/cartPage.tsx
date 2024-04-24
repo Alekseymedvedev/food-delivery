@@ -1,7 +1,7 @@
 import {MainLayout} from "../../layout/mainLayout"
 import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
 import {Product} from "../../entities/product/product";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import classes from "./cartPage.module.scss"
 import {Button} from "../../shared/button/button";
 import {FormCheckout} from "../../entities/formCheckout/formCheckout";
@@ -20,6 +20,7 @@ const CartPage = () => {
     const [worktime, setWorktime] = useState(true)
     const [modal, setModal] = useState(false)
     const [swipeItem, setSwipeItem] = useState<IProduct | null>(null);
+    const productRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
      if(contactsData){
          const timeRange = contactsData?.worktime;
@@ -41,13 +42,13 @@ const CartPage = () => {
             setCheckout(true)
         }
     }
+
     const handleSwipeEnd = (event:any) => {
-        // if ((e.touches[0].clientX <100) && swipeItem) {
-        //     dispatch(deleteSwipeProduct(swipeItem))
-        // }
         const itemWidth = event.target.offsetWidth;
         const swipeDistance = event.changedTouches[0].clientX - event.target.getBoundingClientRect().left;
-
+        if (productRef.current) {
+            productRef.current.style.transform = `translateX(${swipeDistance})`;
+        }
         if ((swipeDistance > itemWidth / 2) && swipeItem) {
             dispatch(deleteSwipeProduct(swipeItem))
         }
@@ -65,11 +66,10 @@ const CartPage = () => {
                                 {
                                     productsInCart && productsInCart.map(item =>
                                         <div
+                                            ref={productRef}
                                             key={item.id}
                                             onTouchStart={() => setSwipeItem(item)}
                                             onTouchEnd={handleSwipeEnd}
-                                            // onDrag={()=> setSwipeItem(item)}
-                                            // onDragEnd={handleSwipeEnd}
                                             onTouchMove={handleSwipeEnd}
                                         >
                                             <Product data={item} inCart count={item.count ? item.count : 0}/>
