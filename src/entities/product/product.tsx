@@ -2,7 +2,6 @@ import React, {FC, memo, useEffect, useState} from "react";
 import classes from "./product.module.scss";
 import {IProduct} from "../../types/types";
 import {FavoritesIcon} from "../../shared/images/icons/favoritesIcon";
-import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
 import {PlusAndMinus} from "../../shared/plusAndMinus/plusAndMinus";
 
 interface IType {
@@ -15,7 +14,6 @@ interface IType {
 }
 
 export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin, oneProduct}) => {
-    const dispatch = useAppDispatch();
 
     const classesArr = [classes.product]
     if (oneProduct) classesArr.push(classes.oneProduct)
@@ -85,7 +83,7 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
             {
                 inCart &&
                 <div className={classes.priceBox}>
-                    <PlusAndMinus data={data}/>
+                    <PlusAndMinus data={data} isBlack/>
                     <div className={classes.price}>{data?.price}₽</div>
                 </div>
             }

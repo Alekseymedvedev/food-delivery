@@ -11,7 +11,13 @@
     fill: var(--tg-theme-text-color)
   }
 }
+.buttonGroupBlack{
+  color: var(--tg-theme-button-color);
 
+  svg {
+    fill: var(--tg-theme-button-color)
+  }
+}
 .button {
   padding: 6px;
   display: flex;
