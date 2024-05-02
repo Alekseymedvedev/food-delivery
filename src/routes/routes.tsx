@@ -33,6 +33,17 @@ export const routes = [
     {path: "/more/favorites", element: <FavoritesPage/>},
     {path: "/qrcode", element: <QrcodePage/>},
 ]
+export const cashierRoutes =[
+    {path: "/more/change-status-order", element: <ChangeStatusOrderPage/>},
+    {path: "/more/all-orders", element: <AllOrdersPage/>},
+]
+export const cookRoutes =[
+    {path: "/more/settings", element: <SettingsPage/>},
+    {path: "/more/settings-category/:id", element: <SettingsCategoryPage/>},
+    {path: "/more/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
+    {path: "/more/change-status-order", element: <ChangeStatusOrderPage/>},
+    {path: "/more/all-orders", element: <AllOrdersPage/>},
+]
 export const adminRoutes =[
     {path: "/more/settings", element: <SettingsPage/>},
     {path: "/more/settings-category/:id", element: <SettingsCategoryPage/>},
