@@ -40,7 +40,7 @@ const ProductPage = () => {
                 <>
                     {
                         product ?
-                            <Button><PlusAndMinus data={product}/></Button>
+                            <Button><PlusAndMinus data={product} isBlack/></Button>
                             :  <Button onClick={addHandler}>Добавить в корзину</Button>
                     }
                 </>
