@@ -5,14 +5,24 @@ import {Product} from "../../entities/product/product";
 import {Button} from "../../shared/button/button";
 import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
 import {addProductToCart} from "../../store/slice/productsSlice";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Loader} from "../../shared/loader/loader";
+import {PlusAndMinus} from "../../shared/plusAndMinus/plusAndMinus";
+import {IProduct} from "../../types/types";
 
 
 const ProductPage = () => {
     const {id} = useParams()
     const {data, isError,isLoading} = useGetOneProductQuery(`${id}`)
     const dispatch = useAppDispatch()
+    const {productsInCart} = useAppSelector(state => state.productReducer)
+
+    const[product,setProduct] =useState<any>()
+    useEffect(() => {
+        if(productsInCart && data ){
+            setProduct(productsInCart.find(item=> item.id === data.id))
+        }
+    }, [productsInCart,data]);
     const addHandler = () => {
         dispatch(addProductToCart(data))
     }
@@ -26,8 +36,17 @@ const ProductPage = () => {
                 <Product data={data} oneProduct/>
             </div>
             {
-               data?.disabled && <Button onClick={addHandler}>Добавить в корзину</Button>
+               data?.disabled &&
+                <>
+                    {
+                        product ?
+                            <Button><PlusAndMinus data={product}/></Button>
+                            :  <Button onClick={addHandler}>Добавить в корзину</Button>
+                    }
+                </>
+
             }
+
         </MainLayout>
     );
 };

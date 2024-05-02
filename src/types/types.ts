@@ -46,6 +46,7 @@ export interface IOrder {
     notifications?: boolean;
     status?: string;
     user:{chatId:number | string}
+    comment?: string
 }
 
 export interface IUser {

@@ -56,7 +56,6 @@ const CartPage = () => {
         setSwipeItem(null);
     };
     const handleSwipeStart = (e:any,item:IProduct,index:number) => {
-        console.log(productRef.current[index])
         const itemWidth = e.target.offsetWidth;
         const swipeDistance = e.changedTouches[0].clientX - e.target.getBoundingClientRect().left;
         setSwipeItem(item)
