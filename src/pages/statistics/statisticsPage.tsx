@@ -115,7 +115,7 @@ const StatisticsPage = memo(() => {
                         <div className="" onClick={() => {
                             item?.id && setCatId(item?.id)
                         }}>
-                            <span className={classes.title}>{item?.title}: </span>
+                            <span className={ item?.id ? `${classes.title} ${classes.category}` :classes.title}>{item?.title}: </span>
                             <span className={classes.text}>{item?.count}шт</span>
                         </div>
                     )
