@@ -19,7 +19,10 @@ export const MainLayout: FC<IType> = ({children, heading, homePage, textCenter, 
     return (
         <div className={tg?.colorScheme === 'light' ? 'container' : 'container darkTheme'}>
             {
-                homePage && <img src={process.env.REACT_APP_API_URL + 'logo.svg'} alt="logo"/>
+                homePage &&
+                <div className={'backLogo'}>
+                    <img src={process.env.REACT_APP_API_URL + 'logo.svg'} alt="logo"/>
+                </div>
             }
             <h1 className={textCenter ? "h1 textCenter" : "h1"}>
                 {!homePage &&
