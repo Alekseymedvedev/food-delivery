@@ -17,25 +17,29 @@ export const MainLayout: FC<IType> = ({children, heading, homePage, textCenter, 
     const {tg} = useTelegram();
     const navigate = useNavigate();
     return (
-        <div className={tg?.colorScheme === 'light' ? 'container' : 'container darkTheme'}>
+        <>
             {
                 homePage &&
                 <div className={'backLogo'}>
                     <img src={process.env.REACT_APP_API_URL + 'logo.svg'} alt="logo"/>
                 </div>
             }
-            <h1 className={textCenter ? "h1 textCenter" : "h1"}>
-                {!homePage &&
-                    <span className={"back"} onClick={() => navigate(-1)}>
+
+            <div className={tg?.colorScheme === 'light' ? 'container' : 'container darkTheme'}>
+
+                <h1 className={textCenter ? "h1 textCenter" : "h1"}>
+                    {!homePage &&
+                        <span className={"back"} onClick={() => navigate(-1)}>
                     <ArrowIconBack/>
                   </span>
-                }
-                <span>{heading}</span>
-            </h1>
-            {isSearch && <Search url={'search?search'}/>}
-            {children}
-            <Menu/>
-            <div className="menuBg"></div>
-        </div>
+                    }
+                    <span>{heading}</span>
+                </h1>
+                {isSearch && <Search url={'search?search'}/>}
+                {children}
+                <Menu/>
+                <div className="menuBg"></div>
+            </div>
+        </>
     );
 };
