@@ -44,8 +44,6 @@ const AddAminPage = () => {
                                     <div className={classes.title}>Пользователь:</div>
                                     <div className={classes.title}>
                                         {item?.username ? item?.username : item?.chatId}
-                                        {item?.firstName && item?.firstName}
-                                        {item?.lastName && item?.lastName}
                                     </div>
                                 </div>
                                 <div className={classes.inner}>
