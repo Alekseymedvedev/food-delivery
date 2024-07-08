@@ -18,12 +18,12 @@ export const MainLayout: FC<IType> = ({children, heading, homePage, textCenter, 
     const navigate = useNavigate();
     return (
         <>
-            {
-                homePage &&
-                <div className={'backLogo'}>
-                    <img src={process.env.REACT_APP_API_URL + 'logo.svg'} alt="logo"/>
-                </div>
-            }
+            {/*{*/}
+            {/*    homePage &&*/}
+            {/*    <div className={'backLogo'}>*/}
+            {/*        <img src={process.env.REACT_APP_API_URL + 'logo.svg'} alt="logo"/>*/}
+            {/*    </div>*/}
+            {/*}*/}
 
             <div className={tg?.colorScheme === 'light' ? 'container' : 'container darkTheme'}>
 

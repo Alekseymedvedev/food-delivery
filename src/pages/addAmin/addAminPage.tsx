@@ -49,7 +49,9 @@ const AddAminPage = () => {
                             <div className={classes.item}>
                                 <div className={classes.title}>Пользователь:</div>
                                 <div className={classes.title}>
-                                    chatId: {item?.chatId} first_name: {item?.firstname} username: {item?.username}
+                                    <div>chatId: {item?.chatId} </div>
+                                    <div>first_name: {item?.firstname} </div>
+                                    <div>username: {item?.username}</div>
                                 </div>
                             </div>
                             <div className={classes.inner}>
@@ -74,7 +76,9 @@ const AddAminPage = () => {
                                 <div className={classes.item}>
                                     <div className={classes.title}>Пользователь:</div>
                                     <div className={classes.title}>
-                                        chatId: {item?.chatId} first_name: {item?.firstname} username: {item?.username}
+                                        <div>chatId: {item?.chatId} </div>
+                                        <div>first_name: {item?.firstname} </div>
+                                        <div>username: {item?.username}</div>
                                     </div>
                                 </div>
                                 <div className={classes.inner}>
