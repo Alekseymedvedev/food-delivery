@@ -31,7 +31,7 @@ const UpdateRoleUserPage = () => {
     return (
         <MainLayout heading={'Обновление роли пользователя'}>
             <div className="mb-4">
-                Изменить роль пользователя chatId: {data?.chatId} first_name: {data?.firstname} username: {data?.username} с ID {id} на
+                Изменить роль пользователя chatId: {data?.chatId} first_name: {data?.firstname} username: {data?.username} на
                 <select onChange={(e) => setSelect(e.target.value)}>
                     {
                         roles.map(item =>
