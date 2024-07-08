@@ -4,6 +4,7 @@ import {ArrowIconBack} from "../shared/images/icons/arrowIconBack";
 import {Menu} from "../entities/menu/menu";
 import {Search} from "../entities/search/search";
 import {useTelegram} from "../hooks/useTelegram";
+import {logo} from "../../public/logo.svg"
 
 interface IType {
     children?: React.ReactNode;
@@ -18,6 +19,9 @@ export const MainLayout: FC<IType> = ({children, heading, homePage, textCenter, 
     const navigate = useNavigate();
     return (
         <div className={tg?.colorScheme === 'light' ? 'container' : 'container darkTheme'}>
+            {
+                homePage && <img src={logo} alt="logo"/>
+            }
             <h1 className={textCenter ? "h1 textCenter" : "h1"}>
                 {!homePage &&
                     <span className={"back"} onClick={() => navigate(-1)}>
