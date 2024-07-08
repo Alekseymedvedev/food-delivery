@@ -52,6 +52,8 @@ export interface IUser {
     chatId?: number;
     role?: string;
     username?: string;
+    firstName?: string;
+    lastName?: string;
     name?: string;
     email?: string;
     gender?: string;
