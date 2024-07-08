@@ -5,14 +5,10 @@ import {Route, Routes, useNavigate} from "react-router-dom";
 import {useTelegram} from "./hooks/useTelegram";
 import {useAppDispatch, useAppSelector} from "./hooks/useRedux";
 import {fetchUser} from "./store/slice/userSlice";
-import {adminRoutes, routes, superAdminRoutes} from "./routes/routes";
+import {adminRoutes, cashierRoutes, cookRoutes, routes, superAdminRoutes} from "./routes/routes";
 import {useAuthUserMutation} from "./store/API/userApi";
 
-const dataUser = {
-    chatId: 1035451470,
-    username: "Amed152",
-    queryId: "AAFOvLc9AAAAAE68tz2o81k0"
-};
+
 
 interface IRoutes {
     path: string;
@@ -39,11 +35,6 @@ function App() {
         }else{
             navigate(`/qrcode`)
         }
-        // authUser({
-        //     chatId: 1035451470,
-        //     username: 'Amed152',
-        //     queryId: 'AAFOvLc9AAAAAE68tz3ynEhS'
-        // })
     }, []);
     useEffect(() => {
         if (data) {
@@ -56,6 +47,10 @@ function App() {
             setAllRoutes([...routes, ...adminRoutes, ...superAdminRoutes]);
         } else if (user?.role === "admin") {
             setAllRoutes([...routes, ...adminRoutes]);
+        } else if (user?.role === "cook") {
+            setAllRoutes([...routes, ...cookRoutes]);
+        } else if (user?.role === "cashier") {
+            setAllRoutes([...routes, ...cashierRoutes]);
         } else {
             setAllRoutes([...routes]);
         }

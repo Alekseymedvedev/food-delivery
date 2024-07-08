@@ -29,6 +29,7 @@ export interface IOrderCreate {
     paymentMethod?: string;
     status?: string;
     sum?: number;
+    comment?: string;
     orderProducts: { id: number; count: number }[];
 }
 
@@ -45,6 +46,7 @@ export interface IOrder {
     notifications?: boolean;
     status?: string;
     user:{chatId:number | string}
+    comment?: string
 }
 
 export interface IUser {

@@ -28,11 +28,11 @@ const CartPage = () => {
          const endHour = parseFloat(timeRange.split("до ")[1]);
          const currentTime = new Date().getHours();
 
-         if (currentTime >= startHour && currentTime < endHour) {
-             setWorktime(true)
-         } else {
-             setWorktime(false)
-         }
+         // if (currentTime >= startHour && currentTime < endHour) {
+         //     setWorktime(true)
+         // } else {
+         //     setWorktime(false)
+         // }
      }
     }, [contactsData]);
     const addOrder = () => {
@@ -56,7 +56,6 @@ const CartPage = () => {
         setSwipeItem(null);
     };
     const handleSwipeStart = (e:any,item:IProduct,index:number) => {
-        console.log(productRef.current[index])
         const itemWidth = e.target.offsetWidth;
         const swipeDistance = e.changedTouches[0].clientX - e.target.getBoundingClientRect().left;
         setSwipeItem(item)

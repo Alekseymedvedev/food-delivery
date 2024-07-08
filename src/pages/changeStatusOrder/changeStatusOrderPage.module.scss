@@ -15,10 +15,11 @@
   margin-bottom: 16px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .title {
-  width: 100%;
+  flex-grow: 1;
   font-weight: 600;
 }
 

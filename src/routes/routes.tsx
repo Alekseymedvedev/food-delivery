@@ -16,6 +16,7 @@ import {ChangeStatusOrderPage} from "../pages/changeStatusOrder/changeStatusOrde
 import {UpdateRoleUserPage} from "../pages/updateRoleUser/updateRoleUserPageLazy";
 import {AddAminPage} from "../pages/addAmin/addAminPageLazy";
 import {QrcodePage} from "../pages/qrcode/qrcodePageLazy";
+import {AllOrdersPage} from "../pages/allOrders/allOrdersPageLazy";
 
 
 export const routes = [
@@ -32,12 +33,24 @@ export const routes = [
     {path: "/more/favorites", element: <FavoritesPage/>},
     {path: "/qrcode", element: <QrcodePage/>},
 ]
+export const cashierRoutes =[
+    {path: "/more/change-status-order", element: <ChangeStatusOrderPage/>},
+    {path: "/more/all-orders", element: <AllOrdersPage/>},
+]
+export const cookRoutes =[
+    {path: "/more/settings", element: <SettingsPage/>},
+    {path: "/more/settings-category/:id", element: <SettingsCategoryPage/>},
+    {path: "/more/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
+    {path: "/more/change-status-order", element: <ChangeStatusOrderPage/>},
+    {path: "/more/all-orders", element: <AllOrdersPage/>},
+]
 export const adminRoutes =[
     {path: "/more/settings", element: <SettingsPage/>},
     {path: "/more/settings-category/:id", element: <SettingsCategoryPage/>},
     {path: "/more/settings-category/:id/settings-product/:id", element: <SettingsProductPage/>},
     {path: "/more/statistics", element: <StatisticsPage/>},
     {path: "/more/change-status-order", element: <ChangeStatusOrderPage/>},
+    {path: "/more/all-orders", element: <AllOrdersPage/>},
 ]
 export const superAdminRoutes =[
     {path: "/update-user/:id", element: <UpdateRoleUserPage/>},

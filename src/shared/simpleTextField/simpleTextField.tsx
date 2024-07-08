@@ -7,12 +7,13 @@ interface IType {
     label?: string;
     value?: any;
     placeholder?: string;
-    onChange?: (val: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (val: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     error?: boolean;
     borderAccent?: boolean;
+    description?: boolean
 }
 
-export const SimpleTextField: FC<IType> = memo(({placeholder, type, label, value, onChange, error, borderAccent}) => {
+export const SimpleTextField: FC<IType> = memo(({placeholder, type, label, value, onChange, error, borderAccent, description}) => {
 
         return (
             <>
@@ -27,6 +28,9 @@ export const SimpleTextField: FC<IType> = memo(({placeholder, type, label, value
                             onChange={onChange}/>
                         {error && <span className="error">Поле обязательно к заполнению</span>}
                     </label>
+                        ? description :
+                        <textarea className={classes.textarea} placeholder="Описание" value={value}
+                                  onChange={onChange}></textarea>
                     :
                     <label className={classes.label}>
                         {label && <span className={classes.text}>{label}</span>}

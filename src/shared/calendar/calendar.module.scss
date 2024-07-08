@@ -18,13 +18,14 @@
 
 .item {
   max-width: max-content;
+  width: 300px;
   padding: 10px;
   border: 1px solid var(--accent-color);
   border-radius: 16px;
   background-color: var(--tg-theme-bg-color);
   position: absolute;
   top: -117px;
-  left: 131px;
+  left: 0;
   z-index: 1;
 }
 

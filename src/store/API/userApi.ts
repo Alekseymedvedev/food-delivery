@@ -14,7 +14,6 @@ export const userApi = createApi({
                 method: 'Post',
                 headers: {
                     "Content-Type": "application/json",
-                    // "Access-Control-Allow-Origin": "*",
                 },
                 body
             }),
@@ -25,7 +24,6 @@ export const userApi = createApi({
                 url: `/user`,
             }),
             providesTags: ['Users'],
-
         }),
         getUser: build.query({
             query: (id) => ({
@@ -58,7 +56,6 @@ export const userApi = createApi({
                 }
             },
         }),
-
     }),
 });
 

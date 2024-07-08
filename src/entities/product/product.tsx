@@ -2,10 +2,7 @@ import React, {FC, memo, useEffect, useState} from "react";
 import classes from "./product.module.scss";
 import {IProduct} from "../../types/types";
 import {FavoritesIcon} from "../../shared/images/icons/favoritesIcon";
-import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
-import {decrement, addProductToCart} from "../../store/slice/productsSlice";
-import {PlusIcon} from "../../shared/images/icons/plusIcon";
-import {MinusIcon} from "../../shared/images/icons/minusIcon";
+import {PlusAndMinus} from "../../shared/plusAndMinus/plusAndMinus";
 
 interface IType {
     data: IProduct;
@@ -17,7 +14,6 @@ interface IType {
 }
 
 export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin, oneProduct}) => {
-    const dispatch = useAppDispatch();
 
     const classesArr = [classes.product]
     if (oneProduct) classesArr.push(classes.oneProduct)
@@ -83,18 +79,11 @@ export const Product: FC<IType> = memo(({data, inOrder, inCart, count, editAdmin
                 {!inCart && <div className={classes.price}>{data?.price}₽</div>}
 
             </div>
+
             {
                 inCart &&
                 <div className={classes.priceBox}>
-                    <div className={classes.buttonGroup}>
-                        <button className={classes.button} onClick={() => dispatch(decrement(data))}>
-                            <MinusIcon/>
-                        </button>
-                        <span>{data.count}</span>
-                        <button className={classes.button} onClick={() => dispatch(addProductToCart(data))}>
-                            <PlusIcon/>
-                        </button>
-                    </div>
+                    <PlusAndMinus data={data} />
                     <div className={classes.price}>{data?.price}₽</div>
                 </div>
             }

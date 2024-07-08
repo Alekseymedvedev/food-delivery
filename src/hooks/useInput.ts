@@ -12,7 +12,7 @@ export const useInput = (initialValue: any, errorInput?: boolean, clear?: boolea
         }
     }, [errorInput])
 
-    const onChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
+    const onChange = (e: (React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)) => {
         setValue(e.target.value)
         if (e.target.value !== value) {
             setVisible(true)
