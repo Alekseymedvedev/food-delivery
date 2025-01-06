@@ -1,3 +1,4 @@
+
 import {MainLayout} from "../../layout/mainLayout"
 import classes from "../../entities/search/search.module.scss";
 import React, {useEffect, useState} from "react";
@@ -13,13 +14,13 @@ const UpdateRoleUserPage = () => {
     const navigate = useNavigate();
     const {id} = useParams()
     const {data} = useGetUserQuery(`${id}`)
-    const [update, {data: dataUpdateUser, isLoading, error}] = useUpdateRoleUserMutation()
+    const [update,{data:dataUpdateUser,isLoading,error}]=useUpdateRoleUserMutation()
     const [select, setSelect] = useState('')
     useEffect(() => {
-        if (dataUpdateUser && !isLoading && !error) {
+        if(dataUpdateUser && !isLoading && !error){
             navigate(`/`)
         }
-    }, [isLoading, error]);
+    }, [isLoading,error]);
     const handler = () => {
         update({
             id,
@@ -31,7 +32,7 @@ const UpdateRoleUserPage = () => {
     return (
         <MainLayout heading={'Обновление роли пользователя'}>
             <div className="mb-4">
-                Изменить роль пользователя chatId: {data?.chatId} first_name: {data?.firstname} username: {data?.username} на
+                Изменить роль пользователя {data?.username} с ID {id} на
                 <select onChange={(e) => setSelect(e.target.value)}>
                     {
                         roles.map(item =>

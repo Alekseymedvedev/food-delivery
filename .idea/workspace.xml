@@ -4,7 +4,96 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit" />
+    <list default="true" id="d9e6b3e4-dabb-4c2d-8051-72df84eaa51c" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/category/category.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/category/category.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/category/category.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/category/category.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/formCheckout/formCheckout.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/formCheckout/formCheckout.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/formCheckout/formCheckout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/formCheckout/formCheckout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/menu/menu.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/menu/menu.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/menu/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/modal/modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/modal/modal.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/modal/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/modal/modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/order/order.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/order/order.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/order/order.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/order/order.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/product/product.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/product/product.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/product/product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/product/product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/search/search.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/search/search.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/search/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/search/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/mainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/mainLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/addAmin/addAminPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/addAmin/addAminPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/addAmin/addAminPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/addAmin/addAminPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/allOrders/allOrdersPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/allOrders/allOrdersPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/allOrders/allOrdersPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/allOrders/allOrdersPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/cartPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/cartPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/category/categoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/category/categoryPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/category/categoryPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/category/categoryPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/changeStatusOrder/changeStatusOrderPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/changeStatusOrder/changeStatusOrderPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/changeStatusOrder/changeStatusOrderPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/changeStatusOrder/changeStatusOrderPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/favorites/favoritesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/favorites/favoritesPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/favorites/favoritesPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/favorites/favoritesPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/homePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/homePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/homePageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/homePageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/more/morePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/more/morePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/more/morePageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/more/morePageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/notification/notificationPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/notification/notificationPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/notification/notificationPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/notification/notificationPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/oneOrder/oneOrderPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/oneOrder/oneOrderPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/oneOrder/oneOrderPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/oneOrder/oneOrderPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/orders/ordersPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/orders/ordersPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/orders/ordersPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/orders/ordersPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/product/productPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/product/productPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/product/productPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/product/productPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/profilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/profilePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/profilePageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/profilePageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/qrcode/qrcodePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/qrcode/qrcodePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/qrcode/qrcodePageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/qrcode/qrcodePageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/settings/settingsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/settings/settingsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/settings/settingsPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/settings/settingsPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/settingsCategory/settingsCategoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/settingsCategory/settingsCategoryPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/settingsCategory/settingsCategoryPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/settingsCategory/settingsCategoryPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/settingsProduct/settingsProductPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/settingsProduct/settingsProductPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/settingsProduct/settingsProductPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/settingsProduct/settingsProductPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/statistics/statisticsPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/statistics/statisticsPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/statistics/statisticsPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/statistics/statisticsPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/updateRoleUser/updateRoleUserPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/updateRoleUser/updateRoleUserPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/updateRoleUser/updateRoleUserPageLazy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/updateRoleUser/updateRoleUserPageLazy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/reset.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/btnGroup/btnGroup.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/btnGroup/btnGroup.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/btnGroup/btnGroup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/btnGroup/btnGroup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/calendar/calendar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/calendar/calendar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/calendar/calendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/calendar/calendar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/inputRadio/inputRadio.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/inputRadio/inputRadio.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/inputRadio/inputRadio.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/inputRadio/inputRadio.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/linkAll/linkAll.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/linkAll/linkAll.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/linkAll/linkAll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/linkAll/linkAll.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/loader/loader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/loader/loader.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/loader/loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/loader/loader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/plusAndMinus/plusAndMinus.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/plusAndMinus/plusAndMinus.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/plusAndMinus/plusAndMinus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/plusAndMinus/plusAndMinus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/select/select.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/select/select.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/select/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/select/select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/simpleTextField/simpleTextField.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/simpleTextField/simpleTextField.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/simpleTextField/simpleTextField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/simpleTextField/simpleTextField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/textField/textField.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/textField/textField.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/textField/textField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/textField/textField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/addAndEditForm/addAndEditForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/addAndEditForm/addAndEditForm.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/addAndEditForm/addAndEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/addAndEditForm/addAndEditForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/categories/categories.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/categories/categories.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/categories/categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/categories/categories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/orders/orders.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/orders/orders.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/orders/orders.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/orders/orders.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/products/products.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/products/products.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/products/products.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/products/products.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,25 +123,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/aleks/Desktop/web/food-delivery/public",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.TypeScript",
-    "ts.external.directory.path": "C:\\Users\\aleks\\Desktop\\web\\food-delivery\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleks/Desktop/web/food-delivery/public&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.TypeScript&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\aleks\\Desktop\\web\\food-delivery\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>

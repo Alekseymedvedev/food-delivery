@@ -7,7 +7,7 @@ import {useAppDispatch, useAppSelector} from "./hooks/useRedux";
 import {fetchUser} from "./store/slice/userSlice";
 import {adminRoutes, cashierRoutes, cookRoutes, routes, superAdminRoutes} from "./routes/routes";
 import {useAuthUserMutation} from "./store/API/userApi";
-
+import {QrcodePage} from "./pages/qrcode/qrcodePageLazy";
 
 
 interface IRoutes {
@@ -20,19 +20,21 @@ function App() {
     const dispatch = useAppDispatch();
     const {user} = useAppSelector((state) => state.userReducer);
     const [allRoutes, setAllRoutes] = useState<IRoutes[]>();
+    const [isPlug, setIsPlug] = useState(true);
     const [authUser, {data, error}] = useAuthUserMutation()
 
     const navigate = useNavigate()
     useEffect(() => {
 
-        if(tg?.initDataUnsafe?.user?.id){
-           authUser({
+        if (tg?.initDataUnsafe?.user?.id) {
+            authUser({
                 chatId: tg?.initDataUnsafe?.user?.id,
                 username: tg?.initDataUnsafe?.user?.username,
                 queryId: tg?.initDataUnsafe?.query_id ? tg?.initDataUnsafe?.query_id : 'queryId'
             })
+            setIsPlug(false)
             return
-        }else{
+        } else {
             navigate(`/qrcode`)
         }
     }, []);
@@ -57,20 +59,16 @@ function App() {
     }, [user]);
 
     return (
-        <>
+        <Routes>
             {
-                <Routes>
-                    {allRoutes &&
-                        allRoutes.map((route) => (
-                            <Route
-                                key={route?.path}
-                                path={route?.path}
-                                element={route?.element}
-                            />
-                        ))}
-                </Routes>
+                isPlug ?
+                    <Route path={`/qrcode`} element={<QrcodePage/>}/>
+                    :
+                    allRoutes?.map((route) => (
+                        <Route key={route?.path} path={route?.path} element={route?.element}/>
+                    ))
             }
-        </>
+        </Routes>
     );
 }
 
